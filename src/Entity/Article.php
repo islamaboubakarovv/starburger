@@ -33,9 +33,14 @@ class Article
     private $datePubli;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      */
     private $auteur;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $importance;
 
     public function getId(): ?int
     {
@@ -78,14 +83,26 @@ class Article
         return $this;
     }
 
-    public function getAuteur(): ?string
+    public function getAuteur(): ?int
     {
         return $this->auteur;
     }
 
-    public function setAuteur(string $auteur): self
+    public function setAuteur(int $auteur): self
     {
         $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getImportance(): ?int
+    {
+        return $this->importance;
+    }
+
+    public function setImportance(int $importance): self
+    {
+        $this->importance = $importance;
 
         return $this;
     }
