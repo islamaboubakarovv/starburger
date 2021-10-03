@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +44,16 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      */
     private $artisan;
+
+    /**
+     * @ORM\OneToMany(targetEntity=IllustrationArticle::class, mappedBy="article", orphanRemoval=true)
+     */
+    private $illustrationarticle;
+
+    public function __construct()
+    {
+        $this->illustrationarticle = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +116,36 @@ class Article
     public function setArtisan(?Artisan $artisan): self
     {
         $this->artisan = $artisan;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|IllustrationArticle[]
+     */
+    public function getIllustrationarticle(): Collection
+    {
+        return $this->illustrationarticle;
+    }
+
+    public function addIllustrationarticle(IllustrationArticle $illustrationarticle): self
+    {
+        if (!$this->illustrationarticle->contains($illustrationarticle)) {
+            $this->illustrationarticle[] = $illustrationarticle;
+            $illustrationarticle->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIllustrationarticle(IllustrationArticle $illustrationarticle): self
+    {
+        if ($this->illustrationarticle->removeElement($illustrationarticle)) {
+            // set the owning side to null (unless already changed)
+            if ($illustrationarticle->getArticle() === $this) {
+                $illustrationarticle->setArticle(null);
+            }
+        }
 
         return $this;
     }
