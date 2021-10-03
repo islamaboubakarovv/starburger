@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\OffreRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Offre
      * @ORM\Column(type="string", length=100)
      */
     private $typeContrat;
+
+    /**
+     * @ORM\OneToMany(targetEntity=OffrePostulant::class, mappedBy="offre", orphanRemoval=true)
+     */
+    private $offre;
+
+    public function __construct()
+    {
+        $this->offre = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,36 @@ class Offre
     public function setTypeContrat(string $typeContrat): self
     {
         $this->typeContrat = $typeContrat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OffrePostulant[]
+     */
+    public function getOffre(): Collection
+    {
+        return $this->offre;
+    }
+
+    public function addOffre(OffrePostulant $offre): self
+    {
+        if (!$this->offre->contains($offre)) {
+            $this->offre[] = $offre;
+            $offre->setOffre($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOffre(OffrePostulant $offre): self
+    {
+        if ($this->offre->removeElement($offre)) {
+            // set the owning side to null (unless already changed)
+            if ($offre->getOffre() === $this) {
+                $offre->setOffre(null);
+            }
+        }
 
         return $this;
     }

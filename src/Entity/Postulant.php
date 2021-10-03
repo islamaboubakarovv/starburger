@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PostulantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -46,6 +48,16 @@ class Postulant
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lettreMotivation;
+
+    /**
+     * @ORM\OneToMany(targetEntity=OffrePostulant::class, mappedBy="postulant", orphanRemoval=true)
+     */
+    private $postulant;
+
+    public function __construct()
+    {
+        $this->postulant = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +132,40 @@ class Postulant
     public function setLettreMotivation(?string $lettreMotivation): self
     {
         $this->lettreMotivation = $lettreMotivation;
+
+        return $this;
+    }
+
+    public function getPostulant(): ?self
+    {
+        return $this->postulant;
+    }
+
+    public function setPostulant(?self $postulant): self
+    {
+        $this->postulant = $postulant;
+
+        return $this;
+    }
+
+    public function addPostulant(OffrePostulant $postulant): self
+    {
+        if (!$this->postulant->contains($postulant)) {
+            $this->postulant[] = $postulant;
+            $postulant->setPostulant($this);
+        }
+
+        return $this;
+    }
+
+    public function removePostulant(OffrePostulant $postulant): self
+    {
+        if ($this->postulant->removeElement($postulant)) {
+            // set the owning side to null (unless already changed)
+            if ($postulant->getPostulant() === $this) {
+                $postulant->setPostulant(null);
+            }
+        }
 
         return $this;
     }
