@@ -35,12 +35,13 @@ class Article
     /**
      * @ORM\Column(type="integer")
      */
-    private $auteur;
+    private $importance;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity=Artisan::class, inversedBy="auteur")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $importance;
+    private $artisan;
 
     public function getId(): ?int
     {
@@ -83,18 +84,6 @@ class Article
         return $this;
     }
 
-    public function getAuteur(): ?int
-    {
-        return $this->auteur;
-    }
-
-    public function setAuteur(int $auteur): self
-    {
-        $this->auteur = $auteur;
-
-        return $this;
-    }
-
     public function getImportance(): ?int
     {
         return $this->importance;
@@ -103,6 +92,18 @@ class Article
     public function setImportance(int $importance): self
     {
         $this->importance = $importance;
+
+        return $this;
+    }
+
+    public function getArtisan(): ?Artisan
+    {
+        return $this->artisan;
+    }
+
+    public function setArtisan(?Artisan $artisan): self
+    {
+        $this->artisan = $artisan;
 
         return $this;
     }

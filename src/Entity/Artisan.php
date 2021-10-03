@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArtisanRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Artisan
      * @ORM\Column(type="string", length=30)
      */
     private $mdp;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="artisan", orphanRemoval=true)
+     */
+    private $auteur;
+
+    public function __construct()
+    {
+        $this->auteur = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,36 @@ class Artisan
     public function setMdp(string $mdp): self
     {
         $this->mdp = $mdp;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getAuteur(): Collection
+    {
+        return $this->auteur;
+    }
+
+    public function addAuteur(Article $auteur): self
+    {
+        if (!$this->auteur->contains($auteur)) {
+            $this->auteur[] = $auteur;
+            $auteur->setArtisan($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAuteur(Article $auteur): self
+    {
+        if ($this->auteur->removeElement($auteur)) {
+            // set the owning side to null (unless already changed)
+            if ($auteur->getArtisan() === $this) {
+                $auteur->setArtisan(null);
+            }
+        }
 
         return $this;
     }
