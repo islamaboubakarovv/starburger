@@ -19,13 +19,13 @@ class OffrePostulant
 
     /**
      * @ORM\ManyToOne(targetEntity=Offre::class, inversedBy="offre")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $offre;
 
     /**
      * @ORM\ManyToOne(targetEntity=Postulant::class, inversedBy="postulant")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $postulant;
 

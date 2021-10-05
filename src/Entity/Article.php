@@ -41,7 +41,7 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity=Artisan::class, inversedBy="auteur")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $artisan;
 

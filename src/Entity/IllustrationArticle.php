@@ -24,7 +24,7 @@ class IllustrationArticle
 
     /**
      * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="illustrationarticle")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $article;
 
