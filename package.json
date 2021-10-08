@@ -1,25 +1,24 @@
 {
-  "name": "techguys",
-  "version": "1.0.0",
-  "description": "**Projet de réalisation d'un site vitrine pour une entreprise de Menuiserie/Charpente.<br/>**\r Réalisé par :\r <ul>\r     <li><a href=\"https://gitlab.com/isabou\">ABOUBAKAROV Islam<a/></li>\r     <li><a href=\"https://gitlab.com/kuku974\">DELAPERRIERE Lucas<a/></li>\r     <li><a href=\"https://gitlab.com/anthony.mrim\">MERIME Anthony<a/></li>\r     <li><a href=\"https://gitlab.com/JulienVrctr\">VERCOUTERE Julien<a/></li>\r </ul>",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/fac2/techguys.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/fac2/techguys/issues"
-  },
-  "homepage": "https://gitlab.com/fac2/techguys#readme",
-  "dependencies": {
-    "bootstrap": "^5.1.1"
-  }
+    "devDependencies": {
+        "@symfony/stimulus-bridge": "^2.0.0",
+        "@symfony/webpack-encore": "^1.0.0",
+        "bootstrap": "^5.1.2",
+        "core-js": "^3.0.0",
+        "regenerator-runtime": "^0.13.2",
+        "sass": "^1.42.1",
+        "sass-loader": "^12.0.0",
+        "stimulus": "^2.0.0",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.10.2"
+    }
 }
