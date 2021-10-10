@@ -13,6 +13,10 @@ body {
     color : #E6C9A5;
 }
 
-img {
-    padding : 30px;
+.btn-footer, .btn-footer:hover, .btn-footer:active, .btn-footer:visited {
+    background-color: #E6C9A5 !important;
+    color : black !important;
+    border-radius: 30px !important;
+    width: 192px !important;
+    height: 42px !important;
 }
