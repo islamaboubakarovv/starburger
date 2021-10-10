@@ -9,5 +9,4 @@
 import './styles/app.scss';
 
 // start the Stimulus application
-require('bootstrap');
-console.log("i am working");
+import 'bootstrap';
