@@ -7,6 +7,7 @@ body {
 .img-footer {
     height : 30px;
     width : 30px;
+    margin : 0 10px 10px 0 !important;
 }
 
 .nav-link {
@@ -19,4 +20,16 @@ body {
     border-radius: 30px !important;
     width: 192px !important;
     height: 42px !important;
+}
+
+.nav-link {
+    color : #E6C9A5 !important;
+}
+
+.navbar-brand {
+    margin-left : 0.5% !important;
+}
+
+.container {
+    width : 80% !important;
 }
