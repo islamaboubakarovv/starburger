@@ -1,20 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}ABC Legermain{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="accueil-second-part px-5">
+    <div class="row py-4">
+        <div class="col-sm-12 col-md-6">
+            <h2>NOTRE ENTREPRISE :</h2>
+            <p>La société Legermain, jeune entreprise alliant créativité et dynamisme, vous propose de mettre son savoir faire à votre service.<br>
+                Pour  vos travaux de charpente, couverture, escaliers et autres ouvrages spécifiques, faites confiance à deux techniciens du bois, André Legermain et Philippe Troquin. Habitués à intervenir, notamment, sur des bâtiments classés Monuments Historiques.
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-6 text-center">
+            <img class="img-fluid accueil-img" src="/images/illustrations/homme_casque_chantier.jpg" alt="homme casque chantier">
+        </div>
+    </div>
+    <div class="row py-2">
+        <hr>
+    </div>
+    <div class="row py-4" align="center">
+        <h2>NOS CERTIFICATS : </h2>
+    </div>
+    <div class="row py-4 gy-3" align="center">
+        <div class="col-12 col-sm-6 col-md-4"><img class="img-fluid logos-certificats" src="/images/logos/fondation-du-patrimoine.jpg" alt=""></div>
+        <div class="col-12 col-sm-6 col-md-4"><img class="img-fluid logos-certificats" src="/images/logos/logo_qualibat.png" alt=""></div>
+        <div class="col-12 col-sm-12 col-md-4"><img class="img-fluid logos-certificats" src="/images/logos/logo-maitreartisan.png" alt=""></div>
+    </div>
+    <div class="row py-2">
+        <hr>
+    </div>
+    <div class="d-flex flex-row justify-content-center align-items-center py-4" align="center">
+        <div class="px-2"><h2>DÉCOUVREZ NOTRE SAVOIR-FAIRE</h2></div>
+        <div class="px-2"><button type="button" class="btn btn-primary">Nos réalisations</button></div>
+    </div>
+</section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/julie/OneDrive/Documents/Université de Tours/L3/Projet S5/techguys/src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/julie/OneDrive/Documents/Université de Tours/L3/Projet S5/techguys/templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
-    </ul>
-</div>
+<section class="accueil-third-part">
+    <div class="row py-4" align="center">
+        <h2>VISIONNEZ NOS OUVRAGES : </h2>
+    </div>
+    <div class="row py-4 gy-1" align="center">
+        <div class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Charpentes</button>  </div>
+        <div class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Ouvrages spéciaux</button></div>
+        <div class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Couvertures</button></div>
+    </div>
+</section>
 {% endblock %}

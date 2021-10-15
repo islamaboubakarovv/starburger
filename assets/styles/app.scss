@@ -30,6 +30,25 @@ body {
     margin-left : 0.5% !important;
 }
 
-.container {
-    width : 80% !important;
+.accueil-second-part {
+    background-color: #4A4134;
+    color: white;
+}
+
+.accueil-third-part {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.accueil-second-part div>hr {
+    width: 50%;
+    margin: auto;
+}
+
+.accueil-img {
+    width: 450px !important;
+}
+
+.logos-certificats {
+    width: 150px !important;
 }
