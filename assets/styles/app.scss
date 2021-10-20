@@ -22,6 +22,15 @@ body {
     height: 42px !important;
 }
 
+.btn-actualite, .btn-actualite:hover, .btn-actualite:active, .btn-actualite:visited {
+    background-color: #95683E !important;
+    color : white !important;
+    border-radius: 5px !important;
+    width: 150px !important;
+    position: relative; 
+    top:80% !important;
+}
+
 .nav-link {
     color : #E6C9A5 !important;
 }
@@ -62,4 +71,19 @@ body {
 
 .reseaux-footer a {
     text-decoration: none !important;
+}
+
+@media (min-width: 1000px){
+    .img-article {
+        float: left;
+        width: 35%;
+        padding-right: 30px !important;
+    }
+}
+
+@media (max-width: 999.9px){
+    .img-article {
+        width: 100%;
+        padding-bottom: 10px !important;
+    }
 }

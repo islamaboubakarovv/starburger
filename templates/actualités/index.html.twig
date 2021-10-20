@@ -1,30 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ActualitésController!{% endblock %}
+{% block title %}Nos actualités{% endblock %}
 
 {% block body %}
-<div class="bloc-haut">
-  <div style="width:100%; height:150px; overflow:hidden">
-    <img src="/images/illustrations/chantier.jpg" class="img-haut" style="margin-top: -150px;"/>
-  </div>
-  <div class="surtext">
-    <h1>Nos actualités</h1>
-    <p>Découvrez ABC au quotidien</p>
-  </div>
-</div>
-<div class="container shadow-sm p-3 mb-5 bg-white rounded">
-  <div class="row py-4 px-lg-5">
-    <div class="col-lg-5 col-md-12 text-center">
-        <img src="images/illustrations/homme_casque_chantier.jpg " class="img-qui">
+  <div class="bloc-haut">
+    <div style="width:100%; height:150px; overflow:hidden">
+      <img src="/images/illustrations/journal.jpg" class="img-haut" style="margin-top: -450px;"/>
     </div>
-    <div class="col-lg-6 col-md-12 px-5">
-    <h3>André Legermain</h2>
-        <p class="text-justify">André Legermain a fondé son entreprise en sortant de l’école à seulement 22 ans. Travaillant dans ce domaine depuis maintenant une dizaine d’année il effectue un BTS enveloppe du bâtiment avant de poursuivre avec un master afin de devenir ingénieur structure conception bâtiment. Habitué à intervenir sur des ouvrages spécifiques, il profite de chacun d’entre eux pour se challenger et découvrir de nouvelles méthodes de travail et de réflexion. Pour lui chaque projet est bien plus qu’une réalisation, c’est une réelle recherche afin de créer ou de conserver l’identité de l’ouvrage. 
-        </p>
-    </div>
-    <div class="col-lg-1 col-md-12 text-center">
-        <button type="button" class="btn btn-secondary">Lire plus</button>
+    <div class="surtext">
+      <h1>Nos actualités</h1>
+      <p>Découvrez ABC au quotidien</p>
     </div>
   </div>
-</div>
+  {% for articles in articles %}
+    <div class="container shadow-sm p-3 mb-5 bg-white rounded">
+      <div class="row py-4 px-lg-5">
+        <div class="col-lg-4 col-md-12 text-center">
+            <img src="images/illustrations/homme_casque_chantier.jpg " class="img-qui">
+        </div>
+        <div class="col-lg-6 col-md-12 px-5">
+        <h3>{{articles.titre}}</h3>
+            <p class="text-justify">{{articles.contenu}}
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-12 text-center">
+            <a class="btn btn-actualite" href="{{ path('article', { id: articles.id }) }}" role="button">Lire plus</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}
