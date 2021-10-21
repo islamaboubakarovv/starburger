@@ -4,8 +4,13 @@
 
 {% block body %}
 <section class="accueil-first-part">
-    <div class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="3000">
+    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="5000">
         <div class="carousel-inner">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
             <div class="carousel-item active">
                 <img src="/images/illustrations/Charpentes/charpente1.JPG" class="d-block w-100 active img-fluid">
             </div>
@@ -13,7 +18,7 @@
                 <img src="/images/illustrations/Couvertures/couverture1.JPG" class="d-block w-100 img-fluid">
             </div> 
             <div class="carousel-item">
-                <img src="/images/illustrations/Ouvrages/ouvrage9.JPG" class="d-block w-100 img-fluid" >
+                <img src="/images/illustrations/Ouvrages/ouvrage2.jpg" class="d-block w-100 img-fluid" >
             </div>
         </div>
     </div>
@@ -50,14 +55,59 @@
     </div>
 </section>
 
-<section class="accueil-third-part">
-    <div class="row py-3" align="center">
+<section class="accueil-third-part container-fluid" align="center">
+    <div class="row py-3">
         <h2>VISIONNEZ NOS OUVRAGES : </h2>
     </div>
-    <div class="row py-3 gy-3 px-5" align="center">
-        <div class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Charpentes</button>  </div>
-        <div class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Ouvrages spéciaux</button></div>
-        <div class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Couvertures</button></div>
+    <div class="row py-3 gy-3 px-5">
+        <div id="bouton-charpentes" class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Charpentes</button>  </div>
+        <div id="bouton-ouvrages" class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Ouvrages spéciaux</button></div>
+        <div id="bouton-couvertures" class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Couvertures</button></div>
+    </div>
+    <div id="visionneuse-charpentes"class="row visionneuse-images">
+        <div class="col">
+        <img src="" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+            </div>
+            <div class="row">
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+            </div>
+        </div>
+    </div>
+    <div id="visionneuse-ouvrages"class="row visionneuse-images">
+        <div class="col">
+        <img src="" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+            </div>
+            <div class="row">
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+            </div>
+        </div>
+    </div>
+    <div id="visionneuse-couverture"class="row visionneuse-images">
+        <div class="col">
+        <img src="" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+            </div>
+            <div class="row">
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+                <div class="col"><img src="" alt="" class="img-fluid"></div>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
