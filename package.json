@@ -20,5 +20,9 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress"
     },
-    "dependencies": {}
+    "dependencies": {
+        "file-loader": "^6.2.0",
+        "resolve-url-loader": "^4.0.0",
+        "url-loader": "^4.1.1"
+    }
 }

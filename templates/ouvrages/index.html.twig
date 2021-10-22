@@ -12,11 +12,44 @@
 
 
 </div>
+<!-- script js pour afficher texte en position absolue -->
+{% block javascripts %}
+<script type ="text/javascript">
+var myLayer = document.createElement('div');
+myLayer.id = 'bookingLayer';
+myLayer.style.position = 'relative';
+myLayer.style.zIndex=1;
+myLayer.style.left = '590px';
+myLayer.style.top = '384px';
+myLayer.style.width = '160px';
+myLayer.style.height = '145px';
+myLayer.style.padding = '10px';
+myLayer.style.background = '#ffffff';
+myLayer.innerHTML = 'Texte grid';
+document.body.appendChild(myLayer);
+//fonctions pour changer texte du bloc
+function changeText(text)
+        {
+            var display = document.getElementById('bookingLayer');
+            display.innerHTML = "";
+            display.innerHTML = text;
+        }
+//texte par défaut
+function defaultText()
+        {
+            var display = document.getElementById('bookingLayer');
+            display.innerHTML = "";
+            display.innerHTML = "passez le curseur sur un ouvrage";
+        }
+
+</script>
+{% endblock %}
 {# le hexa grid #}
 <section id="lab">
 
         <article>
 
+            <!-- ça change le texte quand on hover -->
             <div class="lab_item">
                 <div class="hexagon hexagon2inv">
                     <div class="hexagon-in1">
@@ -25,8 +58,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="lab_item">
+            <div class="lab_item" onmouseover="changeText('ouvrage 1')" onmouseout="defaultText()">
                 <div class="hexagon hexagon2">
                     <div class="hexagon-in1">
                         <div class="hexagon-in2-1">
@@ -34,7 +66,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lab_item">
+            
+            <div class="lab_item" onmouseover="changeText('ouvrage 2')" onmouseout="defaultText()">
                 <div class="hexagon hexagon2">
                     <div class="hexagon-in1">
                         <div class="hexagon-in2-2">
@@ -50,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lab_item">
+            <div class="lab_item" onmouseover="changeText('ouvrage 3')" onmouseout="defaultText()">
                 <div class="hexagon hexagon2">
                     <div class="hexagon-in1">
                         <div class="hexagon-in2-3">
@@ -67,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lab_item">
+            <div class="lab_item" onmouseover="changeText('ouvrage 4')" onmouseout="defaultText()">
                 <div class="hexagon hexagon2">
                     <div class="hexagon-in1">
                         <div class="hexagon-in2-4">
@@ -85,7 +118,7 @@
                 </div>
             </div>
 
-            <div class="lab_item">
+            <div class="lab_item" onmouseover="changeText('ouvrage 5')" onmouseout="defaultText()">
                 <div class="hexagon hexagon2">
                     <div class="hexagon-in1">
                         <div class="hexagon-in2-5">
@@ -95,7 +128,7 @@
             </div>
 
 
-            <div class="lab_item">
+            <div class="lab_item" onmouseover="changeText('ouvrage 6')" onmouseout="defaultText()">
                 <div class="hexagon hexagon2">
                     <div class="hexagon-in1">
                         <div class="hexagon-in2-6">
