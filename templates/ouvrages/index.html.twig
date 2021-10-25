@@ -3,9 +3,9 @@
 {% endblock %}
 {% block body %}
 	<!-- script js pour afficher texte en position absolue -->
-	{% block javascripts %}
-		<script type="text/javascript">
-			var myLayer = document.createElement('div');
+{% block javascripts %}
+<script type="text/javascript">
+var myLayer = document.createElement('div');
 myLayer.id = 'bookingLayer';
 myLayer.style.position = 'relative';
 myLayer.style.zIndex = 1;
@@ -34,6 +34,163 @@ var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
 display.innerHTML = "passez le curseur sur un ouvrage";
 }
+//responsive
+var z = window.matchMedia("(max-width: 1400px)")
+var a = window.matchMedia("(max-width: 1275px)")
+var b = window.matchMedia("(max-width: 1071px)")
+var c = window.matchMedia("(max-width: 998px)")
+var d = window.matchMedia("(max-width: 945px)")
+var e = window.matchMedia("(max-width: 914px)")
+var f = window.matchMedia("(max-width: 884px)")
+var g = window.matchMedia("(max-width: 803px)")
+var h = window.matchMedia("(max-width: 763px)")
+var i = window.matchMedia("(max-width: 670px)")
+var j = window.matchMedia("(max-width: 623px)")
+var k = window.matchMedia("(max-width: 594px)")
+var l = window.matchMedia("(max-width: 584px)")
+var m = window.matchMedia("(max-width: 548px)")
+var n = window.matchMedia("(max-width: 530px)")
+function responsivea(x){
+	if(x.matches){
+		myLayer.style.top='820px';
+
+	}else{
+
+	}
+}
+function responsiveb(x){
+	if(x.matches){
+		myLayer.style.left='300px';
+
+	}else{
+
+	}
+}
+function responsivec(x){
+	if(x.matches){
+		myLayer.style.left='100px';
+
+	}else{
+
+	}
+}
+function responsived(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivee(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivef(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsiveg(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsiveh(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivei(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivej(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivek(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivel(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsivem(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+function responsiven(x){
+	if(x.matches){
+		myLayer.style.left='0px';
+
+	}else{
+
+	}
+}
+
+responsivea(a) 
+a.addListener(responsivea) 
+responsiveb(b) 
+b.addListener(responsiveb)
+responsivec(c) 
+c.addListener(responsivec)
+responsived(d) 
+d.addListener(responsived)
+responsivee(e) 
+e.addListener(responsivee)
+responsivef(f) 
+f.addListener(responsivef)
+responsiveg(g) 
+g.addListener(responsiveg)
+responsiveh(h) 
+h.addListener(responsiveh)
+responsivei(i) 
+i.addListener(responsivei)
+responsivej(j) 
+j.addListener(responsivej)
+responsivek(k) 
+k.addListener(responsivek)
+responsivel(l) 
+l.addListener(responsivel)
+responsivem(m) 
+m.addListener(responsivem)
+responsiven(n) 
+n.addListener(responsiven)
 		</script>
 	{% endblock %}
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
