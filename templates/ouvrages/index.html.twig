@@ -1,156 +1,179 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello OuvragesController!{% endblock %}
+{% block title %}Hello OuvragesController!
+{% endblock %}
 {% block body %}
-<!-- script js pour afficher texte en position absolue -->
-{% block javascripts %}
-<script type ="text/javascript">
-var myLayer = document.createElement('div');
+	<!-- script js pour afficher texte en position absolue -->
+	{% block javascripts %}
+		<script type="text/javascript">
+			var myLayer = document.createElement('div');
 myLayer.id = 'bookingLayer';
 myLayer.style.position = 'relative';
-myLayer.style.zIndex=1;
+myLayer.style.zIndex = 1;
 myLayer.style.left = '590px';
-myLayer.style.top = '618px';
+myLayer.style.top = '700px';
 myLayer.style.width = '160px';
 myLayer.style.height = '145px';
 myLayer.style.padding = '10px';
-myLayer.style.background = '#ffffff';
+myLayer.style.background = '#95683E';
+myLayer.style.color='#ffffff';
+myLayer.style.textAlign="center";
 myLayer.innerHTML = 'Texte grid';
 document.body.appendChild(myLayer);
-//fonctions pour changer texte du bloc
-function changeText(text)
-        {
-            var display = document.getElementById('bookingLayer');
-            display.innerHTML = "";
-            display.innerHTML = text;
-        }
-//texte par défaut
-function defaultText()
-        {
-            var display = document.getElementById('bookingLayer');
-            display.innerHTML = "";
-            display.innerHTML = "passez le curseur sur un ouvrage";
-        }
+// fonctions pour changer texte du bloc
+function changeText(text) {
+var display = document.getElementById('bookingLayer');
+display.innerHTML = "";
+display.innerHTML = text;
+}
+// texte par défaut
+function defaultText() {
+var display = document.getElementById('bookingLayer');
+display.innerHTML = "";
+display.innerHTML = "passez le curseur sur un ouvrage";
+}
+		</script>
+	{% endblock %}
+	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
+		<a>Ouvrages spécifiques</a>
+	</div>
+	<section id="whitespace">
+	</section>
 
-</script>
-{% endblock %}
-<section id="ouvrages_spec" style="background-image: {{asset('images/header/carpentry3.png')}}">
-<a>Ouvrages spécifiques</a>
-</section>
-
-<section id="palette">
-<h1>Large palette de créations</h1>
-<style>
-    .conteneur {display: flex; margin :50px; width: 95%; justify-content: space-around;}
-</style>
-
-
-<div class="conteneur">
-    <div>
-        <p>Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
- </p>
-    </div>
-    <div>
-        <p>Toutes nos fabrications intérieures et extérieures sont exécutées dans notre atelier à partir de matériaux nobles et sont réalisées par des professionnels qualifiés.</p>
-    </div>
-</div>
-</section>
-{# le hexa grid #}
-<section id="lab">
-
-        <article>
-             
-
-            <!-- ça change le texte quand on hover -->
-            <div class="lab_item">
-                <div class="hexagon hexagon2inv">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-1" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lab_item" onmouseover="changeText('ouvrage 1')" onmouseout="defaultText()" >
-                <div class="hexagon hexagon2" >
-                    <div class="hexagon-in1" >
-                        <div class="hexagon-in2-1" style="background-image: url('{{asset('images/hexa_grid/1.jpg')}}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="lab_item" onmouseover="changeText('ouvrage 2')" onmouseout="defaultText()">
-                <div class="hexagon hexagon2">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-2" style="background-image: url('{{asset('images/hexa_grid/2.jpg')}}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lab_item">
-                <div class="hexagon hexagon2inv">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-1">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lab_item" onmouseover="changeText('ouvrage 3')" onmouseout="defaultText()">
-                <div class="hexagon hexagon2">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-3" style="background-image: url('{{asset('images/hexa_grid/3.jpg')}}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lab_item">
-                <div class="hexagon hexagon2inv">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-1">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lab_item" onmouseover="changeText('ouvrage 4')" onmouseout="defaultText()">
-                <div class="hexagon hexagon2">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-4" style="background-image: url('{{asset('images/hexa_grid/4.jpg')}}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lab_item">
-                <div class="hexagon hexagon2inv">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-1">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lab_item" onmouseover="changeText('ouvrage 5')" onmouseout="defaultText()">
-                <div class="hexagon hexagon2">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-5" style="background-image: url('{{asset('images/hexa_grid/5.jpg')}}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
+	<section id="palette">
+		<h1 id="large">Large palette de créations</h1>
+		<style>
+            #large{
+                text-align:center;
+                color:#95683E;
+            }
+			.conteneur {
+				display: flex;
+				margin: 50px;
+				width: 95%;
+				justify-content: space-around;
+			}
+		</style>
 
 
-            <div class="lab_item" onmouseover="changeText('ouvrage 6')" onmouseout="defaultText()">
-                <div class="hexagon hexagon2">
-                    <div class="hexagon-in1">
-                        <div class="hexagon-in2-6" style="background-image: url('{{asset('images/hexa_grid/6.jpg')}}')">
-                        </div>
-                    </div>
-                </div>
-            </div>
+		<div class="conteneur">
+			<div>
+				<p>Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
+				</p>
+			</div>
+			<div>
+				<p>Toutes nos fabrications intérieures et extérieures sont exécutées dans notre atelier à partir de matériaux nobles et sont réalisées par des professionnels qualifiés.</p>
+			</div>
+		</div>
+	</section>
+	{# le hexa grid #}
+	<section id="lab">
 
-        </article>
-    </section>
-    {# fin du hexagrid #}
-    
+		<article>
+
+
+			<!-- ça change le texte quand on hover -->
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item" onmouseover="changeText('ouvrage 1')" onmouseout="defaultText()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1" style="background-image: url('{{asset('images/hexa_grid/1.jpg')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item" onmouseover="changeText('ouvrage 2')" onmouseout="defaultText()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-2" style="background-image: url('{{asset('images/hexa_grid/2.jpg')}}')"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item" onmouseover="changeText('ouvrage 3')" onmouseout="defaultText()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-3" style="background-image: url('{{asset('images/hexa_grid/3.jpg')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item" onmouseover="changeText('ouvrage 4')" onmouseout="defaultText()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-4" style="background-image: url('{{asset('images/hexa_grid/4.jpg')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item" onmouseover="changeText('ouvrage 5')" onmouseout="defaultText()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-5" style="background-image: url('{{asset('images/hexa_grid/5.jpg')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lab_item" onmouseover="changeText('ouvrage 6')" onmouseout="defaultText()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-6" style="background-image: url('{{asset('images/hexa_grid/6.jpg')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+		</article>
+	</section>
+	{# fin du hexagrid #}
+	<section id="rdv">
+		<style>
+			.conteneur2 {
+				display: flex;
+				margin: 50px;
+				width: 95%;
+				justify-content: space-around;
+			}
+		</style>
+
+
+		<div class="conteneur2">
+			<div>
+				<p>Nos travaux vous intéressent ? 
+				</p>
+			</div>
+			<div>
+				<a id="prendre_rdv">Prendre RDV</a>
+			</div>
+		</div>
+
+	</section>
+
 {% endblock %}
