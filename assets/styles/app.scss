@@ -402,6 +402,11 @@ body {
     top: 120px;
 }
 
+#ouvrages_txtt {
+    font-size: 48px;
+    font-weight: bold;
+}
+
 #whitespace {
     height: 100px;
 }
@@ -417,7 +422,24 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 24px;
-    height: 40px;
-    width: 200px;
-    line-height: 2px;
+    height: 64px;
+    width: 322px;
+    line-height: 22px;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.cont_txt {
+    font-size: 24px;
+    font-family: Montserrat;
+    text-align: left;
+    text-shadow: black 1px 0 1px;
+}
+
+//Montserrat bold weight:700
+#travaux {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 36px;
 }

@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Hello OuvragesController!
 {% endblock %}
 {% block body %}
@@ -11,12 +10,15 @@ myLayer.id = 'bookingLayer';
 myLayer.style.position = 'relative';
 myLayer.style.zIndex = 1;
 myLayer.style.left = '590px';
-myLayer.style.top = '700px';
+myLayer.style.top = '780px';
 myLayer.style.width = '160px';
 myLayer.style.height = '145px';
 myLayer.style.padding = '10px';
 myLayer.style.background = '#95683E';
 myLayer.style.color='#ffffff';
+myLayer.style.fontSize="15px";
+myLayer.style.textShadow="1px 0 10px black";
+myLayer.style.fontFamily="Montserrat";	
 myLayer.style.textAlign="center";
 myLayer.innerHTML = 'Texte grid';
 document.body.appendChild(myLayer);
@@ -35,7 +37,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 		</script>
 	{% endblock %}
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
-		<a>Ouvrages spécifiques</a>
+		<p style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
 	</div>
 	<section id="whitespace">
 	</section>
@@ -46,23 +48,29 @@ display.innerHTML = "passez le curseur sur un ouvrage";
             #large{
                 text-align:center;
                 color:#95683E;
+				font-weight: 700;
+				font-size: 48px;
+				font-family: Helvetica;
             }
 			.conteneur {
 				display: flex;
-				margin: 50px;
-				width: 95%;
+				margin-left:100px;
+				margin-right:100px;
+				margin-top:50px;
+				width: 80%;
 				justify-content: space-around;
+				column-gap: 100px;
 			}
 		</style>
 
 
 		<div class="conteneur">
 			<div>
-				<p>Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
+				<p class="cont_txt">Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
 				</p>
 			</div>
 			<div>
-				<p>Toutes nos fabrications intérieures et extérieures sont exécutées dans notre atelier à partir de matériaux nobles et sont réalisées par des professionnels qualifiés.</p>
+				<p class="cont_txt">Toutes nos fabrications intérieures et extérieures sont exécutées dans notre atelier à partir de matériaux nobles et sont réalisées par des professionnels qualifiés.</p>
 			</div>
 		</div>
 	</section>
@@ -80,7 +88,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 					</div>
 				</div>
 			</div>
-			<div class="lab_item" onmouseover="changeText('ouvrage 1')" onmouseout="defaultText()">
+			<div class="lab_item" onmouseover="changeText('Le porche de David')" onmouseout="defaultText()">
 				<div class="hexagon hexagon2">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-1" style="background-image: url('{{asset('images/hexa_grid/1.jpg')}}')"></div>
@@ -88,7 +96,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 				</div>
 			</div>
 
-			<div class="lab_item" onmouseover="changeText('ouvrage 2')" onmouseout="defaultText()">
+			<div class="lab_item" onmouseover="changeText('Projet de cabane dans les arbres')" onmouseout="defaultText()">
 				<div class="hexagon hexagon2">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-2" style="background-image: url('{{asset('images/hexa_grid/2.jpg')}}')"></div>
@@ -102,7 +110,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 					</div>
 				</div>
 			</div>
-			<div class="lab_item" onmouseover="changeText('ouvrage 3')" onmouseout="defaultText()">
+			<div class="lab_item" onmouseover="changeText('rue Rio Grande')" onmouseout="defaultText()">
 				<div class="hexagon hexagon2">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-3" style="background-image: url('{{asset('images/hexa_grid/3.jpg')}}')"></div>
@@ -117,7 +125,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 					</div>
 				</div>
 			</div>
-			<div class="lab_item" onmouseover="changeText('ouvrage 4')" onmouseout="defaultText()">
+			<div class="lab_item" onmouseover="changeText('Le toit de Sam')" onmouseout="defaultText()">
 				<div class="hexagon hexagon2">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-4" style="background-image: url('{{asset('images/hexa_grid/4.jpg')}}')"></div>
@@ -133,7 +141,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 				</div>
 			</div>
 
-			<div class="lab_item" onmouseover="changeText('ouvrage 5')" onmouseout="defaultText()">
+			<div class="lab_item" onmouseover="changeText('Le pont de Mandi')" onmouseout="defaultText()">
 				<div class="hexagon hexagon2">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-5" style="background-image: url('{{asset('images/hexa_grid/5.jpg')}}')"></div>
@@ -142,7 +150,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 			</div>
 
 
-			<div class="lab_item" onmouseover="changeText('ouvrage 6')" onmouseout="defaultText()">
+			<div class="lab_item" onmouseover="changeText('Le pont de Ralph')" onmouseout="defaultText()">
 				<div class="hexagon hexagon2">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-6" style="background-image: url('{{asset('images/hexa_grid/6.jpg')}}')"></div>
@@ -166,7 +174,7 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 
 		<div class="conteneur2">
 			<div>
-				<p>Nos travaux vous intéressent ? 
+				<p id="travaux">Nos travaux vous intéressent ? 
 				</p>
 			</div>
 			<div>
