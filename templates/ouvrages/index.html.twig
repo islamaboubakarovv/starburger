@@ -35,12 +35,11 @@ display.innerHTML = "";
 display.innerHTML = "passez le curseur sur un ouvrage";
 }
 //responsive
-var z = window.matchMedia("(max-width: 1400px)")
 var a = window.matchMedia("(max-width: 1275px)")
-var b = window.matchMedia("(max-width: 1071px)")
-var c = window.matchMedia("(max-width: 998px)")
-var d = window.matchMedia("(max-width: 945px)")
-var e = window.matchMedia("(max-width: 914px)")
+var b = window.matchMedia("(max-width: 1090px)")
+var c = window.matchMedia("(max-width: 990px)")
+var d = window.matchMedia("(max-width: 965px)")
+var e = window.matchMedia("(max-width: 930px)")
 var f = window.matchMedia("(max-width: 884px)")
 var g = window.matchMedia("(max-width: 803px)")
 var h = window.matchMedia("(max-width: 763px)")
@@ -50,65 +49,96 @@ var k = window.matchMedia("(max-width: 594px)")
 var l = window.matchMedia("(max-width: 584px)")
 var m = window.matchMedia("(max-width: 548px)")
 var n = window.matchMedia("(max-width: 530px)")
+
 function responsivea(x){
 	if(x.matches){
 		myLayer.style.top='820px';
+		
+		
 
 	}else{
+		
 
 	}
 }
 function responsiveb(x){
 	if(x.matches){
-		myLayer.style.left='300px';
+		myLayer.style.top='860px';
+		
+		
 
 	}else{
-
+		
 	}
 }
 function responsivec(x){
 	if(x.matches){
-		myLayer.style.left='100px';
+		myLayer.style.left='390px';
+		
+		
 
 	}else{
+		
 
 	}
 }
 function responsived(x){
 	if(x.matches){
-		myLayer.style.left='0px';
+		myLayer.style.left='374px';
+		myLayer.style.top='885px';
+		
+		
 
 	}else{
+		
 
 	}
 }
 function responsivee(x){
 	if(x.matches){
-		myLayer.style.left='0px';
+		myLayer.style.left='362px';
+		myLayer.style.top='927px';
+		
+		
 
 	}else{
+		
 
 	}
 }
 function responsivef(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='800px';
+		
+		
+
 
 	}else{
+		
 
 	}
 }
 function responsiveg(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='950px';
+		
+		
+
 
 	}else{
+		
 
 	}
 }
 function responsiveh(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='970px';
+		
+		
+
 
 	}else{
 
@@ -117,14 +147,19 @@ function responsiveh(x){
 function responsivei(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='990px';
+		
 
 	}else{
+		
 
 	}
 }
 function responsivej(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='1000px';
+		
 
 	}else{
 
@@ -133,6 +168,8 @@ function responsivej(x){
 function responsivek(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='1050px';
+		
 
 	}else{
 
@@ -141,6 +178,8 @@ function responsivek(x){
 function responsivel(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='1090px';
+		
 
 	}else{
 
@@ -149,6 +188,7 @@ function responsivel(x){
 function responsivem(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='1110px';
 
 	}else{
 
@@ -157,14 +197,17 @@ function responsivem(x){
 function responsiven(x){
 	if(x.matches){
 		myLayer.style.left='0px';
+		myLayer.style.top='1200px';
+		
 
 	}else{
 
 	}
 }
 
+
 responsivea(a) 
-a.addListener(responsivea) 
+a.addListener(responsivea)
 responsiveb(b) 
 b.addListener(responsiveb)
 responsivec(c) 
@@ -191,6 +234,7 @@ responsivem(m)
 m.addListener(responsivem)
 responsiven(n) 
 n.addListener(responsiven)
+
 		</script>
 	{% endblock %}
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
