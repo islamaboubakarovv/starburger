@@ -2,6 +2,7 @@
 
 body {
     background-color: rgb(242, 242, 242);
+    overflow-x: inherit;
 }
 
 .img-footer {
@@ -22,13 +23,44 @@ body {
     height: 42px !important;
 }
 
+.navbar {
+    min-height: clamp(15vh, 17.5vh, 20vh);
+    background-color: #4A4134 !important;
+}
+
 .nav-link {
     color : #E6C9A5 !important;
 }
-
-.navbar-brand {
-    margin-left : 0.5% !important;
+.nav-link img {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(13%) saturate(779%) hue-rotate(343deg) brightness(94%) contrast(91%);
+    height: 22px;
 }
+
+.nav-link img:hover {
+    height: 25px;   
+}
+
+.nav-link:hover{
+    color : #ffffff !important;
+}
+
+
+
+.navbar .active {
+    font-weight: bold !important;
+}
+.navbar-brand img{
+    filter: brightness(0) saturate(100%) invert(88%) sepia(13%) saturate(779%) hue-rotate(343deg) brightness(94%) contrast(91%);
+    height: 70px;
+}
+
+.navbar-brand img:hover {
+    filter: brightness(255);
+}
+
+
+
+// ACCUEIL
 
 .accueil-second-part {
     background-color: #4A4134;
@@ -55,48 +87,51 @@ body {
 
 #myCarousel {
     top: 0;
+    margin-top: clamp(15vh, 17.5vh, 20vh);
+    .carousel-inner {
+        height: calc(100vh - clamp(15vh, 17.5vh, 20vh));
+    }
+    
+    .carousel-item {
+        height: 100%;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(70%);
+    }
+    
+    .carousel-indicators {
+        justify-content: flex-end;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
+    
+    .carousel-caption {
+        top: 0;
+        left: 0;
+        margin-left: 12px;
+        text-align: left;
+        text-shadow: 0px 4px 4px black;
+    }
+    
+    .visionneuse-images img {
+        object-fit: cover;
+    }
+    
+    .visionneuse-images .left-col img {
+        width: 40vw;
+        height: 40vw;
+    }
+    
+    .visionneuse-images .right-col img {
+        width: 20vw;
+        height: 20vw;
+    }
 }
 
-.carousel-inner {
-    height: 100vh;
-}
 
-.carousel-item {
-    height: 100%;
-}
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
-}
-
-.carousel-indicators {
-    justify-content: flex-end;
-    margin-right: 3px;
-    margin-bottom: 3px;
-}
-
-.carousel-caption {
-    margin: 0;
-    padding: 0;
-    top: 23%;
-    left: 3%;
-    text-align: left;
-    text-shadow: 0px 4px 4px black;
-}
-
-.visionneuse-images img {
-    object-fit: cover;
-}
-
-.visionneuse-images .left-col img {
-    width: 40vw;
-    height: 40vw;
-}
-
-.visionneuse-images .right-col img {
-    width: 20vw;
-    height: 20vw;
-}
+// FIN ACCUEIL
