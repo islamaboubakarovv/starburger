@@ -430,11 +430,18 @@ body {
     font-size: 30px;
 }
 
-.cont_txt {
-    font-size: 24px;
-    font-family: Montserrat;
-    text-align: left;
-    text-shadow: black 1px 0 1px;
+#cont_txt1 {
+    font-size: 24px!important;
+    font-family: Montserrat!important;
+    text-align: left!important;
+    text-shadow: black 1px 0 1px!important;
+}
+
+#cont_txt2 {
+    font-size: 24px!important;
+    font-family: Montserrat!important;
+    text-align: left!important;
+    text-shadow: black 1px 0 1px!important;
 }
 
 //Montserrat bold weight:700
@@ -442,4 +449,40 @@ body {
     font-family: Montserrat;
     font-weight: 700;
     font-size: 36px;
+}
+
+@media (max-width: 540px) {
+    #ouv_spec {
+        font-size: 20px!important;
+    }
+    #large {
+        font-size: 20px!important;
+    }
+}
+
+@media (max-width: 800px) {
+    #ouv_spec {
+        font-size: 24px!important;
+    }
+    #large {
+        font-size: 24px!important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #ouv_spec {
+        font-size: 28px!important;
+    }
+    #large {
+        font-size: 36px!important;
+    }
+}
+
+@media (max-width: 1300px) {
+    #ouv_spec {
+        font-size: 32px!important;
+    }
+    #large {
+        font-size: 40px!important;
+    }
 }

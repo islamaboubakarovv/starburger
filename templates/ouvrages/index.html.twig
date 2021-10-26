@@ -3,9 +3,9 @@
 {% endblock %}
 {% block body %}
 	<!-- script js pour afficher texte en position absolue -->
-{% block javascripts %}
-<script type="text/javascript">
-var myLayer = document.createElement('div');
+	{% block javascripts %}
+		<script type="text/javascript">
+			var myLayer = document.createElement('div');
 myLayer.id = 'bookingLayer';
 myLayer.style.position = 'relative';
 myLayer.style.zIndex = 1;
@@ -15,11 +15,11 @@ myLayer.style.width = '160px';
 myLayer.style.height = '145px';
 myLayer.style.padding = '10px';
 myLayer.style.background = '#95683E';
-myLayer.style.color='#ffffff';
-myLayer.style.fontSize="15px";
-myLayer.style.textShadow="1px 0 10px black";
-myLayer.style.fontFamily="Montserrat";	
-myLayer.style.textAlign="center";
+myLayer.style.color = '#ffffff';
+myLayer.style.fontSize = "15px";
+myLayer.style.textShadow = "1px 0 10px black";
+myLayer.style.fontFamily = "Montserrat";
+myLayer.style.textAlign = "center";
 myLayer.innerHTML = 'Texte grid';
 document.body.appendChild(myLayer);
 // fonctions pour changer texte du bloc
@@ -34,7 +34,7 @@ var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
 display.innerHTML = "passez le curseur sur un ouvrage";
 }
-//responsive
+// responsive
 var a = window.matchMedia("(max-width: 1275px)")
 var b = window.matchMedia("(max-width: 1090px)")
 var c = window.matchMedia("(max-width: 990px)")
@@ -50,228 +50,192 @@ var l = window.matchMedia("(max-width: 584px)")
 var m = window.matchMedia("(max-width: 548px)")
 var n = window.matchMedia("(max-width: 530px)")
 
-function responsivea(x){
-	if(x.matches){
-		myLayer.style.top='820px';
-		
-		
+function responsivea(x) {
+if (x.matches) {
+myLayer.style.top = '820px';
 
-	}else{
-		
 
-	}
+} else {}
 }
-function responsiveb(x){
-	if(x.matches){
-		myLayer.style.top='860px';
-		
-		
+function responsiveb(x) {
+if (x.matches) {
+myLayer.style.top = '860px';
 
-	}else{
-		
-	}
+
+} else {}
 }
-function responsivec(x){
-	if(x.matches){
-		myLayer.style.left='390px';
-		
-		
+function responsivec(x) {
+if (x.matches) {
+myLayer.style.left = '390px';
 
-	}else{
-		
 
-	}
+} else {}
 }
-function responsived(x){
-	if(x.matches){
-		myLayer.style.left='374px';
-		myLayer.style.top='885px';
-		
-		
+function responsived(x) {
+if (x.matches) {
+myLayer.style.left = '374px';
+myLayer.style.top = '885px';
 
-	}else{
-		
 
-	}
+} else {}
 }
-function responsivee(x){
-	if(x.matches){
-		myLayer.style.left='362px';
-		myLayer.style.top='927px';
-		
-		
+function responsivee(x) {
+if (x.matches) {
+myLayer.style.left = '362px';
+myLayer.style.top = '927px';
 
-	}else{
-		
 
-	}
+} else {}
 }
-function responsivef(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='800px';
-		
-		
+function responsivef(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '800px';
 
 
-	}else{
-		
-
-	}
+} else {}
 }
-function responsiveg(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='950px';
-		
-		
+function responsiveg(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '950px';
 
 
-	}else{
-		
-
-	}
+} else {}
 }
-function responsiveh(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='970px';
-		
-		
+function responsiveh(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '970px';
 
 
-	}else{
-
-	}
+} else {}
 }
-function responsivei(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='990px';
-		
+function responsivei(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '990px';
 
-	}else{
-		
 
-	}
+} else {}
 }
-function responsivej(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='1000px';
-		
+function responsivej(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '1000px';
 
-	}else{
 
-	}
+} else {}
 }
-function responsivek(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='1050px';
-		
+function responsivek(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '1050px';
 
-	}else{
 
-	}
+} else {}
 }
-function responsivel(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='1090px';
-		
+function responsivel(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '1090px';
 
-	}else{
 
-	}
+} else {}
 }
-function responsivem(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='1110px';
+function responsivem(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '1110px';
 
-	}else{
-
-	}
+} else {}
 }
-function responsiven(x){
-	if(x.matches){
-		myLayer.style.left='0px';
-		myLayer.style.top='1200px';
-		
+function responsiven(x) {
+if (x.matches) {
+myLayer.style.left = '0px';
+myLayer.style.top = '1200px';
 
-	}else{
 
-	}
+} else {}
 }
 
 
-responsivea(a) 
+responsivea(a)
 a.addListener(responsivea)
-responsiveb(b) 
+responsiveb(b)
 b.addListener(responsiveb)
-responsivec(c) 
+responsivec(c)
 c.addListener(responsivec)
-responsived(d) 
+responsived(d)
 d.addListener(responsived)
-responsivee(e) 
+responsivee(e)
 e.addListener(responsivee)
-responsivef(f) 
+responsivef(f)
 f.addListener(responsivef)
-responsiveg(g) 
+responsiveg(g)
 g.addListener(responsiveg)
-responsiveh(h) 
+responsiveh(h)
 h.addListener(responsiveh)
-responsivei(i) 
+responsivei(i)
 i.addListener(responsivei)
-responsivej(j) 
+responsivej(j)
 j.addListener(responsivej)
-responsivek(k) 
+responsivek(k)
 k.addListener(responsivek)
-responsivel(l) 
+responsivel(l)
 l.addListener(responsivel)
-responsivem(m) 
+responsivem(m)
 m.addListener(responsivem)
-responsiven(n) 
+responsiven(n)
 n.addListener(responsiven)
-
 		</script>
 	{% endblock %}
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
-		<p style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
+		<p id="ouv_spec" style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
 	</div>
-	<section id="whitespace">
-	</section>
+	<section id="whitespace"></section>
 
 	<section id="palette">
 		<h1 id="large">Large palette de créations</h1>
 		<style>
-            #large{
-                text-align:center;
-                color:#95683E;
+			#large {
+				text-align: center;
+				color: #95683E;
 				font-weight: 700;
 				font-size: 48px;
 				font-family: Helvetica;
-            }
+			}
 			.conteneur {
 				display: flex;
-				margin-left:100px;
-				margin-right:100px;
-				margin-top:50px;
+				margin-left: 100px;
+				margin-right: 100px;
+				margin-top: 50px;
 				width: 80%;
 				justify-content: space-around;
 				column-gap: 100px;
 			}
 		</style>
 
-
-		<div class="conteneur">
-			<div>
-				<p class="cont_txt">Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
-				</p>
-			</div>
-			<div>
-				<p class="cont_txt">Toutes nos fabrications intérieures et extérieures sont exécutées dans notre atelier à partir de matériaux nobles et sont réalisées par des professionnels qualifiés.</p>
+		<!--
+								<div class="conteneur">
+									<div>
+										<p class="cont_txt">
+										</p>
+									</div>
+									<div>
+										<p class="cont_txt">
+									</div>
+								</div>
+								-->
+		<!-- bootstrap -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm" id="cont_txt1">
+					Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
+				</div>
+				<div class="col-sm" id="cont_txt2">
+					Toutes nos fabrications intérieures et extérieures sont exécutées dans notre atelier à partir de matériaux nobles et sont réalisées par des professionnels qualifiés.
+				</div>
 			</div>
 		</div>
 	</section>
@@ -372,17 +336,27 @@ n.addListener(responsiven)
 			}
 		</style>
 
-
-		<div class="conteneur2">
-			<div>
-				<p id="travaux">Nos travaux vous intéressent ? 
-				</p>
+		<!--
+									<div class="conteneur2">
+										<div>
+											<p id="travaux">Nos travaux vous intéressent ?
+											</p>
+										</div>
+										<div>
+											<a id="prendre_rdv">Prendre RDV</a>
+										</div>
+									</div>
+						-->
+		<div class="container">
+			<div class="row">
+				<div class="col" id="travaux">
+					Nos travaux vous intéressent ?
+				</div>
+				<div class="col" id="prendre_rdv">
+					Prendre RDV
+				</div>
 			</div>
-			<div>
-				<a id="prendre_rdv">Prendre RDV</a>
-			</div>
-		</div>
 
-	</section>
+		</section>
 
-{% endblock %}
+	{% endblock %}
