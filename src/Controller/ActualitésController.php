@@ -14,7 +14,7 @@ class ActualitésController extends AbstractController
     public function index(Environment $twig, ArticleRepository $articleRepository): Response
      {
         return new Response($twig->render('actualités/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articleRepository->findBy([], ['datePubli' => 'DESC']),
             ]));
     }
 }
