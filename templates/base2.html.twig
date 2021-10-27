@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="icon" type="image/png" href="images/logos/logoArtisan.png" />
     {# Run `composer require symfony/webpack-encore-bundle`
       and uncomment the following Encore helpers to start using Symfony UX #}
@@ -12,6 +12,7 @@
 
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('base') }}
     {% endblock %}
   </head>
   <body>
@@ -55,5 +56,6 @@
       </div>
     </nav>
     {% block body %} {% endblock %}
+    
   </body>
 </html>

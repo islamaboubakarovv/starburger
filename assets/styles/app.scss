@@ -2,7 +2,6 @@
 
 body {
     background-color: rgb(242, 242, 242);
-    overflow-x: inherit;
 }
 
 .img-footer {
@@ -24,7 +23,6 @@ body {
 }
 
 .navbar {
-    min-height: clamp(15vh, 17.5vh, 20vh);
     background-color: #4A4134 !important;
 }
 
@@ -37,14 +35,12 @@ body {
 }
 
 .nav-link img:hover {
-    height: 25px;   
+    filter: brightness(0) saturate(100%) invert(100%);
 }
 
 .nav-link:hover{
     color : #ffffff !important;
 }
-
-
 
 .navbar .active {
     font-weight: bold !important;
@@ -77,7 +73,7 @@ body {
     margin: auto;
 }
 
-.accueil-img {
+.accueil-info-item {
     width: 450px !important;
 }
 
@@ -87,9 +83,8 @@ body {
 
 #myCarousel {
     top: 0;
-    margin-top: clamp(15vh, 17.5vh, 20vh);
     .carousel-inner {
-        height: calc(100vh - clamp(15vh, 17.5vh, 20vh));
+        height: 100vh;
     }
     
     .carousel-item {
@@ -110,9 +105,9 @@ body {
     }
     
     .carousel-caption {
-        top: 0;
+        top: 100px;
         left: 0;
-        margin-left: 12px;
+        margin-left: 1rem;
         text-align: left;
         text-shadow: 0px 4px 4px black;
     }
@@ -122,13 +117,13 @@ body {
     }
     
     .visionneuse-images .left-col img {
-        width: 40vw;
-        height: 40vw;
+        width: 30vh;
+        height: 30vh;
     }
     
     .visionneuse-images .right-col img {
-        width: 20vw;
-        height: 20vw;
+        width: 15vh;
+        height: 15vh;
     }
 }
 
