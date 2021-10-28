@@ -195,6 +195,29 @@ body {
     }
 }
 
-.carousel{
-    width: 70vw !important;
+@media (min-width: 1000px){
+    #carrouselCharpente, #carrouselCharpente img{
+        height: 60vh !important;
+        width: 60vw !important;
+        margin: auto !important;
+    }
+}
+
+@media (max-width: 999.9px){
+    #carrouselCharpente, #carrouselCharpente img{
+        width: 80vw !important;
+        margin: auto !important;
+    }
+}
+
+#carrouselCharpente img {
+    object-fit: cover;
+}
+
+.devis_question {
+    float: left !important;
+}
+
+.contact_button {
+    float : right !important;
 }
