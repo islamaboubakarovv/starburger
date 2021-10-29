@@ -55,6 +55,10 @@ body {
     background: #B0DAD4;
 }
 
+#palette {
+    margin-bottom: 100px!important;
+}
+
 .beaker {
     -webkit-filter: drop-shadow(#424242 0px 1px 0px);
     border-bottom: 2em solid #FFF;
@@ -415,19 +419,18 @@ body {
     border: none;
     color: white;
     background-color: #11589A;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 30px!important;
     margin: 4px 2px;
     border-radius: 24px;
-    height: 64px;
-    width: 322px;
-    line-height: 22px;
+    height: 90px;
+    width: 200px!important;
+    line-height: 40px!important;
     font-family: Helvetica;
     font-weight: 700;
-    font-size: 30px;
 }
 
 #cont_txt1 {

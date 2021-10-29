@@ -3,6 +3,7 @@
 {% endblock %}
 {% block body %}
 	<!-- script js pour afficher texte en position absolue -->
+
 	{% block javascripts %}
 		<script type="text/javascript">
 			var myLayer = document.createElement('div');
@@ -10,11 +11,11 @@ myLayer.id = 'bookingLayer';
 myLayer.style.position = 'relative';
 myLayer.style.zIndex = 1;
 myLayer.style.left = '590px';
-myLayer.style.top = '780px';
+myLayer.style.top = '795px';
 myLayer.style.width = '160px';
 myLayer.style.height = '145px';
 myLayer.style.padding = '10px';
-myLayer.style.background = '#95683E';
+myLayer.style.background = '#11ffee00';
 myLayer.style.color = '#ffffff';
 myLayer.style.fontSize = "15px";
 myLayer.style.textShadow = "1px 0 10px black";
@@ -35,6 +36,7 @@ display.innerHTML = "";
 display.innerHTML = "passez le curseur sur un ouvrage";
 }
 // responsive
+//sinon essayer avec les breakpoints
 var a = window.matchMedia("(max-width: 1275px)")
 var b = window.matchMedia("(max-width: 1090px)")
 var c = window.matchMedia("(max-width: 990px)")
@@ -52,14 +54,14 @@ var n = window.matchMedia("(max-width: 530px)")
 
 function responsivea(x) {
 if (x.matches) {
-myLayer.style.top = '820px';
+myLayer.style.top = '800px';
 
 
 } else {}
 }
 function responsiveb(x) {
 if (x.matches) {
-myLayer.style.top = '860px';
+myLayer.style.top = '800px';
 
 
 } else {}
@@ -74,7 +76,7 @@ myLayer.style.left = '390px';
 function responsived(x) {
 if (x.matches) {
 myLayer.style.left = '374px';
-myLayer.style.top = '885px';
+myLayer.style.top = '820px';
 
 
 } else {}
@@ -82,7 +84,7 @@ myLayer.style.top = '885px';
 function responsivee(x) {
 if (x.matches) {
 myLayer.style.left = '362px';
-myLayer.style.top = '927px';
+myLayer.style.top = '840px';
 
 
 } else {}
@@ -90,7 +92,7 @@ myLayer.style.top = '927px';
 function responsivef(x) {
 if (x.matches) {
 myLayer.style.left = '0px';
-myLayer.style.top = '800px';
+myLayer.style.top = '850px';
 
 
 } else {}
@@ -160,34 +162,43 @@ myLayer.style.top = '1200px';
 }
 
 
-responsivea(a)
+
 a.addListener(responsivea)
-responsiveb(b)
 b.addListener(responsiveb)
-responsivec(c)
 c.addListener(responsivec)
-responsived(d)
 d.addListener(responsived)
-responsivee(e)
 e.addListener(responsivee)
-responsivef(f)
 f.addListener(responsivef)
-responsiveg(g)
 g.addListener(responsiveg)
-responsiveh(h)
 h.addListener(responsiveh)
-responsivei(i)
 i.addListener(responsivei)
-responsivej(j)
 j.addListener(responsivej)
-responsivek(k)
 k.addListener(responsivek)
-responsivel(l)
 l.addListener(responsivel)
-responsivem(m)
 m.addListener(responsivem)
-responsiven(n)
 n.addListener(responsiven)
+{# changer la disposition du texte quand on resize #}
+function resize(){
+responsivea(a);
+responsiveb(b)
+responsivec(c)
+responsived(d)
+responsivee(e)
+responsivef(f)
+responsiveg(g)
+responsiveh(h)
+responsivei(i)
+responsivej(j)
+responsivek(k)
+responsivel(l)
+responsivem(m)
+responsiven(n)
+}
+
+window.onresize=resize
+
+
+
 		</script>
 	{% endblock %}
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
@@ -216,19 +227,7 @@ n.addListener(responsiven)
 			}
 		</style>
 
-		<!--
-								<div class="conteneur">
-									<div>
-										<p class="cont_txt">
-										</p>
-									</div>
-									<div>
-										<p class="cont_txt">
-									</div>
-								</div>
-								-->
-		<!-- bootstrap -->
-		<div class="container">
+		<div class="container" id="textes">
 			<div class="row">
 				<div class="col-sm" id="cont_txt1">
 					Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
@@ -241,12 +240,15 @@ n.addListener(responsiven)
 	</section>
 	{# le hexa grid #}
 	<section id="lab">
+	{#whitespace#}
+	
+	
 
 		<article>
 
 
 			<!-- ça change le texte quand on hover -->
-			<div class="lab_item">
+			<div class="lab_item" >
 				<div class="hexagon hexagon2inv">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-1"></div>
@@ -351,10 +353,10 @@ n.addListener(responsiven)
 
 		<div class="container">
 			<div class="row">
-				<div class="col" id="travaux">
+				<div class="col-6" id="travaux">
 					Nos travaux vous intéressent ?
 				</div>
-				<div class="col" id="prendre_rdv">
+				<div class="col-6" id="prendre_rdv">
 					Prendre RDV
 				</div>
 			</div>
