@@ -8,10 +8,10 @@
 		<script type="text/javascript">
 			var myLayer = document.createElement('div');
 myLayer.id = 'bookingLayer';
-myLayer.style.position = 'relative';
+myLayer.style.position = 'absolute';
 myLayer.style.zIndex = 1;
 myLayer.style.left = '590px';
-myLayer.style.top = '795px';
+myLayer.style.top = '850px';
 myLayer.style.width = '160px';
 myLayer.style.height = '145px';
 myLayer.style.padding = '10px';
@@ -54,7 +54,7 @@ var n = window.matchMedia("(max-width: 530px)")
 
 function responsivea(x) {
 if (x.matches) {
-myLayer.style.top = '800px';
+myLayer.style.top = '950px';
 
 
 } else {}
@@ -177,22 +177,81 @@ k.addListener(responsivek)
 l.addListener(responsivel)
 m.addListener(responsivem)
 n.addListener(responsiven)
+
 {# changer la disposition du texte quand on resize #}
 function resize(){
-responsivea(a);
-responsiveb(b)
-responsivec(c)
-responsived(d)
-responsivee(e)
-responsivef(f)
-responsiveg(g)
-responsiveh(h)
-responsivei(i)
-responsivej(j)
-responsivek(k)
-responsivel(l)
-responsivem(m)
-responsiven(n)
+//remove les listener
+a.removeListener(responsivea)
+b.removeListener(responsiveb)
+c.removeListener(responsivec)
+d.removeListener(responsived)
+e.removeListener(responsivee)
+f.removeListener(responsivef)
+g.removeListener(responsiveg)
+h.removeListener(responsiveh)
+i.removeListener(responsivei)
+j.removeListener(responsivej)
+k.removeListener(responsivek)
+l.removeListener(responsivel)
+m.removeListener(responsivem)
+n.removeListener(responsiven)
+
+if(a.matches){
+	responsivea(a)
+	a.addListener(responsivea)
+}
+if(b.matches){
+	responsiveb(b)
+	b.addListener(responsiveb)
+}	
+if(c.matches){
+	responsivec(c)
+	c.addListener(responsivec)
+}	
+if(d.matches){
+	responsived(d)
+	d.addListener(responsived)	
+}
+if(e.matches){
+	responsivee(e)
+	e.addListener(responsivee)
+}	
+if(f.matches){
+	responsivef(f)
+	f.addListener(responsivef)
+}	
+if(g.matches){
+	responsiveg(g)
+	g.addListener(responsiveg)
+}	
+if(h.matches){
+	responsiveh(h)
+	h.addListener(responsiveh)
+}	
+if(i.matches){
+	responsivei(i)
+	i.addListener(responsivei)
+}	
+if(j.matches){
+	responsivej(j)
+	j.addListener(responsivej)
+}	
+if(k.matches){
+	responsivek(k)
+	k.addListener(responsivek)	
+}
+if(l.matches){
+	responsivel(l)
+	l.addListener(responsivel)
+}	
+if(m.matches){
+	responsivem(m)
+	m.addListener(responsivem)
+}	
+if(n.matches){	
+	responsiven(n)
+	n.addListener(responsiven)
+}
 }
 
 window.onresize=resize
