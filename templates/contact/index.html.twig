@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<div class="bloc-haut">
+  <div style="width:100%; height:150px; overflow:hidden">
+    <img src="/images/illustrations/journal.jpg" class="img-haut" style="margin-top: -450px;"/>
+  </div>
+  <div class="surtext">
+    <h1>Nous contacter</h1>
+  </div>
+</div>
+<div class="container shadow-sm p-5 mb-5 bg-white rounded">
+<div class="row">
+        <div class="row text-center">
+            <h2>Où nous trouver ?</h2>
+        </div>
+        <div class="col">
+            <div class="row">
+                <img src="images/logos/logo_snapchat.png" class="img-contact"><h5>Horaires : Du lundi au samedi de 8h à 18h</h5>
+            </div>
+            <div class="row">
+                <img src="images/logos/logo_snapchat.png" class="img-contact"><h5>Adresse : Zone Artisanale, 72140, Rouez en Champagne</h5>
+            </div>
+            <div class="row">
+                <img src="images/logos/logo_snapchat.png" class="img-contact"><h5>Téléphone : 02 47 36 70 34</h5>
+            </div>
+            <div class="row">
+                <img src="images/logos/logo_snapchat.png" class="img-contact"><h5>E-mail : infos@legermain.com</h5>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+<div class="container shadow-sm p-5 mb-5 bg-white rounded">
+    <div class="row text-center">
+        <h2>Demander un devis</h2>
+    </div>
+    <div class="row text-center">
+        {{ form(projet_form) }}
+    </div>
+</div>
+{% endblock %}
