@@ -13,16 +13,18 @@
   </div>
 </div>
 <div class="container shadow-sm p-5 mb-5 bg-white rounded">
+{% for articles in articles %}
 <div class="row py-4 px-lg-5">
         <div class="col-lg-12 col-md-12 text-center">
-            <h2 style="color:#95683E;">{{articles.titre}}</h2>
+            <h2 style="color:#95683E;">{{articles.article.titre}}</h2>
         </div>
     </div>
     <div class="text-center">
-        <img src="images/illustrations/homme_casque_chantier.jpg" class="img-article">
+        <img src="{{articles.adresseImage}}" class="img-article">
     </div>
     <div class="text-justify">
-        <p>{{articles.contenu}}</p>
+        <p>{{articles.article.contenu}}</p>
     </div>
 </div>
+{% endfor %}
 {% endblock %}

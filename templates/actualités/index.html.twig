@@ -16,15 +16,15 @@
     <div class="container shadow-sm p-3 mb-5 bg-white rounded">
       <div class="row py-4 px-lg-5">
         <div class="col-lg-4 col-md-12 text-center">
-            <img src="images/illustrations/homme_casque_chantier.jpg " class="img-qui">
+            <img src="{{articles.adresseImage}}" class="img-qui">
         </div>
         <div class="col-lg-6 col-md-12 px-5">
-        <h3 class="titre-article">{{articles.titre}}</h3>
-            <p class="text-justify contenu-article">{{articles.contenu}}
+        <h3 class="titre-article">{{articles.article.titre}}</h3>
+            <p class="text-justify contenu-article">{{articles.article.contenu}}
             </p>
         </div>
         <div class="col-lg-2 col-md-12 text-center">
-            <a class="btn btn-actualite" href="{{ path('article', { id: articles.id }) }}" role="button">Lire plus</a>
+            <a class="btn btn-actualite" href="{{ path('article', { id: articles.article.id }) }}" role="button">Lire plus</a>
         </div>
       </div>
     </div>
