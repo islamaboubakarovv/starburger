@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello ContactController!{% endblock %}
-
+{% form_theme projet_form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 <div class="bloc-haut">
@@ -19,16 +19,16 @@
         </div>
         <div class="col">
             <div class="row my-3">
-                <p><img src="images/logos/logo_horloge.svg" class="img-contact">Horaires : Du lundi au samedi de 8h à 18h</p>
+                <p><img src="images/logos/logo_horloge.svg" class="img-contact"><b>Horaires :</b> Du lundi au samedi de 8h à 18h</p>
             </div>
             <div class="row my-3">
-                <p><img src="images/logos/logo_maison.svg" class="img-contact">Adresse : Zone Artisanale, 72140, Rouez en Champagne</p>
+                <p><img src="images/logos/logo_maison.svg" class="img-contact"><b>Adresse :</b> Zone Artisanale, 72140, Rouez en Champagne</p>
             </div>
             <div class="row my-3">
-                <p><img src="images/logos/logo_téléphone.svg" class="img-contact">Téléphone : 02 47 36 70 34</p>
+                <p><img src="images/logos/logo_téléphone.svg" class="img-contact"><b>Téléphone :</b> 02 47 36 70 34</p>
             </div>
             <div class="row my-3">
-                <p><img src="images/logos/logo_mail.svg" class="img-contact">E-mail : infos@legermain.com</p>
+                <p><img src="images/logos/logo_mail.svg" class="img-contact"><b>E-mail :</b> infos@legermain.com</p>
             </div>
         </div>
         <div class="col">
@@ -41,8 +41,17 @@
     <div class="row text-center">
         <h2>Demander un devis</h2>
     </div>
-    <div class="row text-center">
-        {{ form(projet_form) }}
+    <div class="row">
+        {{ form_label(projet_form.objet, 'Objet', {'label_attr': {'class': 'form-contact-label'}}) }}
+            {{ form_widget(projet_form.objet, {'attr': {'class': 'form-contact'}}) }}
+
+        {{ form_label(projet_form.description, 'Description', {'label_attr': {'class': 'form-contact-label'}}) }}
+            {{ form_widget(projet_form.description, {'attr': {'class': 'form-contact-desc'}}) }}
+
+        <div class="text-center">
+            {{ form_widget(projet_form.valider, {'attr': {'class': 'form-contact-button'}}) }}
+            <button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button>
+        </div>
     </div>
 </div>
 <!-- Fichiers Javascript -->

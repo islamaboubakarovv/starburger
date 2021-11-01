@@ -237,3 +237,51 @@ body {
     height:350px;
     width: 400px;
 }
+
+@media (min-width: 1000px){
+    .form-contact, .form-contact-desc, .form-contact-label {
+        width: 70% !important;
+        margin: auto;
+    }
+}
+
+@media (max-width: 999.9px){
+    .form-contact, .form-contact-desc, .form-contact-label {
+        margin: auto;
+    }
+}
+
+.form-contact-desc {
+    min-height: 40vh !important;
+}
+
+.form-contact-label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.form-contact-button, .form-return-button {
+    margin: 20px 5px 0 5px;
+}
+
+@media (min-width: 1000px){
+    .form-contact-button, .form-return-button {
+        width: 20%;
+    }
+}
+
+@media (max-width: 999.9px){
+    .form-contact-button, .form-return-button {
+        width: 40%;
+    }
+}
+
+.form-contact-button {
+    background-color: #E6C9A5;
+}
+
+.form-return-button {
+    border-color: #000;
+    color: #000;
+}
