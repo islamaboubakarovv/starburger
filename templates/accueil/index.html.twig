@@ -1,4 +1,4 @@
-{% extends 'base2.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}ABC Legermain{% endblock %}
 
@@ -63,7 +63,7 @@
     </div>
     <div class="d-flex flex-row justify-content-center align-items-center py-3 pb-5" align="center">
         <div class="px-2"><h2>DÉCOUVREZ NOTRE SAVOIR-FAIRE</h2></div>
-        <div class="px-2"><button type="button" class="btn btn-primary">Nos réalisations</button></div>
+        <div class="px-2"><button type="button" class="btn btn-primary btn-accueil">Nos réalisations</button></div>
     </div>
 </section>
 
@@ -71,54 +71,23 @@
     <div class="row py-3">
         <h2>VISIONNEZ NOS OUVRAGES : </h2>
     </div>
-    <div class="row py-3 gy-3 px-5">
-        <div id="bouton-charpentes" class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Charpentes</button>  </div>
-        <div id="bouton-ouvrages" class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Ouvrages spéciaux</button></div>
-        <div id="bouton-couvertures" class="col-12 col-sm-4"><button type="button" class="btn btn-primary">Couvertures</button></div>
-    </div>
-    <div id="visionneuse-charpentes" class="row g-0 py-3 px-5 visionneuse-images">
-        <div class="col-12 col-sm-6 px-0 mx-0 left-col">
-        <img src="/images/illustrations/Ouvrages/ouvrage11.JPG" alt="" class="img-fluid">
-        </div>
-        <div class="col-12 col-sm-6 px-0 mx-0 right-col">
-            <div class="row g-0">
-                <div class="col px-0 mx-0"><img src="/images/illustrations/Ouvrages/ouvrage11.JPG" alt="" class="img-fluid"></div>
-                <div class="col px-0 mx-0"><img src="/images/illustrations/Ouvrages/ouvrage11.JPG" alt="" class="img-fluid"></div>
+    <div id="visionneuse-images" class="container pb-3">
+        <div class="row left-part">
+            <div class="col-12 col-md-1"></div>
+            <div class="col-12 col-md-5"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+            <div class="col-12 col-md-5">
+                <div class="container-fluid right-part">
+                    <div class="row">
+                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+                    </div>
+                </div>
             </div>
-            <div class="row g-0">
-                <div class="col px-0 mx-0"><img src="/images/illustrations/Ouvrages/ouvrage11.JPG" alt="" class="img-fluid"></div>
-                <div class="col px-0 mx-0"><img src="/images/illustrations/Ouvrages/ouvrage11.JPG" alt="" class="img-fluid"></div>
-            </div>
-        </div>
-    </div>
-    <div id="visionneuse-ouvrages" class="row visionneuse-images d-none">
-        <div class="col">
-        <img src="" alt="" class="img-fluid">
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-            </div>
-            <div class="row">
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-            </div>
-        </div>
-    </div>
-    <div id="visionneuse-couverture" class="row visionneuse-images d-none">
-        <div class="col">
-        <img src="" alt="" class="img-fluid">
-        </div>
-        <div class="col">
-            <div class="row">
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-            </div>
-            <div class="row">
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-                <div class="col"><img src="" alt="" class="img-fluid"></div>
-            </div>
+            <div class="col-12 col-md-1"></div>
         </div>
     </div>
 </section>

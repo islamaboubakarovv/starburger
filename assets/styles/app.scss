@@ -1,25 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-color: rgb(242, 242, 242);
-}
-
-.img-footer {
-    height : 30px;
-    width : 30px;
-    margin : 0 10px 10px 0 !important;
-}
+// HEADER
 
 .nav-link {
     color : #E6C9A5;
-}
-
-.btn-footer, .btn-footer:hover, .btn-footer:active, .btn-footer:visited {
-    background-color: #E6C9A5 !important;
-    color : black !important;
-    border-radius: 30px !important;
-    width: 192px !important;
-    height: 42px !important;
 }
 
 .navbar {
@@ -54,9 +38,34 @@ body {
     filter: brightness(255);
 }
 
+// FOOTER
 
+#footer {
+    .img-footer {
+        height : 30px;
+        width : 30px;
+        margin : 0 10px 10px 0 !important;
+    }
+
+    .btn-footer, .btn-footer:hover, .btn-footer:active, .btn-footer:visited {
+        background-color: #E6C9A5 !important;
+        color : black !important;
+        border-radius: 30px !important;
+        width: 192px !important;
+        height: 42px !important;
+    }
+}
 
 // ACCUEIL
+
+.btn-accueil, .btn-accueil:hover, .btn-accueil:active, .btn-accueil:visited {
+    background-color: #1e2f79 !important;
+        color : white !important;
+        border: none;
+        border-radius: 30px !important;
+        width: 192px !important;
+        height: 42px !important;
+}
 
 .accueil-second-part {
     background-color: #4A4134;
@@ -112,21 +121,17 @@ body {
         text-shadow: 0px 4px 4px black;
     }
     
-    .visionneuse-images img {
-        object-fit: cover;
-    }
     
-    .visionneuse-images .left-col img {
-        width: 30vh;
-        height: 30vh;
-    }
-    
-    .visionneuse-images .right-col img {
-        width: 15vh;
-        height: 15vh;
-    }
 }
 
-
-
-// FIN ACCUEIL
+#visionneuse-images {
+    * {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border: 4px solid white;
+    }
+}
