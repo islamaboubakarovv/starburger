@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Nous contacter{% endblock %}
 {% form_theme projet_form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
@@ -41,17 +41,18 @@
     <div class="row text-center">
         <h2>Demander un devis</h2>
     </div>
-    <div class="row">
-        {{ form_label(projet_form.objet, 'Objet', {'label_attr': {'class': 'form-contact-label'}}) }}
-            {{ form_widget(projet_form.objet, {'attr': {'class': 'form-contact'}}) }}
-
-        {{ form_label(projet_form.description, 'Description', {'label_attr': {'class': 'form-contact-label'}}) }}
-            {{ form_widget(projet_form.description, {'attr': {'class': 'form-contact-desc'}}) }}
-
+    <div class="row form-contact">
+    {{ form_start(projet_form) }}
+        {{ form_row(projet_form.objet) }}
+        {{ form_row(projet_form.description, {'attr': {'class': 'form-contact-desc'}}) }}
         <div class="text-center">
+            {% for message in app.flashes('success') %}
+                <p>{{ message }}</p>
+            {% endfor %}
             {{ form_widget(projet_form.valider, {'attr': {'class': 'form-contact-button'}}) }}
             <button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button>
         </div>
+    {{ form_end(projet_form) }}
     </div>
 </div>
 <!-- Fichiers Javascript -->

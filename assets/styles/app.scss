@@ -239,14 +239,14 @@ body {
 }
 
 @media (min-width: 1000px){
-    .form-contact, .form-contact-desc, .form-contact-label {
+    .form-contact {
         width: 70% !important;
         margin: auto;
     }
 }
 
 @media (max-width: 999.9px){
-    .form-contact, .form-contact-desc, .form-contact-label {
+    .form-contact {
         margin: auto;
     }
 }
@@ -255,14 +255,9 @@ body {
     min-height: 40vh !important;
 }
 
-.form-contact-label {
-    margin-top: 20px;
-    margin-bottom: 5px;
-    padding: 0;
-}
-
 .form-contact-button, .form-return-button {
     margin: 20px 5px 0 5px;
+    border-radius: 30px;
 }
 
 @media (min-width: 1000px){
