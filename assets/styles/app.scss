@@ -34,6 +34,7 @@ body {
 
 .container {
     width: 80% !important;
+    margin-bottom: 50px!important;
 }
 
 #lab {
@@ -400,10 +401,11 @@ body {
     height: 229px;
     text-align: center;
     line-height: 229px;
-    position: absolute;
+    position: relative;
     left: 0px;
     right: 0px;
-    top: 120px;
+    top: 0px;
+    
 }
 
 #ouvrages_txtt {
@@ -432,6 +434,7 @@ body {
     font-family: Helvetica;
     font-weight: 700;
 }
+
 
 #cont_txt1 {
     font-size: 24px!important;
@@ -470,7 +473,11 @@ body {
     #large {
         font-size: 24px!important;
     }
+    
 }
+
+
+
 
 @media (max-width: 1200px) {
     #ouv_spec {
@@ -489,3 +496,4 @@ body {
         font-size: 40px!important;
     }
 }
+

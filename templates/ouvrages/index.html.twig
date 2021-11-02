@@ -11,7 +11,7 @@ myLayer.id = 'bookingLayer';
 myLayer.style.position = 'absolute';
 myLayer.style.zIndex = 1;
 myLayer.style.left = '590px';
-myLayer.style.top = '850px';
+myLayer.style.top = '1200px';
 myLayer.style.width = '160px';
 myLayer.style.height = '145px';
 myLayer.style.padding = '10px';
@@ -35,245 +35,73 @@ var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
 display.innerHTML = "passez le curseur sur un ouvrage";
 }
-// responsive
-//sinon essayer avec les breakpoints
-var a = window.matchMedia("(max-width: 1275px)")
-var b = window.matchMedia("(max-width: 1090px)")
-var c = window.matchMedia("(max-width: 990px)")
-var d = window.matchMedia("(max-width: 965px)")
-var e = window.matchMedia("(max-width: 930px)")
-var f = window.matchMedia("(max-width: 884px)")
-var g = window.matchMedia("(max-width: 803px)")
-var h = window.matchMedia("(max-width: 763px)")
-var i = window.matchMedia("(max-width: 670px)")
-var j = window.matchMedia("(max-width: 623px)")
-var k = window.matchMedia("(max-width: 594px)")
-var l = window.matchMedia("(max-width: 584px)")
-var m = window.matchMedia("(max-width: 548px)")
-var n = window.matchMedia("(max-width: 530px)")
-
-function responsivea(x) {
-if (x.matches) {
-myLayer.style.top = '950px';
-
-
-} else {}
-}
-function responsiveb(x) {
-if (x.matches) {
-myLayer.style.top = '800px';
-
-
-} else {}
-}
-function responsivec(x) {
-if (x.matches) {
-myLayer.style.left = '390px';
-
-
-} else {}
-}
-function responsived(x) {
-if (x.matches) {
-myLayer.style.left = '374px';
-myLayer.style.top = '820px';
-
-
-} else {}
-}
-function responsivee(x) {
-if (x.matches) {
-myLayer.style.left = '362px';
-myLayer.style.top = '840px';
-
-
-} else {}
-}
-function responsivef(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '850px';
-
-
-} else {}
-}
-function responsiveg(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '950px';
-
-
-} else {}
-}
-function responsiveh(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '970px';
-
-
-} else {}
-}
-function responsivei(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '990px';
-
-
-} else {}
-}
-function responsivej(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '1000px';
-
-
-} else {}
-}
-function responsivek(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '1050px';
-
-
-} else {}
-}
-function responsivel(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '1090px';
-
-
-} else {}
-}
-function responsivem(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '1110px';
-
-} else {}
-}
-function responsiven(x) {
-if (x.matches) {
-myLayer.style.left = '0px';
-myLayer.style.top = '1200px';
-
-
-} else {}
-}
 
 
 
-a.addListener(responsivea)
-b.addListener(responsiveb)
-c.addListener(responsivec)
-d.addListener(responsived)
-e.addListener(responsivee)
-f.addListener(responsivef)
-g.addListener(responsiveg)
-h.addListener(responsiveh)
-i.addListener(responsivei)
-j.addListener(responsivej)
-k.addListener(responsivek)
-l.addListener(responsivel)
-m.addListener(responsivem)
-n.addListener(responsiven)
-
-{# changer la disposition du texte quand on resize #}
+//js responsive pour position du bloc de texte dynamique
 function resize(){
-//remove les listener
-a.removeListener(responsivea)
-b.removeListener(responsiveb)
-c.removeListener(responsivec)
-d.removeListener(responsived)
-e.removeListener(responsivee)
-f.removeListener(responsivef)
-g.removeListener(responsiveg)
-h.removeListener(responsiveh)
-i.removeListener(responsivei)
-j.removeListener(responsivej)
-k.removeListener(responsivek)
-l.removeListener(responsivel)
-m.removeListener(responsivem)
-n.removeListener(responsiven)
-
-if(a.matches){
-	responsivea(a)
-	a.addListener(responsivea)
-}
-if(b.matches){
-	responsiveb(b)
-	b.addListener(responsiveb)
-}	
-if(c.matches){
-	responsivec(c)
-	c.addListener(responsivec)
-}	
-if(d.matches){
-	responsived(d)
-	d.addListener(responsived)	
-}
-if(e.matches){
-	responsivee(e)
-	e.addListener(responsivee)
-}	
-if(f.matches){
-	responsivef(f)
-	f.addListener(responsivef)
-}	
-if(g.matches){
-	responsiveg(g)
-	g.addListener(responsiveg)
-}	
-if(h.matches){
-	responsiveh(h)
-	h.addListener(responsiveh)
-}	
-if(i.matches){
-	responsivei(i)
-	i.addListener(responsivei)
-}	
-if(j.matches){
-	responsivej(j)
-	j.addListener(responsivej)
-}	
-if(k.matches){
-	responsivek(k)
-	k.addListener(responsivek)	
-}
-if(l.matches){
-	responsivel(l)
-	l.addListener(responsivel)
-}	
-if(m.matches){
-	responsivem(m)
-	m.addListener(responsivem)
-}	
-if(n.matches){	
-	responsiven(n)
-	n.addListener(responsiven)
+var s = window.outerWidth;
+if(s>1050){
+	myLayer.style.top="1090px";
+	myLayer.style.left = '590px';
+}else if(s>803 && s<=1050){
+	myLayer.style.top="1150px";
+	myLayer.style.left = '590px';
+	
+}else if(s>548 && s<=803){
+	myLayer.style.top="1150px";
+	myLayer.style.left="300px";
+	
+}else if(s>530 && s<=548){
+	myLayer.style.top="1150px";
+	myLayer.style.left="0px";
+	
+}else{
+	myLayer.style.top="1150px";
+	myLayer.style.left="0px";
+	
 }
 }
 
-window.onresize=resize
+window.onresize=resize;
 
+	</script>
+	{% endblock %}   
 
-
-		</script>
-	{% endblock %}
+    <style>
+    @media (max-width: 540px) {
+    }
+    @media (max-width: 800px) {
+        #bookingLayer{
+            bottom:1000px!important;
+        }
+    }
+    @media (max-width: 975px) {
+        #bookingLayer{
+            left:400px!important;
+        }
+    }
+    @media (max-width: 1200px) {
+        
+    }
+    
+    </style>
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
 		<p id="ouv_spec" style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
 	</div>
-	<section id="whitespace"></section>
 
 	<section id="palette">
 		<h1 id="large">Large palette de créations</h1>
 		<style>
 			#large {
+				position: relative;
 				text-align: center;
 				color: #95683E;
 				font-weight: 700;
 				font-size: 48px;
 				font-family: Helvetica;
+				margin-top: 40px;
+				margin-bottom: 40px;
 			}
 			.conteneur {
 				display: flex;
@@ -286,7 +114,7 @@ window.onresize=resize
 			}
 		</style>
 
-		<div class="container" id="textes">
+		<div class="container">
 			<div class="row">
 				<div class="col-sm" id="cont_txt1">
 					Grâce à notre large palette de créations, allant de la construction d’une devanture de commerce à celle d’un poulailler, nous sommes en mesure de répondre à tous les besoins pour vos projets.
@@ -298,16 +126,16 @@ window.onresize=resize
 		</div>
 	</section>
 	{# le hexa grid #}
-	<section id="lab">
-	{#whitespace#}
-	
-	
+	<section
+		id="lab">
+		{#whitespace#}
+
 
 		<article>
 
 
 			<!-- ça change le texte quand on hover -->
-			<div class="lab_item" >
+			<div class="lab_item">
 				<div class="hexagon hexagon2inv">
 					<div class="hexagon-in1">
 						<div class="hexagon-in2-1"></div>
@@ -398,17 +226,17 @@ window.onresize=resize
 		</style>
 
 		<!--
-									<div class="conteneur2">
-										<div>
-											<p id="travaux">Nos travaux vous intéressent ?
-											</p>
-										</div>
-										<div>
-											<a id="prendre_rdv">Prendre RDV</a>
-										</div>
-									</div>
-									avant bootstrap
-						-->
+													<div class="conteneur2">
+														<div>
+															<p id="travaux">Nos travaux vous intéressent ?
+															</p>
+														</div>
+														<div>
+															<a id="prendre_rdv">Prendre RDV</a>
+														</div>
+													</div>
+													avant bootstrap
+										-->
 
 		<div class="container">
 			<div class="row">
