@@ -594,8 +594,9 @@ $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
   color:#d58521;
   }
   .close-button-1 {
+    position: absolute;
+    left:45%;
     display: none;
-     margin: auto;
      -webkit-transition: -webkit-transform 1s ease-out;
      transition: transform 1s ease-out;
      transform-origin: center;
@@ -605,7 +606,9 @@ $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
    .close-button-1:hover {
      -webkit-transform: rotate(360deg);
      transform: rotate(360deg);
+     
    }
+   
   
 
   
