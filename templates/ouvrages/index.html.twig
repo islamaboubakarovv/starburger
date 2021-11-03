@@ -33,7 +33,7 @@ display.innerHTML = text;
 function defaultText() {
 var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
-display.innerHTML = "passez le curseur sur un ouvrage";
+display.innerHTML = "passez le curseur sur un ouvrage et cliquez pour développer";
 }
 //fonctions pour la gallerie d'images 
 //display:block afficher
@@ -45,12 +45,18 @@ var gall3=document.getElementById("main3");
 var gall4=document.getElementById("main4");
 var gall5=document.getElementById("main5");
 var gall6=document.getElementById("main6");
+var lab=document.getElementById("lab");
+var layer=document.getElementById("bookingLayer");
+var btn=document.getElementById("btn");
+btn.style.display="inline";
 gall1.style.display="block";
 gall2.style.display="none";
 gall3.style.display="none";
 gall4.style.display="none";
 gall5.style.display="none";
 gall6.style.display="none";
+lab.style.display="none";
+layer.style.display="none";
 
 }
 function gall2(){
@@ -60,12 +66,16 @@ var gall3=document.getElementById("main3");
 var gall4=document.getElementById("main4");
 var gall5=document.getElementById("main5");
 var gall6=document.getElementById("main6");
+var lab=document.getElementById("lab");
+var layer=document.getElementById("bookingLayer");
 gall1.style.display="none";
 gall2.style.display="block";
 gall3.style.display="none";
 gall4.style.display="none";
 gall5.style.display="none";
 gall6.style.display="none";
+lab.style.display="none";
+layer.style.display="none";
 	
 }
 function gall3(){
@@ -75,12 +85,16 @@ var gall3=document.getElementById("main3");
 var gall4=document.getElementById("main4");
 var gall5=document.getElementById("main5");
 var gall6=document.getElementById("main6");
+var lab=document.getElementById("lab");
+var layer=document.getElementById("bookingLayer");
 gall1.style.display="none";
 gall2.style.display="none";
 gall3.style.display="block";
 gall4.style.display="none";
 gall5.style.display="none";
 gall6.style.display="none";
+lab.style.display="none";
+layer.style.display="none";
 	
 }
 function gall4(){
@@ -90,12 +104,16 @@ var gall3=document.getElementById("main3");
 var gall4=document.getElementById("main4");
 var gall5=document.getElementById("main5");
 var gall6=document.getElementById("main6");
+var lab=document.getElementById("lab");
+var layer=document.getElementById("bookingLayer");
 gall1.style.display="none";
 gall2.style.display="none";
 gall3.style.display="none";
 gall4.style.display="block";
 gall5.style.display="none";
 gall6.style.display="none";
+lab.style.display="none";
+layer.style.display="none";
 	
 }
 function gall5(){
@@ -105,12 +123,16 @@ var gall3=document.getElementById("main3");
 var gall4=document.getElementById("main4");
 var gall5=document.getElementById("main5");
 var gall6=document.getElementById("main6");
+var lab=document.getElementById("lab");
+var layer=document.getElementById("bookingLayer");
 gall1.style.display="none";
 gall2.style.display="none";
 gall3.style.display="none";
 gall4.style.display="none";
 gall5.style.display="block";
 gall6.style.display="none";
+lab.style.display="none";
+layer.style.display="none";
 	
 }
 function gall6(){
@@ -120,12 +142,16 @@ var gall3=document.getElementById("main3");
 var gall4=document.getElementById("main4");
 var gall5=document.getElementById("main5");
 var gall6=document.getElementById("main6");
+var lab=document.getElementById("lab");
+var layer=document.getElementById("bookingLayer");
 gall1.style.display="none";
 gall2.style.display="none";
 gall3.style.display="none";
 gall4.style.display="none";
 gall5.style.display="none";
 gall6.style.display="block";
+lab.style.display="none";
+layer.style.display="none";
 	
 }
 //fin des fonctions galleries d'images 
@@ -194,6 +220,9 @@ window.onresize=resize;
 			</div>
 		</div>
 	</section>
+	<div class="col-md-4 text-center">
+    <img src="{{asset('images/hexa_grid/btn.png')}}" class="close-button-1" alt="" id="btn">
+  </div>
 	
 	{# le hexa grid #}
 	<section id="lab">
