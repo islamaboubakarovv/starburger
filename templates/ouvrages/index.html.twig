@@ -8,7 +8,7 @@
 		<script type="text/javascript">
 			var myLayer = document.createElement('div');
 myLayer.id = 'bookingLayer';
-myLayer.style.position = 'absolute';
+myLayer.style.position = 'relative';
 myLayer.style.zIndex = 1;
 myLayer.style.left = '590px';
 myLayer.style.top = '1200px';
@@ -37,30 +37,23 @@ display.innerHTML = "passez le curseur sur un ouvrage";
 }
 
 
-
+resize();
 //js responsive pour position du bloc de texte dynamique
 //fonction qui s'active quand la taille de la fenêtre change
 function resize(){
-var s = window.outerWidth;
-if(s>1050){
+var s = window.innerWidth;
+if(s>1013){
 	myLayer.style.top="1090px";
 	myLayer.style.left = '590px';
-}else if(s>803 && s<=1050){
+}else if(s>820 && s<=1013){
 	myLayer.style.top="1150px";
-	myLayer.style.left = '590px';
+	myLayer.style.left = '363px';
 	
-}else if(s>548 && s<=803){
-	myLayer.style.top="1150px";
-	myLayer.style.left="300px";
-	
-}else if(s>530 && s<=548){
+}else if(s<=820){
 	myLayer.style.top="1150px";
 	myLayer.style.left="0px";
 	
-}else{
-	myLayer.style.top="1150px";
-	myLayer.style.left="0px";
-	
+
 }
 }
 
@@ -68,25 +61,6 @@ window.onresize=resize;
 
 	</script>
 	{% endblock %}   
-
-    <style>
-    @media (max-width: 540px) {
-    }
-    @media (max-width: 800px) {
-        #bookingLayer{
-            bottom:1000px!important;
-        }
-    }
-    @media (max-width: 975px) {
-        #bookingLayer{
-            left:400px!important;
-        }
-    }
-    @media (max-width: 1200px) {
-        
-    }
-    
-    </style>
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
 		<p id="ouv_spec" style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
 	</div>
