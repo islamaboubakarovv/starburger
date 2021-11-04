@@ -23,6 +23,7 @@ final class Version20211003134727 extends AbstractMigration
         $this->addSql('ALTER TABLE artisan DROP FOREIGN KEY FK_3C600AD37294869C');
         $this->addSql('DROP INDEX IDX_3C600AD37294869C ON artisan');
         $this->addSql('ALTER TABLE artisan DROP article_id');
+        
     }
 
     public function down(Schema $schema): void
