@@ -11,9 +11,15 @@
       <h1>Nos actualités</h1>
       <p>Découvrez ABC au quotidien</p>
     </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+        <li class="breadcrumb-item">Actualités</li>
+      </ol>
+    </nav>
   </div>
   {% for articles in articles %}
-    <div class="container shadow-sm p-3 mb-5 bg-white rounded">
+    <div class="container shadow-sm p-3 my-4 bg-white rounded">
       <div class="row py-4 px-lg-5">
         <div class="col-lg-4 col-md-12 text-center">
             <img src="{{articles.adresseImage}}" class="img-qui">

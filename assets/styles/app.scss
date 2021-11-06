@@ -78,23 +78,42 @@ body {
     width: 100% !important;
 }
 
-.surtext {
+.surtext, .breadcrumb {
     position: absolute;
-    top: 10%;
     left: 5%;
-    transform: translate( -10%, -5% );
     text-align: left;
-    color: white;
+    transform: translate( -10%, -5% );
     font-weight: bold;
-    text-shadow: 2px 2px #000;
+}
+
+.surtext {
+    top: 10%;
+    color: white;
+}
+
+.breadcrumb {
+    margin: 0;
+    bottom: 5%;
 }
 
 .surtext h1 {
+    text-shadow: 2px 2px #000;
     font-family: 'Montserrat Bold';
+    margin:0;
 }
 
 .surtext p {
     font-family: 'Montserrat Regular';
+    text-shadow: 1px 1px #000;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color:rgb(54, 54, 54);
+}
+
+.breadcrumb li {
+    color: rgb(104, 104, 104) !important;
 }
 
 .reseaux-footer a {
