@@ -26,7 +26,7 @@ class IllustrationArticle
     private $adresseImage;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="article")
+     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="illustrationarticle")
      * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $article;

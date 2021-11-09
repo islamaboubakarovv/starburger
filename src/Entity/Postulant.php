@@ -49,11 +49,6 @@ class Postulant
      */
     private $lettreMotivation;
 
-    /**
-     * @ORM\OneToMany(targetEntity=OffrePostulant::class, mappedBy="postulant", orphanRemoval=true)
-     */
-    private $postulant;
-
     public function __construct()
     {
         $this->postulant = new ArrayCollection();
