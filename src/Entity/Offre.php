@@ -39,11 +39,6 @@ class Offre
      */
     private $typeContrat;
 
-    /**
-     * @ORM\OneToMany(targetEntity=OffrePostulant::class, mappedBy="offre", orphanRemoval=true)
-     */
-    private $offre;
-
     public function __construct()
     {
         $this->offre = new ArrayCollection();
@@ -110,25 +105,4 @@ class Offre
         return $this->offre;
     }
 
-    public function addOffre(OffrePostulant $offre): self
-    {
-        if (!$this->offre->contains($offre)) {
-            $this->offre[] = $offre;
-            $offre->setOffre($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOffre(OffrePostulant $offre): self
-    {
-        if ($this->offre->removeElement($offre)) {
-            // set the owning side to null (unless already changed)
-            if ($offre->getOffre() === $this) {
-                $offre->setOffre(null);
-            }
-        }
-
-        return $this;
-    }
 }
