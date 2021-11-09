@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous Rejoindre{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="rox">
+        <div>
+            <h1 class="h1">Nous rejoindre</h1>
+        </div>
+    <div class="row">
+        <div class="col-4">
+            <div>
+            <p>Au sein de la société Legermain règne un climat social, respectueux et constructif.
+            En pensant d’abord à notre capital humain, nous donnons un sens à chacune de nos actions,
+            nous capitalisons sur un esprit d’équipe fort où il fait bon vivre.
+            Nous attachons une grande importance au développement des compétences, à l’engagement, à la responsabilisation.
+            </p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div align=center>
+                <h2>Déposez votre candidature<h2>
+            </div>
+        </div>
+        <div class="col-4">
+            <div>
+                <p>Vous partagez notre vision ? Vous souhaitez rejoindre une société aux multiples projets et possibilités ?
+                Vous avez envie de contribuer à votre manière à nos plus grands succès ?
+                alors déposez-nous votre candidature en remplissant le formulaire ci-dessous :
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{{form_start(candidat_form)}}
+    {# {{ form_row(candidat_form.offre }} #}
+    {{ form_row(candidat_form.nom, {'attr': {'class': 'form-candidat-nom'}}) }}
+    {{ form_row(candidat_form.prenom, {'attr': {'class': 'form-candidat-prenom'}}) }}
+    {{ form_row(candidat_form.telephone, {'attr': {'class': 'form-candidat-telephone'}}) }}
+    {{ form_row(candidat_form.mail, {'attr': {'class': 'form-candidat-mail'}}) }}
+    {{ form_row(candidat_form.cv, {'attr': {'class': 'form-candidat-objet'}}) }}
+    {{ form_row(candidat_form.lettreMotivation, {'attr': {'class': 'form-candidat-message'}}) }}
+     <div class="text-center">
+        {% for message in app.flashes('success') %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        <button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button>
+    </div>
+{{form_end(candidat_form)}}
+
+<div align=center>
+    <h2>Veuillez remplir ce formulaire</h2>
+</div>
+{% endblock %}
