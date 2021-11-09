@@ -70,6 +70,15 @@
 .accueil-second-part {
     background-color: #4A4134;
     color: white;
+    div>hr {
+        width: 50%;
+        margin: auto;
+    }
+    iframe {
+        text-align: center;
+        width: 80%;
+        aspect-ratio: 16/10;
+    }
 }
 
 .accueil-third-part {
@@ -77,10 +86,7 @@
     color: rgb(0, 0, 0);
 }
 
-.accueil-second-part div>hr {
-    width: 50%;
-    margin: auto;
-}
+.accueil-second-part 
 
 .accueil-info-item {
     width: 450px !important;
