@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ListeOffresController!{% endblock %}
+{% block title %}Nous rejoindre{% endblock %}
 
 {% block body %}
 <div class="bloc-haut">
     <div style="width:100%; height:150px; overflow:hidden">
-      <img src="/images/illustrations/journal.jpg" class="img-haut" style="margin-top: -450px;"/>
+      <img src="/images/illustrations/nous_rejoindre.jpg" class="img-haut" style="margin-top: -450px;"/>
     </div>
     <div class="surtext">
       <h1>Nous rejoindre</h1>
@@ -18,16 +18,33 @@
       </ol>
     </nav>
   </div>
+  <div class="container shadow-sm p-4 my-5 bg-white rounded">
+    <div class="row">
+            <div class="row mb-4 text-center">
+                <h2 style="color:#95683E;">Déposez votre candidature</h2>
+            </div>
+            <div class="col-lg-6 col-md-12 px-4 text-justify">
+                <p>
+                    Au sein de la société Legermain règne un climat social, respectueux et constructif. En pensant d’abord à notre capital humain, nous donnons un sens à chacune de nos actions, nous capitalisons sur un esprit d’équipe fort où il fait bon vivre. Nous attachons une grande importance au développement des compétences, à l’engagement, à la responsabilisation.
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-12 px-4 text-justify">
+                <p>
+                    Vous partagez notre vision ? Vous souhaitez rejoindre une société aux multiples projets et possibilités ? Vous avez envie de contribuer à votre manière à nos plus grands succès ? alors déposez-nous votre candidature en remplissant le formulaire ci-dessous :
+                </p>
+            </div>
+        </div>
+    </div>
   {% for offres in offres %}
     <div class="container shadow-sm p-3 my-4 bg-white rounded">
-      <div class="row py-4 px-lg-5">
-        <div class="col-lg-6 col-md-12 px-5">
+      <div class="row py-4 px-lg-3">
+        <div class="col-lg-10 col-md-12">
         <h3 class="titre-article">{{offres.poste}}</h3>
             <p class="text-justify contenu-article">{{offres.description}}
             </p>
         </div>
         <div class="col-lg-2 col-md-12 text-center">
-            <a class="btn btn-actualite" href="{{ path('article', { id: offres.id }) }}" role="button">Lire plus</a>
+            <a class="btn btn-actualite" href="{{ path('nous_rejoindre', { id: offres.id }) }}" role="button">Postuler</a>
         </div>
       </div>
     </div>

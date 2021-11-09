@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ListeOffresController extends AbstractController
 {
-    #[Route('/liste/offres', name: 'liste_offres')]
+    #[Route('/liste_offres', name: 'liste_offres')]
     public function index(Request $request, PaginatorInterface $paginator)
     {
         $em = $this->getDoctrine()->getManager();

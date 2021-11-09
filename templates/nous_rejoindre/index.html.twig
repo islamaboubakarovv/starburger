@@ -3,38 +3,28 @@
 {% block title %}Nous Rejoindre{% endblock %}
 
 {% block body %}
+{% for offres in offres %}
+<div class="container shadow-sm px-lg-5 px-4 py-4 my-5 bg-white rounded container-article">
 
-
-<div class="container">
-    <div class="rox">
-        <div>
-            <h1 class="h1">Nous rejoindre</h1>
-        </div>
-    <div class="row">
-        <div class="col-4">
-            <div>
-            <p>Au sein de la société Legermain règne un climat social, respectueux et constructif.
-            En pensant d’abord à notre capital humain, nous donnons un sens à chacune de nos actions,
-            nous capitalisons sur un esprit d’équipe fort où il fait bon vivre.
-            Nous attachons une grande importance au développement des compétences, à l’engagement, à la responsabilisation.
-            </p>
-            </div>
-        </div>
-        <div class="col-4">
-            <div align=center>
-                <h2>Déposez votre candidature<h2>
-            </div>
-        </div>
-        <div class="col-4">
-            <div>
-                <p>Vous partagez notre vision ? Vous souhaitez rejoindre une société aux multiples projets et possibilités ?
-                Vous avez envie de contribuer à votre manière à nos plus grands succès ?
-                alors déposez-nous votre candidature en remplissant le formulaire ci-dessous :
-                </p>
-            </div>
+    <div class="row pb-4">
+        <div class="col-lg-12 col-md-12 text-center">
+            <h2 style="color:#95683E;">{{offres.poste}}</h2>
         </div>
     </div>
+    <h3>Type de contrat</h3>
+    <div class="text-justify">
+        <p>{{offres.typeContrat}}</p>
+    </div>
+    <h3>Description</h3>
+    <div class="text-justify">
+        <p>{{offres.description}}</p>
+    </div>
+    <h3>Prérequis</h3>
+    <div class="text-justify">
+        <p>{{offres.prerequis}}</p>
+    </div>
 </div>
+{% endfor %}
 {{form_start(candidat_form)}}
     {# {{ form_row(candidat_form.offre }} #}
     {{ form_row(candidat_form.nom, {'attr': {'class': 'form-candidat-nom'}}) }}
