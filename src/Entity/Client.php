@@ -44,7 +44,13 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getPassword(): string
     {
-        return $this->password;
+        return $this->mdp;
+    }
+    public function setPassword(string $mdp): self
+    {
+        $this->mdp = $mdp;
+
+        return $this;
     }
 
     public function eraseCredentials()
