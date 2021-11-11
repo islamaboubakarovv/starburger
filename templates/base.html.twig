@@ -1,118 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" type="image/png" href="images/logos/logoArtisan.png" />
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="images/logos/logoArtisan.png" />
+    {# Run `composer require symfony/webpack-encore-bundle`
+      and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top " style="background-color:#4a4134;">
-  <!-- Container wrapper -->
-  <div class="container-fluid">
-
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#"><svg width="100" height="95" viewBox="0 0 161 132" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M36.7677 131.041C34.4663 130.395 34.2279 129.973 35.1673 128.205C35.6543 127.289 36.0519 127.201 37.6347 127.658C39.8059 128.285 42.9927 127.83 43.8679 126.769C44.1972 126.369 44.6406 125.167 44.8532 124.097L45.2396 122.151L43.8549 123.128C43.074 123.678 41.3598 124.104 39.9243 124.104C33.3393 124.104 30.4277 114.707 35.4468 109.654C37.0461 108.044 37.8161 107.709 39.9243 107.709C41.3245 107.709 43.0518 108.119 43.7626 108.621C44.9325 109.446 45.0552 109.446 45.0552 108.621C45.0552 107.966 45.64 107.709 47.1308 107.709H49.2064L49.021 117.037C48.8546 125.413 48.7114 126.534 47.6201 128.016C45.3996 131.032 41.054 132.243 36.7678 131.041H36.7677ZM43.9663 119.623C45.2239 118.097 45.0039 113.061 43.6356 112.054C41.1453 110.22 37.902 111.434 37.1418 114.484C36.693 116.284 37.2308 118.485 38.4096 119.672C39.612 120.883 42.9523 120.853 43.9663 119.623H43.9663ZM21.3701 124.725C16.8307 123.596 14.4873 120.109 14.9575 115.183C15.1815 112.836 15.6306 111.882 17.3083 110.193C19.0505 108.439 19.8773 108.064 22.4771 107.85C25.0503 107.637 25.8533 107.818 27.2418 108.921C29.0835 110.385 30.5154 113.304 30.5154 115.595V117.078H24.6997C21.4392 117.078 18.884 117.321 18.884 117.631C18.884 117.935 19.49 118.893 20.2308 119.76C21.2922 121.002 22.091 121.336 24.0012 121.336C25.3343 121.336 26.8519 120.98 27.3737 120.544C28.1921 119.86 28.4769 119.943 29.4462 121.148L30.5701 122.546L28.9434 123.572C26.9016 124.86 23.807 125.331 21.3701 124.725H21.3701ZM26.4442 113.565C26.4442 112.599 24.1928 110.637 23.0842 110.637C21.6774 110.637 19.4654 112.268 19.4654 113.305C19.4654 113.948 20.3018 114.15 22.9548 114.15C24.8934 114.15 26.4442 113.89 26.4442 113.565V113.565ZM59.3029 124.738C54.9076 123.655 52.6205 120.832 52.6169 116.483C52.6128 111.005 56.3049 107.425 61.4896 107.881C63.0949 108.022 64.7779 108.591 65.4955 109.234C66.9894 110.574 68.3173 113.568 68.3173 115.595V117.078H62.5016C56.194 117.078 55.4981 117.509 57.9944 119.867C59.8199 121.591 62.0676 121.859 64.4496 120.636C66.4611 119.604 66.4696 119.605 67.109 121.018C67.4619 121.798 67.591 122.696 67.3959 123.014C66.5723 124.355 61.8422 125.363 59.3029 124.738L59.3029 124.738ZM63.5525 112.673C62.3617 110.041 58.7311 110.226 57.2603 112.993C56.6765 114.091 56.8397 114.15 60.4332 114.15H64.2216L63.5525 112.673ZM116.297 124.729C112.399 123.1 111.806 117.86 115.285 115.79C116.195 115.25 118.299 114.625 119.962 114.403C123.068 113.988 123.743 113.17 122.107 111.804C121.258 111.094 118.006 111.233 115.965 112.066C115.35 112.317 114.843 111.98 114.416 111.037C113.839 109.762 113.964 109.547 115.786 108.672C119.552 106.864 124.993 107.849 126.458 110.605C126.787 111.224 127.057 114.647 127.057 118.211V124.69H125.312C123.908 124.69 123.567 124.441 123.567 123.417V122.144L122.258 123.354C120.722 124.775 117.942 125.416 116.297 124.729L116.297 124.729ZM121.822 120.591C123.489 118.913 123.357 117.078 121.569 117.078C118.981 117.078 117.17 118.117 117.17 119.601C117.17 120.36 117.344 121.157 117.557 121.372C118.34 122.16 120.691 121.73 121.822 120.591L121.822 120.591ZM7.83241 123.519C6.89969 122.58 6.66873 121.565 6.6666 118.396C6.66517 116.222 6.49422 111.479 6.28698 107.856L5.90995 101.269H10.7402V110.985C10.7402 120.209 10.7991 120.716 11.9034 121.007C12.7273 121.224 13.0665 121.806 13.0665 123.002C13.0665 124.541 12.8867 124.69 11.0309 124.69C9.77082 124.69 8.55229 124.244 7.83223 123.519L7.83241 123.519ZM71.8059 116.163V107.635L73.696 107.819C75.4131 107.985 75.5677 108.16 75.3848 109.723L75.1835 111.443L77.2952 109.576C80.1935 107.014 81.6927 107.076 81.6927 109.759C81.6927 111.443 81.4775 111.808 80.4848 111.808C79.8205 111.808 78.5119 112.578 77.5768 113.52C75.9785 115.129 75.8768 115.514 75.8768 119.961V124.69H71.8058L71.8059 116.163ZM84.6006 116.163V107.635L86.4907 107.819C88.1054 107.975 88.3527 108.204 88.1877 109.386L87.9944 110.77L89.9872 109.24C92.5004 107.31 95.0366 107.265 97.2171 109.112L98.873 110.515L100.493 109.112C102.733 107.172 106.235 107.188 108.181 109.147C109.538 110.514 109.608 110.929 109.608 117.637V124.69H105.537V118.614C105.537 113.765 105.35 112.381 104.609 111.762C103.836 111.116 103.426 111.131 102.146 111.854C99.8676 113.142 99.158 115.106 99.1486 120.152L99.1405 124.69H95.0695V118.563C95.0695 113.094 94.9479 112.37 93.9396 111.826C92.4394 111.018 90.1735 112.059 89.3178 113.95C88.9627 114.734 88.6722 117.472 88.6722 120.033V124.69H84.6012L84.6006 116.163ZM131.708 116.2V107.709H135.779V124.69H131.708V116.2ZM140.431 116.2V107.709H142.176C143.644 107.709 143.921 107.939 143.921 109.156V110.602L146.038 109.156C148.559 107.433 151.95 107.248 153.772 108.734C155.412 110.072 156.103 113.259 156.12 119.567L156.134 124.69H151.615L151.694 118.79C151.764 113.573 151.642 112.793 150.644 112.056C148.998 110.841 148.107 111.018 146.203 112.934C144.588 114.56 144.503 114.898 144.503 119.668V124.69H140.432V116.2L140.431 116.2ZM131.708 103.318C131.708 101.366 131.805 101.269 133.743 101.269C135.682 101.269 135.779 101.366 135.779 103.318C135.779 105.27 135.682 105.368 133.743 105.368C131.805 105.368 131.708 105.27 131.708 103.318ZM0.457839 95.2431C-0.0336851 94.4423 0.264767 21.408 0.761796 20.9063C1.02191 20.6444 7.10269 18.8433 14.2747 16.9038C44.1861 8.8156 66.6437 2.68014 72.1828 1.08438C79.355 -0.982086 79.8137 -0.990598 85.1754 0.84545C87.5232 1.64942 105.169 6.54967 124.389 11.7346C143.608 16.9198 159.53 21.2839 159.769 21.4326C160.009 21.5813 160.205 38.2857 160.205 58.5525V95.4033L80.4723 95.5538C36.6199 95.6366 0.612939 95.496 0.45623 95.2416L0.457839 95.2431ZM154.83 58.0727L154.981 26.295L153.625 25.776C150.834 24.7075 80.0903 5.82626 78.8768 5.82626C78.1815 5.82626 72.3147 7.27371 65.8394 9.04286C59.3641 10.812 43.5968 15.0588 30.8029 18.4803C18.0082 21.9018 7.08153 24.9431 6.521 25.2386C5.57074 25.7402 5.50324 27.8848 5.50324 57.5685C5.50324 75.055 5.67862 89.5384 5.89315 89.7549C6.10769 89.9709 39.672 90.0805 80.4807 89.9988L154.678 89.8502L154.83 58.0727ZM112.441 71.6611C103.456 68.8757 98.089 60.571 98.6761 50.3613C99.1096 42.8222 102.821 37.1815 109.775 33.4916C112.496 32.0479 113.404 31.8828 118.623 31.8824C124.899 31.8819 127.982 32.7366 131.555 35.4682L133.438 36.9072L131.87 39.3717C131.008 40.7272 130.271 41.9012 130.232 41.9803C130.193 42.0596 128.666 41.3089 126.838 40.3122C122.081 37.718 117.758 37.4047 113.541 39.3483C110.291 40.8464 107.895 43.3562 106.704 46.5109C105.735 49.0758 105.902 55.0278 107.022 57.8447C108.818 62.3638 114.447 66.1361 119.395 66.1361C121.77 66.1361 126.91 64.156 129.064 62.4113L130.782 61.0202L132.45 63.3384C133.368 64.6135 133.976 66.029 133.803 66.4835C133.325 67.7375 128.289 70.7531 125.06 71.719C121.494 72.7855 115.987 72.7599 112.44 71.6606L112.441 71.6611ZM26.126 68.0395C28.2647 61.817 37.9268 34.3401 38.3861 33.175C38.7353 32.2889 39.391 32.152 42.5907 32.2967L46.3816 32.4683L53.277 52.0838C57.0694 62.8725 60.1729 71.7652 60.1737 71.8457C60.1742 71.9262 58.4899 71.992 56.4305 71.992H52.6864L51.0765 67.0149L49.4666 62.0379H35.4066L33.7967 67.0149L32.1868 71.992H24.7676L26.126 68.0395ZM47.1953 54.7861C47.0254 54.3402 45.9005 50.675 44.6956 46.6414L42.5049 39.3077L40.0178 47.3059C38.6499 51.7048 37.5222 55.3699 37.5119 55.4504C37.5019 55.5309 39.7456 55.5966 42.4989 55.5966C46.5239 55.5966 47.4441 55.4376 47.1955 54.7859L47.1953 54.7861ZM65.4087 52.1338V32.1752L73.6962 32.1772C78.2545 32.1789 82.9569 32.4526 84.1467 32.7852C91.4978 34.8408 94.0341 43.795 88.8229 49.2949C87.9869 50.1771 87.4147 50.9871 87.5513 51.0947C87.688 51.2023 88.6299 51.8672 89.6446 52.5721C90.7463 53.3374 91.89 54.9094 92.4835 56.4744C94.5462 61.9122 92.2803 67.7471 87.1111 70.3096C84.5793 71.5646 83.4028 71.7168 74.8597 71.8947L65.4092 72.0915V52.1329L65.4087 52.1338ZM84.3366 64.1137C85.4376 63.0052 85.7641 62.0618 85.7641 59.9883C85.7641 57.9147 85.4376 56.9715 84.3366 55.8628C83.0314 54.5487 82.4584 54.4255 77.6483 54.4255H72.3877V65.5508H77.6483C82.4583 65.5508 83.0313 65.4278 84.3366 64.1135V64.1137ZM82.976 46.9533C83.8865 46.0366 84.2837 44.9404 84.2837 43.3443C84.2837 39.2188 81.3157 37.5746 75.3154 38.376L72.3877 38.767V48.6943L77.0279 48.4821C80.8958 48.3053 81.8857 48.0509 82.9758 46.9533L82.976 46.9533Z" fill="#E6C9A5"/>
-</svg>
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      </ul>
-
-      <!-- Link -->
-      <ul class="navbar-nav d-flex flex-row me-1">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Qui sommes nous?</a>
-        </li>
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-            Notre savoir faire
-          </a>
-          <!-- Dropdown menu -->
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item" href="#">Action</a>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('base') }}
+    {% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid mx-3">
+        <a class="navbar-brand" href="/accueil"><img src="/images/logos/logoArtisan.svg"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">QUI SOMMES NOUS ?</a>
             </li>
-            <li>
-              <a class="dropdown-item" href="#">Another action</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                NOTRE SAVOIR FAIRE
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">CHARPENTES</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">COUVERTURES</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">OUVRAGES SPECIAUX</a></li>
+              </ul>
             </li>
-            <li>
-              <hr class="dropdown-divider" />
+            <li class="nav-item">
+              <a class="nav-link" href="#">ACTUALITES</a>
             </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">NOUS REJOINDRE</a>
             </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Actualités</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nous rejoindre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.0001 7.77696C14.3435 7.77696 15.4629 8.85322 15.4629 10.2144C15.4629 11.5755 14.3754 12.6518 13.0001 12.6518C11.6248 12.6518 10.5374 11.5755 10.5374 10.2144C10.5374 8.85322 11.6568 7.77696 13.0001 7.77696Z" fill="#E6C9A5"/>
-<path d="M13.0004 0.338089C20.0689 0.338089 25.7939 6.00429 25.7939 13C25.7939 19.9957 20.0689 25.6619 13.0004 25.6619C5.93203 25.6619 0.206934 19.9957 0.206934 13C0.206934 6.00429 5.93203 0.338089 13.0004 0.338089ZM7.40328 19.6475C7.78709 19.6475 8.10692 19.331 8.10692 18.9511C8.10692 16.2921 10.3138 14.1079 13.0004 14.1079C15.6871 14.1079 17.894 16.2921 17.894 18.9511C17.894 19.331 18.2138 19.6475 18.5976 19.6475C18.9814 19.6475 19.3012 19.331 19.3012 18.9511C19.3012 16.3554 17.7021 14.1396 15.4312 13.1899C16.3267 12.4935 16.8705 11.4173 16.8705 10.2144C16.8705 8.09351 15.1434 6.3525 13.0004 6.3525C10.8575 6.3525 9.13041 8.06185 9.13041 10.1827C9.13041 11.3856 9.70611 12.4619 10.5697 13.1583C8.29883 14.1079 6.69964 16.3237 6.69964 18.9194C6.69964 19.3309 7.01948 19.6475 7.40328 19.6475Z" fill="#E6C9A5"/>
-</svg>
-</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!-- Container wrapper -->
-</nav>
-<!-- Navbar -->
-        {% block body %}{% endblock %}
-       <!-- Footer -->
-<footer class=" text-left text-white" style="background-color:#4a4134;">
-  <!-- Grid container -->
-  <div class="container p-4" style="width : 80%;">
-    <!-- Section: Links -->
-    <section class="">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-4 reseaux-footer">
-          <h5 class="text-uppercase">Réseaux sociaux</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white"><img src="images/logos/logo_snapchat.png" class="img-footer">Snapchat</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT</a>
             </li>
-            <li>
-              <a href="#!" class="text-white"><img src="images/logos/logo_instagram.png" class="img-footer">Instagram</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"><img src="images/logos/logo_facebook.png" class="img-footer">Facebook</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img src="/images/Pictogrammes/noun_profile_1041818.svg"/></a>
             </li>
           </ul>
         </div>
-        <!--Grid column-->
+      </div>
+    </nav>
 
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-4">
-          <h5 class="text-uppercase">Navigation</h5>
-
+    {% block body %} {% endblock %}
+    
+    <footer id="footer" class="container-fluid text-white py-3 px-5"style="background-color:#4a4134;">
+      <div class="row gy-3">
+        <div class="col-xs-12 col-md-4 px-5">
+          <h5>RÉSEAUX SOCIAUX</h5>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-decoration-none text-white"><img src="images/logos/logo_snapchat.png" class="img-footer">Snapchat</a>
+            </li>
+            <li>
+              <a href="#!" class="text-decoration-none text-white"><img src="images/logos/logo_instagram.png" class="img-footer">Instagram</a>
+            </li>
+            <li>
+              <a href="#!" class="text-decoration-none text-white"><img src="images/logos/logo_facebook.png" class="img-footer">Facebook</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-4 px-5">
+          <h5>NAVIGATION</h5>
           <ul class="list-unstyled mb-0">
             <li class="my-2">
               <a href="#!" class="text-white">> Qui sommes nous?</a>
@@ -131,12 +94,8 @@
             </li>
           </ul>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-4">
-          <h5 class="text-uppercase">Contact</h5>
-
+        <div class="col-xs-12 col-md-4 px-5">
+          <h5>CONTACT</h5>
           <ul class="list-unstyled mb-0">
             <li>
               <p><b>Horaires :</b> du lundi au samedi de 18h à 20h</p>
@@ -145,29 +104,17 @@
                 <p><b>Adresse :</b> Zone Artisanale 72140 Rouez en Champagne</p>
             </li>
             <li>
-              <p><b>Téléphone :</b> 02 47 36 70 34</p>
+              <p><b>Téléphone :</b> 02.47.36.70.34</p>
             </li>
             <li>
               <p><b>Email :</b> infos@legermain.com</p>
             </li>
           </ul>
         </div>
-        <!--Grid column-->
       </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-
-  </div>
-  <!-- Grid container -->
-
-  <!-- Connexion -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-    <a class="btn btn-footer" href="#" role="button">Connexion</a>
-  </div>
-  <!-- Connexion -->
-
-</footer>
-<!-- Footer -->
-    </body>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <a class="btn btn-footer" href="#" role="button">Connexion</a>
+      </div>
+    </footer>
+  </body>
 </html>

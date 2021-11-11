@@ -1,5 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
@@ -7,9 +7,11 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-    .addPlugin(new CopyWebpackPlugin([
-        { from: '.../fonts', to: 'fonts' }
-    ]))
+    .addPlugin(new CopyPlugin({
+        patterns: [
+        { from: "../fonts", to: "fonts" },
+        ],
+    }))
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
@@ -24,6 +26,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addEntry('base', './assets/base.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
@@ -72,7 +75,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    .autoProvidejQuery()
+    // .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();
