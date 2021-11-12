@@ -36,20 +36,14 @@
     </div>
 </div>
 {{form_start(candidat_form)}}
-    {# {{ form_row(candidat_form.offre }} #}
-    {{ form_row(candidat_form.postulant, {'attr': {'class': 'form-candidat-postulant'}}) }}
+    {{ form_row(candidat_form.nom, {'attr': {'class': 'form-candidat-nom'}}) }}
     {{ form_row(candidat_form.prenom, {'attr': {'class': 'form-candidat-prenom'}}) }}
     {{ form_row(candidat_form.telephone, {'attr': {'class': 'form-candidat-telephone'}}) }}
     {{ form_row(candidat_form.mail, {'attr': {'class': 'form-candidat-mail'}}) }}
-    {{ form_row(candidat_form.objet, {'attr': {'class': 'form-candidat-objet'}}) }}
-    {{ form_row(candidat_form.message, {'attr': {'class': 'form-candidat-message'}}) }}
-     <div class="text-center">
-        {% for message in app.flashes('success') %}
-            <p>{{ message }}</p>
-        {% endfor %}
-        {{ form_widget(candidat_form.valider, {'attr': {'class': 'form-candidat-valider'}}) }}
-        <button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button>
-    </div>
+    {{ form_row(candidat_form.cv, {'attr': {'class': 'form-candidat-cv'}}) }}
+    {{ form_row(candidat_form.lettreMotivation, {'attr': {'class': 'form-candidat-lettreMotivation'}}) }}
+    {{ form_row(candidat_form.valider, {'attr': {'class': 'form-candidat-valider'}}) }}
+
 {{form_end(candidat_form)}}
 
 <div align=center>
