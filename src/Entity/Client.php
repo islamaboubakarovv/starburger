@@ -79,7 +79,7 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $mail;
+    private $email;
 
     /**
      * @ORM\Column(type="string", length=30)
@@ -137,12 +137,12 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getMail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
     public function setMail(string $mail): self
     {
-        $this->mail = $mail;
+        $this->email = $mail;
 
         return $this;
     }
