@@ -49,6 +49,11 @@ class Postulant
      */
     private $lettreMotivation;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $infoComp;
+
     public function __construct()
     {
         $this->postulant = new ArrayCollection();
@@ -127,6 +132,18 @@ class Postulant
     public function setLettreMotivation(?string $lettreMotivation): self
     {
         $this->lettreMotivation = $lettreMotivation;
+
+        return $this;
+    }
+
+    public function getInfoComp(): ?string
+    {
+        return $this->infoComp;
+    }
+
+    public function setInfoComp(string $infoComp): self
+    {
+        $this->infoComp = $infoComp;
 
         return $this;
     }

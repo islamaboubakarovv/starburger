@@ -78,10 +78,27 @@ body {
     min-height: 40vh !important;
 }
 
+.form-candidat-infoComp{
+    min-height: 40vh !important;
+}
+
 .form-candidat-valider{
     min-height: 40vh !important;
 }
 
 .form-contact-button {
     background-color: #E6C9A5;
+}
+
+@media (min-width: 1000px){
+    .form-contact {
+        width: 70% !important;
+        margin: auto;
+    }
+}
+
+@media (max-width: 999.9px){
+    .form-contact {
+        margin: auto;
+    }
 }

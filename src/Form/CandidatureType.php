@@ -23,7 +23,8 @@ class CandidatureType extends AbstractType
             ->add('mail', EmailType::class)
             ->add('cv', FileType::class)
             ->add('lettreMotivation', FileType::class)
-         //     ->add('valider',SubmitType::class)
+            ->add('infoComp', TextType::class)
+            // ->add('valider',SubmitType::class)
 
         ;
     }
