@@ -5,7 +5,7 @@ security:
     password_hashers:
         #Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface: 'auto'
         App\Entity\Client:
-            algorithm: auto
+            algorithm: bcrypt
         #Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface: 'auto'
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -14,7 +14,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\Client
-                property: email
+                property: mail
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -24,10 +24,8 @@ security:
             provider: app_user_provider
             logout:
                 path: app_logout
-            #custom_authenticator: App\Security\AppAuthAuthenticator
-            guard:
-                authenticators:
-                    - App\Security\AppAuthAuthenticator
+            custom_authenticator: App\Security\AppAuthAuthenticator
+            
            
                 # where to redirect after logout
                 # target: app_any_route

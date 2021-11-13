@@ -19,11 +19,11 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->email;
+        return (string) $this->mail;
     }
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string) $this->mail;
     }
     public function getSalt(): ?string
     {
@@ -79,7 +79,7 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $email;
+    private $mail;
 
     /**
      * @ORM\Column(type="string", length=30)
@@ -137,12 +137,12 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getMail(): ?string
     {
-        return $this->email;
+        return $this->mail;
     }
 
     public function setMail(string $mail): self
     {
-        $this->email = $mail;
+        $this->mail = $mail;
 
         return $this;
     }
