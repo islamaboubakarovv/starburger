@@ -1,0 +1,47 @@
+<style type="text/css" data-hse-inline-css="true">
+    button {
+        background-color: #E6C9A5;
+        border-radius: 30px;
+        color: #000000;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        margin: 20px;
+        width: 200px;
+        border: none;
+    }
+</style>
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#4a4134;">
+    <tr>
+        <td>
+            <img src="{{ email.image('@images/logos/LogoArtisan.PNG') }}" alt="Logo" width="100px" style="margin-left:15px;">
+        </td>
+    </tr>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" width="95%" align="center">
+    <tr>
+        <td>
+            <h2>Vous avez reçu une nouvelle demande de devis de "username"</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h3><b>Objet : <b/>{{ objet_devis }}</h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h3>Description : </h3>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: justify;">
+            <p>{{ description_devis }}</p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <button type="button">Accéder au site</button>
+        </td>
+    </tr>
+</table>
