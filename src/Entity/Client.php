@@ -7,10 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 use ContainerORBqIZP\getUserInterfaceService;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 /**
  * @ORM\Entity(repositoryClass=ClientRepository::class)
+ * @UniqueEntity("mail")
  */
 class Client implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -77,12 +79,12 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false, unique=true)
      */
     private $mail;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=128)
      */
     private $mdp;
 
