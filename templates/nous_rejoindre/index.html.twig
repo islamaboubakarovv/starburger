@@ -1,53 +1,50 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Nous Rejoindre{% endblock %}
-
 {% block body %}
-
-
 <div class="container">
-    <div class="rox">
+    <div class="row blank-3">
         <div>
-            <h1 class="h1">Nous rejoindre</h1>
+            <h1 class="tittle">Intitulé du poste</h1>
         </div>
-    <div class="row">
-        <div class="col-4">
-            <div>
-            <p>Au sein de la société Legermain règne un climat social, respectueux et constructif.
-            En pensant d’abord à notre capital humain, nous donnons un sens à chacune de nos actions,
-            nous capitalisons sur un esprit d’équipe fort où il fait bon vivre.
-            Nous attachons une grande importance au développement des compétences, à l’engagement, à la responsabilisation.
-            </p>
-            </div>
+    <div class="row blank-3">
+        <div>
+            <h2>Type de contrat<h2/>
         </div>
-        <div class="col-4">
-            <div align=center>
-                <h2>Déposez votre candidature<h2>
-            </div>
+        <div>
+        <div/>
+    <div class="row blank-3">
+        <div>
+            <h2>Description<h2/>
         </div>
-        <div class="col-4">
-            <div>
-                <p>Vous partagez notre vision ? Vous souhaitez rejoindre une société aux multiples projets et possibilités ?
-                Vous avez envie de contribuer à votre manière à nos plus grands succès ?
-                alors déposez-nous votre candidature en remplissant le formulaire ci-dessous :
-                </p>
-            </div>
+        <div>
+        <div/>
+    </div>
+    <div class="row blank-3">
+        <div>
+            <h2>Prérequis<h2/>
         </div>
+        <div>
+        <div/>
     </div>
 </div>
-{{form_start(candidat_form)}}
-    {{ form_row(candidat_form.nom, {'attr': {'class': 'form-candidat-nom'}}) }}
-    {{ form_row(candidat_form.prenom, {'attr': {'class': 'form-candidat-prenom'}}) }}
-    {{ form_row(candidat_form.telephone, {'attr': {'class': 'form-candidat-telephone'}}) }}
-    {{ form_row(candidat_form.mail, {'attr': {'class': 'form-candidat-mail'}}) }}
-    {{ form_row(candidat_form.cv, {'attr': {'class': 'form-candidat-cv'}}) }}
-    {{ form_row(candidat_form.lettreMotivation, {'attr': {'class': 'form-candidat-lettreMotivation'}}) }}
-    {{ form_row(candidat_form.infoComp, {'attr': {'class': 'form-candidat-infoComp'}}) }}
-    {# {{ form_row(candidat_form.valider, {'attr': {'class': 'form-candidat-valider'}}) }} #}
-
-{{form_end(candidat_form)}}
-
-<div align=center>
-    <h2>Veuillez remplir ce formulaire</h2>
+<div class="container shadow blank-3">
+    <div align=center>
+        <h2>Veuillez remplir ce formulaire</h2>
+    </div>
+    <div align=center>
+        {{form_start(candidat_form)}}
+            {{ form_row(candidat_form.nom) }}
+            {{ form_row(candidat_form.prenom) }}
+            {{ form_row(candidat_form.telephone) }}
+            {{ form_row(candidat_form.mail) }}
+            {{ form_row(candidat_form.infoComp, {'attr': {'class': 'form-candidat-infoComp'}}) }}
+            {{ form_row(candidat_form.cv) }}
+            {{ form_row(candidat_form.lettreMotivation) }}
+            {# {{ form_row(candidat_form.captcha, {'attr': {'class': 'form-candidat-captcha'}}) }} #}
+            {{ form_row(candidat_form.valider, {'attr': {'class': 'form-candidat-valider'}}) }}
+        {{form_end(candidat_form)}}
+    </div>
 </div>
+
+
 {% endblock %}

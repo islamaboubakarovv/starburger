@@ -34,13 +34,8 @@ body {
     width : 80% !important;
 }
 
-.h1 { 
-    padding: 10px auto !important;
-    font-size: 100px sans-serif !important;
-    align:left;
-    display: flex;
-    justify-content: space-between;
-    width: 500px
+.tittle { 
+    text-align: center;
 }
 
 .example-wrapper code { 
@@ -54,51 +49,32 @@ body {
     font: 20px/1.5 sans-serif !important; 
 }
 
-.form-candidat-nom{
-    min-height: 40vh !important;
-}
-
-.form-candidat-prenom{
-    min-height: 40vh !important;
-}
-
-.form-candidat-telephone{
-    min-height: 40vh !important;
-}
-
-.form-candidat-mail{
-    min-height: 40vh !important;
-}
-
-.form-candidat-cv{
-    min-height: 40vh !important;
-}
-
-.form-candidat-lettreMotivation{
-    min-height: 40vh !important;
-}
-
-.form-candidat-infoComp{
-    min-height: 40vh !important;
-}
-
-.form-candidat-valider{
-    min-height: 40vh !important;
-}
-
-.form-contact-button {
-    background-color: #E6C9A5;
-}
-
 @media (min-width: 1000px){
-    .form-contact {
+    .form-candidat {
         width: 70% !important;
         margin: auto;
     }
 }
 
 @media (max-width: 999.9px){
-    .form-contact {
+    .form-candidat {
         margin: auto;
     }
 }
+
+.form-candidat-infoComp {
+    min-height: 40vh !important;
+}
+
+.form-candidat-valider{
+   
+}
+
+.form-candidat-captcha{
+   
+}
+
+.form-candidat-button {
+    background-color: #E6C9A5;
+}
+
