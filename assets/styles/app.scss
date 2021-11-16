@@ -131,7 +131,7 @@
 }
 
 #visionneuse-images {
-    * {
+    .row,.row * {
         padding: 0 !important;
         margin: 0 !important;
     }
@@ -140,4 +140,26 @@
         object-fit: cover;
         border: 4px solid white;
     }
+}
+.petite, .grande {
+    cursor: pointer;
+}
+
+.grande {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.grande img {
+    height: 90%;
+    border: 4px white solid;
+    border-radius: 5px;
 }
