@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -24,9 +25,9 @@ class CandidatureType extends AbstractType
             ->add('mail', EmailType::class)
             ->add('cv', FileType::class)
             ->add('lettreMotivation', FileType::class)
-            ->add('infoComp', TextType::class)
+            ->add('infoComp', TextareaType::class)
             // ->add('captcha', CheckboxType::class)
-            ->add('valider', SubmitType::class)
+            ->add('envoyer', SubmitType::class)
 
         ;
     }

@@ -63,16 +63,20 @@ body {
 }
 
 .form-candidat-infoComp {
-    min-height: 40vh !important;
+    min-height: 30vh !important;
 }
 
-.form-candidat-valider{
-   
+.form-candidat-envoyer{
+    text-align: right;
 }
 
-.form-candidat-captcha{
-   
+.form-candidat-retour{
+    text-align: left;
 }
+
+// .form-candidat-captcha{
+   
+// }
 
 .form-candidat-button {
     background-color: #E6C9A5;
