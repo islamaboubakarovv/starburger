@@ -37,6 +37,7 @@ body {
 .btn-footer, .btn-footer:hover, .btn-footer:active, .btn-footer:visited {
     background-color: #E6C9A5 !important;
     color : black !important;
+    font-family: 'Montserrat Bold';
     border-radius: 30px !important;
     width: 192px !important;
     height: 42px !important;
@@ -121,7 +122,7 @@ body {
     text-decoration: none !important;
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1024px){
     .img-article {
         float: left;
         width: 35%;
@@ -129,7 +130,7 @@ body {
     }
 }
 
-@media (max-width: 999.9px){
+@media (max-width: 1023.9px){
     .img-article {
         width: 100%;
         padding-bottom: 10px !important;
@@ -215,7 +216,7 @@ body {
     }
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1024px){
     #carrouselCharpente, #carrouselCharpente img{
         height: 60vh !important;
         width: 60vw !important;
@@ -223,7 +224,7 @@ body {
     }
 }
 
-@media (max-width: 999.9px){
+@media (max-width: 1023.9px){
     #carrouselCharpente, #carrouselCharpente img{
         width: 80vw !important;
         margin: auto !important;
@@ -258,14 +259,14 @@ body {
     width: 400px;
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1024px){
     .form-contact {
         width: 70% !important;
         margin: auto;
     }
 }
 
-@media (max-width: 999.9px){
+@media (max-width: 1023.9px){
     .form-contact {
         margin: auto;
     }
@@ -280,13 +281,13 @@ body {
     border-radius: 30px;
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1024px){
     .form-contact-button, .form-return-button {
         width: 20%;
     }
 }
 
-@media (max-width: 999.9px){
+@media (max-width: 1023.9px){
     .form-contact-button, .form-return-button {
         width: 40%;
     }
@@ -299,4 +300,12 @@ body {
 .form-return-button {
     border-color: #000;
     color: #000;
+}
+
+.moncompte h2 {
+    font-size: 20px;
+}
+
+.moncompte h2, .moncompte p {
+    font-weight: bold;
 }

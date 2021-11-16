@@ -8,7 +8,6 @@ use App\Entity\IllustrationArticle;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\Query\Expr\Join;
 use Twig\Environment;
@@ -16,7 +15,7 @@ use Twig\Environment;
 class ArticleController extends AbstractController
 {
     #[Route('/article', name: 'article')]
-    public function index(Request $request, PaginatorInterface $paginator)
+    public function index(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
       
