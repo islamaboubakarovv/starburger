@@ -18,6 +18,8 @@ class MonCompteController extends AbstractController
         $appointmentsRepository = $em->getRepository(Projet::class);
                 
         $allAppointmentsQuery = $appointmentsRepository->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(5)
             ->getQuery();
         
         $devis = $allAppointmentsQuery->getResult();
