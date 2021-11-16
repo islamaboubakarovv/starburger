@@ -70,7 +70,7 @@ body {
 
 .img-haut {
     display: block;
-    width:100%; 
+    width:100%;
 }
 
 .bloc-haut {
@@ -305,9 +305,15 @@ body {
 }
 
 .moncompte h2 {
-    font-size: 20px;
+    font-size: 24px;
+}
+
+.moncompte p {
+    font-size: 16px;
 }
 
 .moncompte h2, .moncompte p {
     font-weight: bold;
+    margin: 0;
 }
+
