@@ -1,0 +1,42 @@
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{0}: checkout: moving from IslamClientForm to IslamClientForm2
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{1}: checkout: moving from IslamClientForm to IslamClientForm
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{2}: checkout: moving from IslamClientForm2 to IslamClientForm
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{3}: checkout: moving from IslamClientForm to IslamClientForm2
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{4}: checkout: moving from IslamClientForm2 to IslamClientForm
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{5}: reset: moving to HEAD
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{6}: checkout: moving from IslamClientForm to IslamClientForm2
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{7}: checkout: moving from IslamClientForm to IslamClientForm
+[33m41f4b6d[m[33m ([m[1;36mHEAD -> [m[1;32mIslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm2[m[33m, [m[1;31morigin/IslamClientForm[m[33m, [m[1;32mIslamClientForm[m[33m)[m HEAD@{8}: commit: client authentification suite
+[33m844231e[m HEAD@{9}: commit: nouveau loginauthenticator
+[33mcc3fa05[m HEAD@{10}: commit: modif entités email
+[33m7495896[m HEAD@{11}: commit: knp paginator fix bug
+[33m1d68f22[m HEAD@{12}: commit: password encoder
+[33ma54eeed[m HEAD@{13}: commit: form enregistre clients dans bdd
+[33mcc0336a[m HEAD@{14}: commit: refaire le form sur cette branche
+[33m29502ed[m[33m ([m[1;31morigin/Islamdev[m[33m, [m[1;32mIslamdev[m[33m)[m HEAD@{15}: checkout: moving from Islamdev to IslamClientForm
+[33m29502ed[m[33m ([m[1;31morigin/Islamdev[m[33m, [m[1;32mIslamdev[m[33m)[m HEAD@{16}: checkout: moving from Islamdev to Islamdev
+[33m29502ed[m[33m ([m[1;31morigin/Islamdev[m[33m, [m[1;32mIslamdev[m[33m)[m HEAD@{17}: commit: connexion remapping user -> client
+[33m42c63a1[m HEAD@{18}: checkout: moving from Juliendev to Islamdev
+[33m7dac8af[m[33m ([m[1;32mJuliendev[m[33m)[m HEAD@{19}: checkout: moving from Islamdev to Juliendev
+[33m42c63a1[m HEAD@{20}: commit: switch branche
+[33m375afa1[m HEAD@{21}: commit: connexion/inscription/changer_mdp
+[33m24ccfbb[m HEAD@{22}: commit: gallerie ouvrages fermeture finie
+[33m48c35af[m HEAD@{23}: commit: bouton fermeture galleries
+[33m4c93ad2[m HEAD@{24}: reset: moving to 4c93ad291ea31b1c30a98f4844b53061a2ec8612
+[33m4c93ad2[m HEAD@{25}: commit: galleries des projets
+[33m3b37e63[m HEAD@{26}: commit: finalisation ouvrages
+[33m1ad0b6a[m HEAD@{27}: reset: moving to 1ad0b6a
+[33m1ad0b6a[m HEAD@{28}: reset: moving to 1ad0b6a
+[33m53dcf5b[m HEAD@{29}: reset: moving to HEAD^
+[33m1ad0b6a[m HEAD@{30}: commit: fin du responsive js
+[33m53dcf5b[m HEAD@{31}: commit: changement de prénom
+[33m58ff2f9[m HEAD@{32}: commit: js responsive window.outerWidth
+[33m5907c28[m HEAD@{33}: reset: moving to HEAD
+[33m5907c28[m HEAD@{34}: pull: Fast-forward
+[33mdd9b9e8[m HEAD@{35}: reset: moving to HEAD
+[33mdd9b9e8[m HEAD@{36}: checkout: moving from Islamdev to Islamdev
+[33mdd9b9e8[m HEAD@{37}: checkout: moving from Islamdev to Islamdev
+[33mdd9b9e8[m HEAD@{38}: checkout: moving from Islamdev to Islamdev
+[33mdd9b9e8[m HEAD@{39}: reset: moving to HEAD
+[33mdd9b9e8[m HEAD@{40}: checkout: moving from main to Islamdev
+[33m466ed71[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{41}: clone: from https://gitlab.com/fac2/techguys.git

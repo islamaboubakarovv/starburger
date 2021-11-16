@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos actualités{% endblock %}
+
+{% block body %}
+  <div class="bloc-haut">
+    <div style="width:100%; height:150px; overflow:hidden">
+      <img src="/images/illustrations/journal.jpg" class="img-haut" style="margin-top: -450px;"/>
+    </div>
+    <div class="surtext">
+      <h1>Nos actualités</h1>
+      <p>Découvrez ABC au quotidien</p>
+    </div>
+  </div>
+  {% for articles in articles %}
+    <div class="container shadow-sm p-3 mb-5 bg-white rounded">
+      <div class="row py-4 px-lg-5">
+        <div class="col-lg-4 col-md-12 text-center">
+            <img src="{{articles.adresseImage}}" class="img-qui">
+        </div>
+        <div class="col-lg-6 col-md-12 px-5">
+        <h3 class="titre-article">{{articles.article.titre}}</h3>
+            <p class="text-justify contenu-article">{{articles.article.contenu}}
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-12 text-center">
+            <a class="btn btn-actualite" href="{{ path('article', { id: articles.article.id }) }}" role="button">Lire plus</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  <div class="pagination justify-content-center">
+    {{ knp_pagination_render(articles) }}
+  </div>
+{% endblock %}
