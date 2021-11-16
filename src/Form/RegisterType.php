@@ -44,6 +44,7 @@ class RegisterType extends AbstractType
             ])
             ->add('mdp',RepeatedType::class,[
                 'type'=>PasswordType::class,
+                'constraints'=>new Length(20,2),
                 'mapped'=>true,
                 'invalid_message'=>'Le mot de passe et la confirmation doivent être identiques',
                 'label'=>'Votre mot de passe',

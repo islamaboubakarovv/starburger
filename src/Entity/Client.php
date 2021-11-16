@@ -12,7 +12,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ClientRepository::class)
- * @UniqueEntity("id")
  */
 class Client implements UserInterface, PasswordAuthenticatedUserInterface
 {
