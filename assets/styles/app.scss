@@ -109,11 +109,12 @@ body {
 
 .breadcrumb a {
     text-decoration: none;
-    color:rgb(54, 54, 54);
+    color:rgb(50, 50, 50);
 }
 
 .breadcrumb li {
-    color: rgb(104, 104, 104) !important;
+    color: white !important;
+    text-shadow: 0.2px 0.2px #000;
 }
 
 .reseaux-footer a {
