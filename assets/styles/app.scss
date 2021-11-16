@@ -29,6 +29,7 @@ body {
     width : 30px;
     margin : 0 10px 10px 0 !important;
 }
+// HEADER
 
 .nav-link {
     color : #E6C9A5;
@@ -43,6 +44,10 @@ body {
     height: 42px !important;
 }
 
+.navbar {
+    background-color: #4A4134 !important;
+}
+
 .btn-actualite, .btn-actualite:hover, .btn-actualite:active, .btn-actualite:visited {
     background-color: #95683E !important;
     color : white !important;
@@ -55,9 +60,9 @@ body {
 .nav-link {
     color : #E6C9A5 !important;
 }
-
-.navbar-brand {
-    margin-left : 0.5% !important;
+.nav-link img {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(13%) saturate(779%) hue-rotate(343deg) brightness(94%) contrast(91%);
+    height: 22px;
 }
 
 .text-justify {
@@ -151,23 +156,20 @@ body {
     background-color: #4A4134;
     color: white;
 }
-
-.accueil-third-part {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+.nav-link img:hover {
+    filter: brightness(0) saturate(100%) invert(100%);
 }
 
-.accueil-second-part div>hr {
-    width: 50%;
-    margin: auto;
+.nav-link:hover{
+    color : #ffffff !important;
 }
 
-.accueil-img {
-    width: 450px !important;
+.navbar .active {
+    font-weight: bold !important;
 }
-
-.logos-certificats {
-    width: 150px !important;
+.navbar-brand img{
+    filter: brightness(0) saturate(100%) invert(88%) sepia(13%) saturate(779%) hue-rotate(343deg) brightness(94%) contrast(91%);
+    height: 70px;
 }
 
 #myCarousel {
@@ -317,3 +319,110 @@ body {
     margin: 0;
 }
 
+.navbar-brand img:hover {
+    filter: brightness(255);
+}
+
+// FOOTER
+
+#footer {
+    .img-footer {
+        height : 30px;
+        width : 30px;
+        margin : 0 10px 10px 0 !important;
+    }
+
+    .btn-footer, .btn-footer:hover, .btn-footer:active, .btn-footer:visited {
+        background-color: #E6C9A5 !important;
+        color : black !important;
+        border-radius: 30px !important;
+        width: 192px !important;
+        height: 42px !important;
+    }
+}
+
+// ACCUEIL
+
+.btn-accueil, .btn-accueil:hover, .btn-accueil:active, .btn-accueil:visited {
+    background-color: #1e2f79 !important;
+        color : white !important;
+        border: none;
+        border-radius: 30px !important;
+        width: 192px !important;
+        height: 42px !important;
+}
+
+.accueil-second-part {
+    background-color: #4A4134;
+    color: white;
+    div>hr {
+        width: 50%;
+        margin: auto;
+    }
+    iframe {
+        text-align: center;
+        width: 80%;
+        aspect-ratio: 16/10;
+    }
+}
+
+.accueil-third-part {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.accueil-second-part 
+
+.accueil-info-item {
+    width: 450px !important;
+}
+
+.logos-certificats {
+    width: 150px !important;
+}
+
+#myCarousel {
+    top: 0;
+    .carousel-inner {
+        height: 100vh;
+    }
+    
+    .carousel-item {
+        height: 100%;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(70%);
+    }
+    
+    .carousel-indicators {
+        justify-content: flex-end;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
+    
+    .carousel-caption {
+        top: 100px;
+        left: 0;
+        margin-left: 1rem;
+        text-align: left;
+        text-shadow: 0px 4px 4px black;
+    }
+    
+    
+}
+
+#visionneuse-images {
+    * {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border: 4px solid white;
+    }
+}
