@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints\Image;
 
 class CandidatureType extends AbstractType
 {
@@ -23,7 +24,13 @@ class CandidatureType extends AbstractType
             ->add('prenom', TextType::class)
             ->add('telephone', NumberType::class)
             ->add('mail', EmailType::class)
-            ->add('cv', FileType::class)
+            ->add('cv', FileType::class, [
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new Image(['maxSize' => '1024k'])
+                ],
+            ])
             ->add('lettreMotivation', FileType::class)
             ->add('infoComp', TextareaType::class)
             // ->add('captcha', CheckboxType::class)
