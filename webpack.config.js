@@ -9,7 +9,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .addPlugin(new CopyPlugin({
         patterns: [
-          { from: "../fonts", to: "fonts" },
+          { from: "./assets/fonts", to: "fonts" },
         ],
       }))
     // directory where compiled assets will be stored
