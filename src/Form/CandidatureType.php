@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Component\Validator\Constraints\File;
 
 class CandidatureType extends AbstractType
 {
@@ -28,10 +28,22 @@ class CandidatureType extends AbstractType
                 'required' => false,
                 'mapped' => false,
                 'constraints' => [
-                    new Image(['maxSize' => '1024k'])
+                    new File(['maxSize' => '1024k',
+                    'mimeTypes' => ['application/pdf', 'application/x-pdf'],
+                    'mimeTypesMessage' => 'Veuillez choisir un fichier au format PDF',
+                    ])
                 ],
             ])
-            ->add('lettreMotivation', FileType::class)
+            ->add('lm', FileType::class, [
+                'required' => false,
+                'mapped' => false,
+                'constraints' => [
+                    new File(['maxSize' => '1024k',
+                    'mimeTypes' => ['application/pdf', 'application/x-pdf'],
+                    'mimeTypesMessage' => 'Veuillez choisir un fichier au format PDF',
+                    ])
+                ],
+            ])
             ->add('infoComp', TextareaType::class)
             // ->add('captcha', CheckboxType::class)
             ->add('envoyer', SubmitType::class)

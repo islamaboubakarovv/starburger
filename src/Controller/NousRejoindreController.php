@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class NousRejoindreController extends AbstractController
 {
     #[Route('/nous_rejoindre', name: 'nous_rejoindre')]
-    public function index(Request $request, string $photoDir ): Response
+    public function index(Request $request, string $fichierCv, string $fichierLm): Response
     {
         $candidature=new Postulant();
         $form = $this->createForm(CandidatureType::class, $candidature);
@@ -24,14 +24,24 @@ class NousRejoindreController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-        if ($photo = $form['cv']->getData()) {
-            $filename = bin2hex(random_bytes(6)).'.'.$photo->guessExtension();
+        if ($pdfCv = $form['cv']->getData()) {
+            $filename = bin2hex(random_bytes(6)).'.'.$pdfCv->guessExtension();
             try {
-                $photo->move($photoDir, $filename);
+                $pdfCv->move($fichierCv, $filename);
             } catch (FileException $e) {
                 // unable to upload the photo, give up
             }
             $candidature->setCv($filename);
+        }
+
+        if ($pdfLm = $form['lm']->getData()) {
+            $filename = bin2hex(random_bytes(6)).'.'.$pdfLm->guessExtension();
+            try {
+                $pdfLm->move($fichierLm, $filename);
+            } catch (FileException $e) {
+                // unable to upload the photo, give up
+            }
+            $candidature->setLm($filename);
         }
 
             $em->persist($candidature);

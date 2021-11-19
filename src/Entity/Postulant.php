@@ -45,7 +45,7 @@ class Postulant
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $lettreMotivation;
+    private $lm;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -115,21 +115,21 @@ class Postulant
         return $this->cv;
     }
 
-    public function setCv(?string $cv): self
+    public function setCv($cv): self
     {
         $this->cv = $cv;
 
         return $this;
     }
 
-    public function getLettreMotivation(): ?string
+    public function getLm(): ?string
     {
-        return $this->lettreMotivation;
+        return $this->lm;
     }
 
-    public function setLettreMotivation(?string $lettreMotivation): self
+    public function setLm($lm): self
     {
-        $this->lettreMotivation = $lettreMotivation;
+        $this->lm = $lm;
 
         return $this;
     }
