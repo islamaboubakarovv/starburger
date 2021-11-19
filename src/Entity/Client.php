@@ -88,7 +88,7 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     private $mdp;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @ORM\Column(type="string", length=80, nullable=true)
      */
     private $telephone;
 

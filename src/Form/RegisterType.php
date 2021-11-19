@@ -12,7 +12,8 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
+use libphonenumber\PhoneNumberFormat;
+use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -59,11 +60,13 @@ class RegisterType extends AbstractType
                     'placeholder'=>'Merci de confirmer votre mot de passe'
                 ]]
             ])
-            ->add('telephone',TelType::class,[
+            ->add('telephone',PhoneNumberType::class,[
                 'label'=>'Votre numéro de téléphone',
-                'attr'=>[
+                //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
+                /*'attr'=>[
                     'placeholder'=>'Merci de saisir votre numéro de téléphone'
                 ]
+                */
             ])
             ->add('adresse',null,[
                 'label'=>'Votre adresse',

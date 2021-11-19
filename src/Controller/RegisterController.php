@@ -27,6 +27,11 @@ class RegisterController extends AbstractController
         $form = $this->createForm(RegisterType::class,$user);
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
+            //dd($form->get('telephone')->getData());
+            //dd($form->getData()->getTelephone()); ok pour récup
+            //dd($form->get('telephone')->getViewData());// à mettre direct dans la bdd
+            $tel=$form->get('telephone')->getViewData();
+            //dd($tel);
             /*
             $user=$form->getData();
             $password=$encoder->encodePassword($user,$user->getPassword());
@@ -38,7 +43,9 @@ class RegisterController extends AbstractController
                     $form->get('mdp')->getData()
                 )
             );
+            $user->setTelephone($tel);
             $entityManager=$this->getDoctrine()->getManager();
+
             $entityManager->persist($user);
             $entityManager->flush();
         }
