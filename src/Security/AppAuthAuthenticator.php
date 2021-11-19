@@ -63,8 +63,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
-///////////////////////////////////
-    /*tester de fusionner 
-
-    */
 }
+
+
+     

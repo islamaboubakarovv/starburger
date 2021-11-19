@@ -28,10 +28,10 @@
         Se connecter
     </button>
 </form>
-
 {# inscription #}
-<h1>Inscription</h1>
-{{form(form)}}
+{{ render(path('register', {max: 3})) }}
+
+
 
 
 

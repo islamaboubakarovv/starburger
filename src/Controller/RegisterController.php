@@ -20,7 +20,7 @@ class RegisterController extends AbstractController
         $this->entityManager=$entityManager;
     }
     */
-    #[Route('/client', name: 'client')]
+    #[Route('/inscription', name: 'register')]
     public function index(Request $request,UserPasswordEncoderInterface $encoder): Response
     {
         $user = new Client();
@@ -49,7 +49,7 @@ class RegisterController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
         }
-        return $this->render('security/login.html.twig',[
+        return $this->render('register/index.html.twig',[
             'form'=>$form->createView()
         ]);
     }
