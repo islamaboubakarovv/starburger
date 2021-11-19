@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+
+{% block title %}Espace client{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -12,8 +13,8 @@
         <div class="mb-3">
             You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
-    {% endif %}
-
+    {% else %}
+    {# pour se co #}
     <h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
     <label for="inputEmail">Votre email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre adresse mail" autocomplete="email" required autofocus>
@@ -23,20 +24,19 @@
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
     <button class="btn btn-lg btn-primary btn-sm" type="submit">
         Se connecter
     </button>
 </form>
+
+{# inscription #}
+<h1>Inscription</h1>
+{{form(form)}}
+
+
+
+    {% endif %}
+
+
+    
 {% endblock %}
