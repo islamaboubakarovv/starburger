@@ -4,7 +4,7 @@
 {% block title %}Espace client{% endblock %}
 
 {% block body %}
-<form method="post">
+<form method="post" name="loginform">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -28,8 +28,8 @@
         Se connecter
     </button>
 </form>
-{# inscription #}
-{{ render(path('register', {max: 3})) }}
+
+{{ render(path('register')) }}
 
 
 
