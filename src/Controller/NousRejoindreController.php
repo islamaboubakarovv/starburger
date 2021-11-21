@@ -48,6 +48,7 @@ class NousRejoindreController extends AbstractController
             $em->flush();
 
             $this->addFlash('success', 'Votre demande a été envoyé !');
+            return $this->redirectToRoute('liste_offres'); //redirection
         }
 
         return $this->render('nous_rejoindre/index.html.twig', [
