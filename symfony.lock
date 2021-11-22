@@ -97,8 +97,16 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "jms/serializer": {
+        "version": "3.16.0"
+    },
     "knplabs/knp-components": {
-
+        "version": "v3.2.0"
+    },
+    "knplabs/knp-menu": {
+        "version": "v3.3.0"
+    },
+    "knplabs/knp-menu-bundle": {
         "version": "v3.2.0"
     },
     "knplabs/knp-paginator-bundle": {

@@ -24,52 +24,7 @@
     </div>
 </div>
 {% endfor %}
-{{form_start(candidat_form)}}
-    {# {{ form_row(candidat_form.offre }} #}
-    {{ form_row(candidat_form.nom, {'attr': {'class': 'form-candidat-nom'}}) }}
-    {{ form_row(candidat_form.prenom, {'attr': {'class': 'form-candidat-prenom'}}) }}
-    {{ form_row(candidat_form.telephone, {'attr': {'class': 'form-candidat-telephone'}}) }}
-    {{ form_row(candidat_form.mail, {'attr': {'class': 'form-candidat-mail'}}) }}
-    {{ form_row(candidat_form.cv, {'attr': {'class': 'form-candidat-objet'}}) }}
-    {{ form_row(candidat_form.lettreMotivation, {'attr': {'class': 'form-candidat-message'}}) }}
-     <div class="text-center">
-        {% for message in app.flashes('success') %}
-            <p>{{ message }}</p>
-        {% endfor %}
-        <button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button>
-    </div>
-{{form_end(candidat_form)}}
 
-<div align=center>
-    <h2>Veuillez remplir ce formulaire</h2>
-</div>
-<div class="container shadow-sm p-5 my-5 bg-white rounded">
-    <div class="row blank-3">
-        <div>
-            <h1 class="tittle">Intitulé du poste</h1>
-        </div>
-    </div>
-    <div class="row blank-3">
-        <div>
-            <h2>Type de contrat</h2>
-        </div>
-        <div>
-        </div>
-    </div>
-    <div class="row blank-3">
-        <div>
-            <h2>Description</h2>
-        </div>
-        <div>
-        </div>
-    </div>
-    <div class="row blank-3">
-        <div>
-            <h2>Prérequis</h2>
-        </div>
-        <div>
-        </div/>
-    </div>
 </div>
 <div class="container shadow-sm p-5 my-5 bg-white rounded">
     <div class="row text-center">
