@@ -48,8 +48,17 @@ body {
     background-color: #4A4134 !important;
 }
 
+.dropdown-item, .dropdown-menu, .dropdown-item:hover {
+    background-color: #4A4134;
+    color: #E6C9A5;
+}
+
+.dropdown-item:hover {
+    color: white;
+}
+
 .btn-actualite, .btn-actualite:hover, .btn-actualite:active, .btn-actualite:visited {
-    background-color: #95683E !important;
+    background-color: #4A4134 !important;
     color : white !important;
     border-radius: 5px !important;
     width: 150px !important;
