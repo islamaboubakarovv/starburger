@@ -7,6 +7,8 @@
 {% endblock %}
 
 {% block body %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0" nonce="jrGgztzM"></script>
 {% for articles in articles %}
 <div class="bloc-haut">
   <div style="width:100%; height:150px; overflow:hidden">
@@ -32,11 +34,15 @@
         </div>
     </div>
     <div class="text-center">
-        <img src="{{articles.adresseImage}}" class="img-article">
+        <img src="uploads/images/{{articles.adresseImage}}" class="img-article">
     </div>
     <div class="text-justify">
         <p>{{articles.article.contenu}}</p>
     </div>
+    <div class="fb-share-button" data-href="http://127.0.0.1:8000/article?id={{articles.article.id}}" data-layout="button" data-size="large">
+      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Farticle%3Fid%3D1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a>
+    </div>
+
 </div>
 {% endfor %}
 {% endblock %}
