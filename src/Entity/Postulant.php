@@ -2,9 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\PostulantRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -47,7 +45,12 @@ class Postulant
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $lettreMotivation;
+    private $lm;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $infoComp;
 
     public function __construct()
     {
@@ -112,21 +115,33 @@ class Postulant
         return $this->cv;
     }
 
-    public function setCv(?string $cv): self
+    public function setCv($cv): self
     {
         $this->cv = $cv;
 
         return $this;
     }
 
-    public function getLettreMotivation(): ?string
+    public function getLm(): ?string
     {
-        return $this->lettreMotivation;
+        return $this->lm;
     }
 
-    public function setLettreMotivation(?string $lettreMotivation): self
+    public function setLm($lm): self
     {
-        $this->lettreMotivation = $lettreMotivation;
+        $this->lm = $lm;
+
+        return $this;
+    }
+
+    public function getInfoComp(): ?string
+    {
+        return $this->infoComp;
+    }
+
+    public function setInfoComp(string $infoComp): self
+    {
+        $this->infoComp = $infoComp;
 
         return $this;
     }
@@ -139,28 +154,6 @@ class Postulant
     public function setPostulant(?self $postulant): self
     {
         $this->postulant = $postulant;
-
-        return $this;
-    }
-
-    public function addPostulant(OffrePostulant $postulant): self
-    {
-        if (!$this->postulant->contains($postulant)) {
-            $this->postulant[] = $postulant;
-            $postulant->setPostulant($this);
-        }
-
-        return $this;
-    }
-
-    public function removePostulant(OffrePostulant $postulant): self
-    {
-        if ($this->postulant->removeElement($postulant)) {
-            // set the owning side to null (unless already changed)
-            if ($postulant->getPostulant() === $this) {
-                $postulant->setPostulant(null);
-            }
-        }
 
         return $this;
     }

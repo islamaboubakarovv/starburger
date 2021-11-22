@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Nous Rejoindre{% endblock %}
-
+{% form_theme candidat_form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
 {% for offres in offres %}
 <div class="container shadow-sm px-lg-5 px-4 py-4 my-5 bg-white rounded container-article">
@@ -43,5 +42,62 @@
 
 <div align=center>
     <h2>Veuillez remplir ce formulaire</h2>
+</div>
+<div class="container shadow-sm p-5 my-5 bg-white rounded">
+    <div class="row blank-3">
+        <div>
+            <h1 class="tittle">Intitulé du poste</h1>
+        </div>
+    </div>
+    <div class="row blank-3">
+        <div>
+            <h2>Type de contrat</h2>
+        </div>
+        <div>
+        </div>
+    </div>
+    <div class="row blank-3">
+        <div>
+            <h2>Description</h2>
+        </div>
+        <div>
+        </div>
+    </div>
+    <div class="row blank-3">
+        <div>
+            <h2>Prérequis</h2>
+        </div>
+        <div>
+        </div/>
+    </div>
+</div>
+<div class="container shadow-sm p-5 my-5 bg-white rounded">
+    <div class="row text-center">
+        <h2 class="h2">Veuillez remplir ce formulaire</h2>
+    </div>
+    <div class="row form-candidat">
+        <div class="col-6">
+        {{form_start(candidat_form)}}
+            {{ form_row(candidat_form.nom) }}
+            {{ form_row(candidat_form.prenom) }}
+            {{ form_row(candidat_form.telephone) }}
+            {{ form_row(candidat_form.mail) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(candidat_form.infoComp, {'attr': {'class': 'form-candidat-infoComp'}}) }}
+            {# {{ form_row(candidat_form.captcha, {'attr': {'class': 'form-candidat-captcha'}}) }} #}
+        </div>
+    </div>
+    <div class="row form-candidat">
+        <div class="col-6">
+            {{ form_row(candidat_form.cv) }}
+            {{ form_row(candidat_form.envoyer, {'attr': {'class': 'form-candidat-envoyer'}}) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(candidat_form.lm) }}
+            <button type="button" class="btn btn-outline-primary form-candidat-retour" onclick = "history.back()">Retour</button>
+        {{form_end(candidat_form)}}
+        </div>
+    </div>
 </div>
 {% endblock %}

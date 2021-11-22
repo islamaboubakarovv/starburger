@@ -279,8 +279,40 @@ body {
     }
 }
 
+// .container {
+//     width : 80% !important;
+// }
+
+.tittle { 
+    text-align: center;
+}
+
+.example-wrapper code { 
+    background: #F5F5F5 !important;
+     padding: 2px 6px !important; 
+}
+
+.conteneur {
+    display: flex !important;
+    justify-content: space-around !important;
+    font: 20px/1.5 sans-serif !important; 
+}
+
+@media (min-width: 1000px){
+    .form-candidat {
+        width: 70% !important;
+        margin: auto;
+    }
+}
+
 @media (max-width: 1023.9px){
     .form-contact {
+        margin: auto;
+    }
+}
+
+@media (max-width: 1023.9px){
+    .form-candidat {
         margin: auto;
     }
 }
@@ -439,3 +471,24 @@ body {
     float : right;
     margin: 5px;
 }
+
+.form-candidat-infoComp {
+    min-height: 30vh !important;
+}
+
+.form-candidat-envoyer{
+    text-align: right;
+}
+
+.form-candidat-retour{
+    text-align: left;
+}
+
+// .form-candidat-captcha{
+   
+// }
+
+.form-candidat-button {
+    background-color: #E6C9A5;
+}
+
