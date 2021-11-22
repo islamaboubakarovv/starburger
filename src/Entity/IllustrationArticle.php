@@ -105,9 +105,4 @@ class IllustrationArticle
     {
         return $this->image;
     }
-
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
 }
