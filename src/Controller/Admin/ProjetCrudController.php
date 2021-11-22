@@ -27,6 +27,6 @@ class ProjetCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('index', 'Projets');
+            ->setPageTitle('index', 'Liste des projets');
     }
 }

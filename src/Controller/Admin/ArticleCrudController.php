@@ -30,6 +30,8 @@ class ArticleCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('index', 'Articles');
+            ->setPageTitle('index', 'Liste des articles')
+            ->setPageTitle('edit', 'Modification d\'un article')
+            ->setPageTitle('new', 'Ajout d\'un article');
     }
 }

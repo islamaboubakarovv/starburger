@@ -28,6 +28,6 @@ class IllustrationArticleCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('index', 'Images d\'articles');
+            ->setPageTitle('index', 'Liste des images d\'articles');
     }
 }
