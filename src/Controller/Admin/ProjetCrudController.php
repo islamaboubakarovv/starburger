@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Projet;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ProjetCrudController extends AbstractCrudController
@@ -22,4 +23,10 @@ class ProjetCrudController extends AbstractCrudController
         ];
     }
     */
+    
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('index', 'Liste des projets');
+    }
 }

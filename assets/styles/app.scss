@@ -426,3 +426,7 @@ body {
         border: 4px solid white;
     }
 }
+.share-button .twitter-share-button, .share-button .fb-share-button, .share-button p {
+    float : right;
+    margin: 5px;
+}

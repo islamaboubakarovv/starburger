@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Postulant;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class PostulantCrudController extends AbstractCrudController
@@ -22,4 +23,10 @@ class PostulantCrudController extends AbstractCrudController
         ];
     }
     */
+    
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('index', 'Liste des candidatures');
+    }
 }

@@ -23,23 +23,24 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        return $this->render('dashboard/dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Techguys');
+            ->setTitle('ABC Legermain')
+            ->setFaviconPath('/images/logos/logoArtisan.PNG');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
         yield MenuItem::linkToCrud('Articles', 'fas fa-list', Article::class);
         yield MenuItem::linkToCrud('Artisans', 'fas fa-list', Artisan::class);
         yield MenuItem::linkToCrud('Clients', 'fas fa-list', Client::class);
         yield MenuItem::linkToCrud('Offres', 'fas fa-list', Offre::class);
-        yield MenuItem::linkToCrud('Postulants', 'fas fa-list', Postulant::class);
+        yield MenuItem::linkToCrud('Candidatures', 'fas fa-list', Postulant::class);
         yield MenuItem::linkToCrud('Projets', 'fas fa-list', Projet::class);
         yield MenuItem::linkToCrud('Images d\'articles', 'fas fa-list', IllustrationArticle::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
