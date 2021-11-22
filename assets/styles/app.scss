@@ -317,7 +317,7 @@ body {
     margin: 0;
 }
 
-.fb-share-button {
-    position: relative;
-    bottom: 10%;
+.share-button .twitter-share-button, .share-button .fb-share-button, .share-button p {
+    float : right;
+    margin: 5px;
 }
