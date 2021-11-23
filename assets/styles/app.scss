@@ -1,17 +1,38 @@
 @import "~bootstrap/scss/bootstrap";
+
+@font-face{
+    font-family : 'Helvetica';
+    src : url('../fonts/Helvetica.ttf');
+}
+
+@font-face{
+    font-family : 'Helvetica Rounded';
+    src : url('../fonts/Helvetica-rounded-bold.otf');
+}
+
+@font-face{
+    font-family : 'Montserrat Bold';
+    src : url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face{
+    font-family : 'Montserrat Regular';
+    src : url('../fonts/Montserrat-Regular.ttf');
+}
+
 body {
     background-color: rgb(242, 242, 242);
 }
 
 .img-footer {
-    height: 30px;
-    width: 30px;
-    margin: 0 10px 10px 0 !important;
+    height : 30px;
+    width : 30px;
+    margin : 0 10px 10px 0 !important;
 }
 // HEADER
 
 .nav-link {
-    color: #e6c9a5;
+    color : #E6C9A5;
 }
 
 .btn-footer, .btn-footer:hover, .btn-footer:active, .btn-footer:visited {
@@ -46,7 +67,7 @@ body {
 }
 
 .nav-link {
-    color: #e6c9a5 !important;
+    color : #E6C9A5 !important;
 }
 .nav-link img {
     filter: brightness(0) saturate(100%) invert(88%) sepia(13%) saturate(779%) hue-rotate(343deg) brightness(94%) contrast(91%);
@@ -470,6 +491,8 @@ body {
 .form-candidat-button {
     background-color: #E6C9A5;
 }
+
+//repère
 
 .navbar-brand {
     margin-left: 0.5% !important;
