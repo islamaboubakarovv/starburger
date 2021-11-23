@@ -1,16 +1,82 @@
+{#
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon compte{% endblock %}
+{% block title %}Mon compte
+{% endblock %}
 
 {% block body %}
-<h1>Mon compte</h1>
-{% if app.user %}
-        <div class="mb-3">
-            Vous êtes connectés en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-Bienvenue {{app.user.prenom}} dans votre compte <br/>{#mettre app.user.prenom #}
-C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
-<hr>
--<a href="{{path('account_password')}}">Modifier mon mot de passe</a><br/>
+	<h1>Mon compte</h1>
+	{% if app.user %}
+		<div class="mb-3">
+			Vous êtes connectés en tant que
+			{{ app.user.username }},
+			<a href="{{ path('app_logout') }}">Logout</a>
+		</div>
+	{% endif %}
+	Bienvenue
+	{{app.user.prenom}}
+	dans votre compte
+	<br/>
+	C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
+	<hr>
+	-<a href="{{path('account_password')}}">Modifier mon mot de passe</a><br/>
+{% endblock %}
+
+#}
+{############################################}
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte
+{% endblock %}
+
+{% block body %}
+	<div class="bloc-haut">
+		<div style="width:100%; height:150px; overflow:hidden">
+			<img src="/images/illustrations/charpente_bois_haut.jpg" class="img-haut" style="margin-top: -100px;"/>
+		</div>
+		<div class="surtext">
+			<h1>Bienvenue
+				{{ app.user.username }}</h1>
+			,<a href="{{ path('app_logout') }}">Logout</a>
+			<hr>
+			-<a href="{{path('account_password')}}">Modifier mon mot de passe</a><br/>
+			<p>Découvrez ABC au quotidien</p>
+		</div>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="/accueil">Accueil</a>
+				</li>
+				<li class="breadcrumb-item">Mon compte</li>
+			</ol>
+		</nav>
+	</div>
+	<div class="container shadow-sm p-4 my-5 bg-white rounded moncompte">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 text-center my-lg-5 my-4 testas">
+				<h2>RÉALISEZ VOTRE DEVIS DÈS MAINTENANT</h2>
+				<p>Parce que vos projets n'attendent pas</p>
+			</div>
+			<div class="col-lg-6 col-md-12 text-center my-lg-5 my-4 testas">
+				<a class="btn btn-footer" href="/contact" role="button">Devis en ligne</a>
+			</div>
+		</div>
+	</div>
+	{% for devis in devis %}
+		<div class="container shadow-sm p-3 my-4 bg-white rounded">
+			<div class="row py-4 px-lg-5">
+				<div class="col-lg-3 col-md-12 text-center">
+					<img src="images/illustrations/ouvrier_sur_toit.jpg" class="img-qui">
+				</div>
+				<div class="col-lg-7 col-md-12 px-5">
+					<h3 class="titre-article">{{devis.objet}}</h3>
+					<p class="text-justify contenu-article">{{devis.description}}
+					</p>
+				</div>
+				<div class="col-lg-2 col-md-12 text-center">
+					<a class="btn btn-actualite" href="{{ path('article', { id: devis.id }) }}" role="button">Voir plus</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
 {% endblock %}
