@@ -22,13 +22,14 @@ class PostulantCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('nom','Nom'),
-            TextField::new('prenom','Prénom'),
-            EmailField::new('mail','E-mail'),
-            TextField::new('telephone','Téléphone'),
-            TextareaField::new('cvFile','CV')->setFormType(VichFileType::class),
-            TextareaField::new('lmFile','Lettre de motivation')->setFormType(VichFileType::class),
-            TextAreaField::new('info_comp','Informations complémentaires')
+            TextField::new('nom','Nom')->setFormTypeOption('disabled','disabled'),
+            TextField::new('prenom','Prénom')->setFormTypeOption('disabled','disabled'),
+            EmailField::new('mail','E-mail')->setFormTypeOption('disabled','disabled'),
+            TextField::new('telephone','Téléphone')->setFormTypeOption('disabled','disabled'),
+            TextareaField::new('cvFile','CV')->setFormType(VichFileType::class)->setFormTypeOption('disabled','disabled'),
+            TextareaField::new('lmFile','Lettre de motivation')->setFormType(VichFileType::class)->setFormTypeOption('disabled','disabled'),
+            TextAreaField::new('info_comp','Informations complémentaires')->setFormTypeOption('disabled','disabled')->hideOnIndex()
+
         ];
     }
     
