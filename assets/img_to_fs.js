@@ -1,9 +1,10 @@
 $(function () {
   $(".petite").click(function () {
-      var SourcePetiteImage = $(this).attr('src');
-      var SourceGrandeImage = SourcePetiteImage.replace("petites", "grandes");
-      $(".grande").html("<img src='" + SourceGrandeImage + "'>");
+    if($(window).width() >= 600) {
+      var Image = $(this).attr('src');
+      $(".grande").html("<img src='" + Image + "'>");
       $(".grande").fadeIn("slow").css("display", "flex");
+    }
   });
   $(".grande").click(function () {
       $(".grande").fadeOut("fast");

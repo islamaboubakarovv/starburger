@@ -8,6 +8,7 @@
 
 .navbar {
     background-color: #4A4134 !important;
+    box-shadow: 3px 0px 7px black;
 }
 
 .nav-link {
@@ -151,15 +152,88 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
     display: none;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
 }
 
 .grande img {
-    height: 90%;
+    width: 92%;
+    max-height: 90%;
     border: 4px white solid;
     border-radius: 5px;
+}
+
+
+.img-qui {
+    max-width: 500px;
+    width: 100%;
+}
+
+.img-haut {
+    display: block;
+    width:100%;
+}
+
+.bloc-haut {
+    margin-top: 75px;
+    position: relative;
+    display: inline-block;
+    width: 100% !important;
+}
+
+.surtext, .breadcrumb {
+    position: absolute;
+    left: 5%;
+    text-align: left;
+    transform: translate( -10%, -5% );
+    font-weight: bold;
+}
+
+.surtext {
+    top: 20%;
+    color: white;
+}
+
+.breadcrumb {
+    margin: 0;
+    bottom: 5%;
+}
+
+.surtext h1 {
+    text-shadow: 2px 2px #000;
+    font-family: 'Montserrat Bold';
+    margin:0;
+}
+
+.surtext p {
+    font-family: 'Montserrat Regular';
+    text-shadow: 1px 1px #000;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color:rgb(50, 50, 50);
+}
+
+.breadcrumb li {
+    color: white !important;
+    text-shadow: 0.2px 0.2px #000;
+}
+
+.partie-galerie {
+    h2 {text-align: center;}
+    #galerie-ouvrages {
+        img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
+    }
+    .contact {
+        h3 {margin-bottom: 12px;}
+    }
 }
