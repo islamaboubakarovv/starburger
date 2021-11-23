@@ -39,6 +39,11 @@ class Offre
      */
     private $typeContrat;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Postulant::class, mappedBy="offre", orphanRemoval=true)
+     */
+    private $postulant;
+
     public function __construct()
     {
         $this->offre = new ArrayCollection();

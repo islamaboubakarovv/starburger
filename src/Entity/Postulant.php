@@ -52,6 +52,12 @@ class Postulant
      */
     private $infoComp;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Offre::class, inversedBy="postulant")
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
+     */
+    private $offre;
+
     public function __construct()
     {
         $this->postulant = new ArrayCollection();
@@ -154,6 +160,18 @@ class Postulant
     public function setPostulant(?self $postulant): self
     {
         $this->postulant = $postulant;
+
+        return $this;
+    }
+
+    public function getOffre(): ?Offre
+    {
+        return $this->offre;
+    }
+
+    public function setOffre(?Offre $offre): self
+    {
+        $this->offre = $offre;
 
         return $this;
     }
