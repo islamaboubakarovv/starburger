@@ -89,8 +89,6 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): PassportInterface
     {
-
-        //dd($request->request->get('register'));
         //gérer si on avait submit pour register 
         if ($request->request->get('register')) {
             //gestion de register si on a register dans request
