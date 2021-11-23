@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-        {{ encore_entry_script_tags('base') }}
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('base') }}
+    {{ encore_entry_script_tags('img_to_fs') }}
 {% endblock %}
 
 {% block title %}ABC Legermain{% endblock %}
@@ -65,28 +66,34 @@
     </div>
 </section>
 
-<section class="accueil-third-part container-fluid" align="center">
-    <div class="row py-3">
-        <h2>VISIONNEZ NOS OUVRAGES : </h2>
+<section class="accueil-third-part container-fluid py-3 " align="center"  onload="getPics()">
+    <div class="row">
+        <h2>VISIONNEZ NOS TRAVAUX : </h2>
     </div>
-    <div id="visionneuse-images" class="container pb-3">
+    <div id="visionneuse-images" class="container py-3">
         <div class="row left-part">
             <div class="col-12 col-md-1"></div>
-            <div class="col-12 col-md-5"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+            <div class="col-12 col-md-5"><img class="img-fluid petite" src="images/illustrations/Charpentes/charpente7.JPG" alt=""></div>
             <div class="col-12 col-md-5">
                 <div class="container-fluid right-part">
                     <div class="row">
-                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
-                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+                        <div class="col-6"><img class="img-fluid petite" src="images/illustrations/Couvertures/couverture3.JPG" alt=""></div>
+                        <div class="col-6"><img class="img-fluid petite" src="images/illustrations/Ouvrages/ouvrage10.JPG" alt=""></div>
                     </div>
                     <div class="row">
-                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
-                        <div class="col-6"><img class="img-fluid" src="images/illustrations/Charpentes/charpente1.JPG" alt=""></div>
+                        <div class="col-6"><img class="img-fluid petite" src="images/illustrations/Charpentes/charpente10.JPG" alt=""></div>
+                        <div class="col-6"><img class="img-fluid petite" src="images/illustrations/Couvertures/couverture8.JPG" alt=""></div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-1"></div>
         </div>
+    </div> 
+    <div class="grande"></div>
+    <div class="row py-3 gy-2">
+        <div class="col-12 col-md-4"><a class="btn btn-accueil" href="/charpente" role="button">Charpentes</a></div>
+        <div class="col-12 col-md-4"><a class="btn btn-accueil" href="/ouvrages" role="button">Ouvrages</a></div>
+        <div class="col-12 col-md-4"><a class="btn btn-accueil" href="/couverture" role="button">Couvertures</a></div>
     </div>
 </section>
 {% endblock %}
