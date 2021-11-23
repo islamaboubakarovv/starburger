@@ -1,4 +1,7 @@
 {
+    "barbieswimcrew/zip-code-validator": {
+        "version": "v2.0.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },
@@ -101,6 +104,16 @@
         "version": "3.16.0"
     },
     "knplabs/knp-components": {
+    "giggsey/libphonenumber-for-php": {
+        "version": "8.12.37"
+    },
+    "giggsey/locale": {
+        "version": "2.1"
+    },
+    "knplabs/knp-components": {
+        "version": "v3.3.0"
+    },
+    "knplabs/knp-menu": {
         "version": "v3.2.0"
     },
     "knplabs/knp-menu": {
@@ -108,6 +121,9 @@
     },
     "knplabs/knp-menu-bundle": {
         "version": "v3.2.0"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.7.0"
     },
     "knplabs/knp-paginator-bundle": {
         "version": "v5.7.0"
@@ -129,6 +145,18 @@
     },
     "nikic/php-parser": {
         "version": "v4.13.0"
+    },
+    "odolbeau/phone-number-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "4388686329b81291918a948cd42891829fb1de71"
+        },
+        "files": [
+            "./config/packages/misd_phone_number.yaml"
+        ]
     },
     "phar-io/manifest": {
         "version": "2.0.3"
