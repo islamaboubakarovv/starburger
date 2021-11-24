@@ -1,42 +1,66 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}Espace client{% endblock %}
-
+{% block title %}Espace client
+{% endblock %}
 {% block body %}
-<form method="post" name="loginform">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	{% if error %}
+		<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% else %}
-    {# pour se co #}
-    <h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
-    <label for="inputEmail">Votre email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre adresse mail" autocomplete="email" required autofocus>
-    <label for="inputPassword">Votre mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
+	{% if app.user %}
+		<div class="mb-3">
+			You are logged in as
+			{{ app.user.username }},
+			<a href="{{ path('app_logout') }}">Logout</a>
+		</div>
+	{% else %}
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-    <button class="btn btn-lg btn-primary btn-sm" type="submit">
-        Se connecter
-    </button>
-</form>
+		{# container pour login et register#}
+		<div class="container" >
+			<div class="row" id="client-form">
+				<div
+					class="col-xs-5">
+					{# pour se co #}
+					<form method="post" name="loginform">
+						<h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
+						<label for="inputEmail">Votre email</label>
+						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre adresse mail" autocomplete="email" required autofocus>
+						<label for="inputPassword">Votre mot de passe</label>
+						<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
 
-{{ render(path('register')) }}
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+						<button class="btn btn-lg btn-primary btn-sm" type="submit">
+							Se connecter
+						</button>
+					</form>
+					{# fin du form de connexion #}
+				</div>
+                <div class="col-xs-1 d-none d-sm-none d-md-block" id="vl">
+                </div>
+				<div class="col-xs-5">
+					{{ render(path('register')) }}
+				</div>
+			</div>
+		</div>
+<style>
+#vl{
+    border-left: 1px solid black;
+    height: 900px;
+    margin-left:50px;
+    padding-right:0!important;
+}
+/*
+@media (max-width: 576px){
+    #vl{
+        display: none!important;
+    }
+}
+*/
+</style>
+
+	{% endif %}
+	{# fin du container #}
 
 
-
-
-
-    {% endif %}
-
-
-    
 {% endblock %}
