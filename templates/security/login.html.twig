@@ -20,7 +20,7 @@
 		<div class="container" >
 			<div class="row" id="client-form">
 				<div
-					class="col-xs-5">
+					class="col-sm-3 col-md-5">
 					{# pour se co #}
 					<form method="post" name="loginform">
 						<h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
@@ -36,9 +36,9 @@
 					</form>
 					{# fin du form de connexion #}
 				</div>
-                <div class="col-xs-1 d-none d-sm-none d-md-block" id="vl">
+                <div class="col-sm-1 col-md-1 d-none d-sm-block d-md-block" id="vl">
                 </div>
-				<div class="col-xs-5">
+				<div class="col-sm-3 col-md-5">
 					{{ render(path('register')) }}
 				</div>
 			</div>
@@ -50,13 +50,15 @@
     margin-left:50px;
     padding-right:0!important;
 }
+
 /*
-@media (max-width: 576px){
+@media (min-width: 0px) and (max-width:576px){
     #vl{
         display: none!important;
     }
 }
 */
+
 </style>
 
 	{% endif %}
