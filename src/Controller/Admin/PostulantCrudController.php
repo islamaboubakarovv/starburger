@@ -10,6 +10,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 
 class PostulantCrudController extends AbstractCrudController
 {
@@ -38,5 +40,14 @@ class PostulantCrudController extends AbstractCrudController
         return $crud
             ->setPageTitle('index', 'Liste des candidatures')
             ->setPageTitle('edit', 'Détail de la candidature');
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+
+        return $actions
+            ->disable(Action::NEW)
+            ->disable(Action::DELETE)
+        ;
     }
 }

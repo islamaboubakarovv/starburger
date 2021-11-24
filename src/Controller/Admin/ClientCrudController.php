@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 
 class ClientCrudController extends AbstractCrudController
 {
@@ -44,5 +46,30 @@ class ClientCrudController extends AbstractCrudController
         ;
     }
 
+    public function configureActions(Actions $actions): Actions
+    {
+
+        $getVCard = Action::new('getVCard', 'Exporter les données', 'fa fa-user')
+            ->linkToRoute('client', function(Client $entity){
+                return [
+                    'id' => $entity->getId()
+                ];
+            })
+        ;
+
+        return $actions
+            ->disable(Action::DELETE)
+            ->add(Crud::PAGE_EDIT, $getVCard)
+        ;
+    }
+
+    public function getVCard(Request $request) {
+        $id = $request->query->get('id');
+        var_dump($id);
+        return $this->redirectToRoute('admin', [
+            'crudAction' => 'index',
+            'entity' => $request->query->get('entity')
+        ]);
+    }
 
 }

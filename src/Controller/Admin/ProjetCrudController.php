@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 
 class ProjetCrudController extends AbstractCrudController
 {
@@ -32,5 +34,14 @@ class ProjetCrudController extends AbstractCrudController
         return $crud
             ->setPageTitle('index', 'Liste des projets')
             ->setPageTitle('edit', 'Détail du projet');
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+
+        return $actions
+            ->disable(Action::NEW)
+            ->disable(Action::DELETE)
+        ;
     }
 }
