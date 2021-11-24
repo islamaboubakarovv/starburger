@@ -15,12 +15,30 @@
 			<a href="{{ path('app_logout') }}">Logout</a>
 		</div>
 	{% else %}
+		{#texte espace client #}
 
+		<div class="container shadow-sm p-5 my-10 bg-white rounded" id="txt-client">
+			<div class="row">
+				<div class="d-flex justify-content-center" id="espace-client">Espace client</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6" id="txt1">
+                Nous avons créé un espace dédié à nos clients.
+Vous pourrez retrouver sur celui-ci vos différents devis en cours.
+
+Vous n’avez pas encore de compte client?
+
+                </div>
+                <div class="col-sm-6" id="txt2">
+                Nous vous invitons à vous inscrire via notre formulaire de contact ci-dessous. Notre équipe commerciale se fera un plaisir de vous recontacter pour vous orienter dans votre projet. Découvrez notre large gamme de service et profitez d’avantages privilégiés au quotidien !
+                </div>
+			</div>
+		</div>
 		{# container pour login et register#}
-		<div class="container" >
-			<div class="row" id="client-form">
+		<div class="container shadow-sm p-5 my-5 bg-white rounded" id="client-form-cont">
+			<div class="row">
 				<div
-					class="col-sm-3 col-md-5">
+					class="col-sm-3 col-md-4">
 					{# pour se co #}
 					<form method="post" name="loginform">
 						<h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
@@ -36,30 +54,38 @@
 					</form>
 					{# fin du form de connexion #}
 				</div>
-                <div class="col-sm-1 col-md-1 d-none d-sm-block d-md-block" id="vl">
-                </div>
-				<div class="col-sm-3 col-md-5">
+				<div class="col-sm-1 col-md-1 d-none d-sm-block d-md-block" id="vl"></div>
+				<div class="col-sm-6 col-md-5">
 					{{ render(path('register')) }}
 				</div>
 			</div>
 		</div>
-<style>
-#vl{
-    border-left: 1px solid black;
-    height: 900px;
-    margin-left:50px;
-    padding-right:0!important;
-}
+		<style>
+			#vl {
+				border-left: 1.4px solid black;
+				height: 800px;
+				margin-left: 50px;
+				padding-right: 0 !important;
+				margin-top: 40px;
+			}
 
-/*
-@media (min-width: 0px) and (max-width:576px){
-    #vl{
-        display: none!important;
-    }
-}
-*/
+			#client-form-cont {
+				margin-top: 100px;
+			}
+			#txt-client {
+				margin-top: 100px !important;
+			}
+            #txt1{
+                text-align:justify;
+            }
+            #txt2{
+                text-align:justify;
+            }
+            #espace-client{
+                margin-bottom:15px;
+            }
 
-</style>
+		</style>
 
 	{% endif %}
 	{# fin du container #}
