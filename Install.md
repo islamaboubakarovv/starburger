@@ -28,7 +28,7 @@ Pré requis :
 * Copier coller le projet dans le répertoire `www` de Wamp ( dossier `htdocs`pour Xamp)
 * En ligne de commande se placer dans le dossier du projet, exemple : `cd C:\wamp64\www\techguys`
 
-##Installation Packages PHP
+## Installation Packages PHP
 
 * Dans le répertoire du projet, lancer la commande `composer i`
 > Si vous n'avez que le `composer.phar`, lancer `php composer.phar i`
