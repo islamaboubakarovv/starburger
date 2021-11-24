@@ -23,20 +23,21 @@ class ClientCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('prenom','Prénom'),
-            TextField::new('nom','Nom'),
-            EmailField::new('mail','E-mail'),
-            TextField::new('telephone','Téléphone'),
-            TextField::new('adresse','Adresse'),
-            TextField::new('ville','Ville'),
-            TextField::new('code_postal','Code Postal'),
+            TextField::new('prenom','Prénom')->setFormTypeOption('disabled','disabled'),
+            TextField::new('nom','Nom')->setFormTypeOption('disabled','disabled'),
+            EmailField::new('mail','E-mail')->setFormTypeOption('disabled','disabled'),
+            TextField::new('telephone','Téléphone')->setFormTypeOption('disabled','disabled'),
+            TextField::new('adresse','Adresse')->setFormTypeOption('disabled','disabled'),
+            TextField::new('ville','Ville')->setFormTypeOption('disabled','disabled'),
+            TextField::new('code_postal','Code Postal')->setFormTypeOption('disabled','disabled'),
         ];
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('index', 'Liste des clients');
+        ->setPageTitle('index', 'Liste des clients')
+        ->setPageTitle('edit', 'Informations du client');
     }
 
     public function configureAssets(Assets $assets): Assets
