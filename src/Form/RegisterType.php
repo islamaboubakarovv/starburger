@@ -28,21 +28,21 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('prenom',TextType::class,[
-                'label'=>'Votre prénom',
+                'label'=>'PRÉNOM',
                 'constraints'=>new Length(30,2),
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre prénom'
                 ]
             ])
             ->add('nom',TextType::class,[
-                'label'=>'Votre nom',
+                'label'=>'NOM',
                 'constraints'=>new Length(30,2),
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre nom'
                 ]
             ])
             ->add('mail',EmailType::class,[
-                'label'=>'Votre email',
+                'label'=>'ADRESSE E-MAIL',
                 'constraints'=>new Length(60,2),
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre adresse email'
@@ -53,20 +53,20 @@ class RegisterType extends AbstractType
                 'constraints'=>new Length(20,2),
                 'mapped'=>true,
                 'invalid_message'=>'Le mot de passe et la confirmation doivent être identiques',
-                'label'=>'Votre mot de passe',
+                'label'=>'MOT DE PASSE',
                 'required'=>true,
-                'first_options'=>['label'=>'Mot de passe',
+                'first_options'=>['label'=>'MOT DE PASSE',
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre mot de passe'
                 ]
                 ],
-                'second_options'=>['label'=>'Confirmez votre mot de passe',
+                'second_options'=>['label'=>'CONFIRMER MOT DE PASSE',
                 'attr'=>[
                     'placeholder'=>'Merci de confirmer votre mot de passe'
                 ]]
             ])
             ->add('telephone',PhoneNumberType::class,[
-                'label'=>'Votre numéro de téléphone',
+                'label'=>'NUMÉRO DE TÉLÉPHONE',
                 //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre numéro de téléphone au format : "+code"+"numéro" '
@@ -74,21 +74,21 @@ class RegisterType extends AbstractType
                 
             ])
             ->add('adresse',null,[
-                'label'=>'Votre adresse',
+                'label'=>'ADRESSE',
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre adresse'
                 ]
 
             ])
             ->add('ville',null,[
-                'label'=>'Votre ville',
+                'label'=>'VILLE',
                 'attr'=>[
                     'placeholder'=>'Merci de saisir votre ville'
 
                 ]
             ])
             ->add('codePostal',TextType::class,[
-                'label'=>'Votre code postal',
+                'label'=>'CODE POSTAL',
                 //contrainte regex pour CP FR 
                 'constraints'=>[
                     new NotBlank(),
@@ -101,7 +101,10 @@ class RegisterType extends AbstractType
                 ]
             ])
             ->add('submit',SubmitType::class,[
-                'label'=>"S'inscrire"
+                'label'=>"S'inscrire",
+                'attr'=>[
+                    'class'=>'btn btn-lg btn-primary btn-sm registersubmit'
+                ]
             ])
         ;
     }
