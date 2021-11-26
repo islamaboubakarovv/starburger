@@ -3,7 +3,20 @@
 {% block body %}
 
 {# inscription #}
-{{form(form)}}
+{#{{form(form)}}#}
+{{ form_start(form) }}
+{{form_row(form.prenom)}}
+{{form_row(form.nom)}}
+{{form_row(form.mail)}}
+{{form_row(form.mdp)}}
+{{form_row(form.telephone)}}
+{{form_row(form.adresse)}}
+{{form_row(form.ville)}}
+{{form_row(form.codePostal)}}
+<div class="text-center">
+{{form_row(form.submit)}}
+</div>
+{{form_end(form)}}
 <style>
 {# style="font-family:Montserrat;font-size:14px;font-weight:700"#}
 .registersubmit{

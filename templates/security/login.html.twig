@@ -24,104 +24,91 @@
 			<div class="d-flex justify-content-center" id="espace-client" style="font-size:48px;font-weight:700;font-family:Helvetica">Espace client</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6" id="txt1" style="font-family:Montserrat;font-weight:500;font-size:24px">
+			<div class="col-sm-6" id="txt1">
 				Nous avons créé un espace dédié à nos clients.
-												Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
+																								Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
 
 			Vous n’avez pas encore de compte client?
 		</div>
 
 		{#
-								                <div class="col-sm-1 col-md-2">
-								                </div>
-								                #}
-		<div class="col-sm-6" id="txt2" style="font-family:Montserrat;font-weight:500;font-size:24px">
+														                <div class="col-sm-1 col-md-2">
+														                </div>
+														                #}
+		<div class="col-sm-6" id="txt2">
 			Nous vous invitons à vous inscrire via notre formulaire de contact ci-dessous. Notre équipe commerciale se fera un plaisir de vous recontacter pour vous orienter dans votre projet. Découvrez notre large gamme de service et profitez d’avantages privilégiés au quotidien !
 		</div>
 	</div>
 </div>
 {# container pour login et register#}
-<div class="container shadow-sm p	y-5 pl-3 my-5 bg-white rounded" id="client-form-cont">
+<div class="container shadow-sm py-5 pl-3 my-5 bg-white rounded" id="client-form-cont">
 	<div class="row">
-		<div
-			class="col-sm-6 pe-5" id="col1">
-			{# pour se co #}
+		<div class="col-sm-6 pe-5" id="col1">
 			<form method="post" name="loginform">
 				<h1 class="h3 mb-3" id="inscrit" style="font-family:Helvetica;font-size:25px;font-weight:400">DÉJÀ INSCRIT ?</h1>
 				<label for="inputEmail" style="font-family:Montserrat Bold;font-size:14px;font-weight:700">EMAIL</label>
 				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre adresse mail" autocomplete="email" required autofocus>
-				<label for="inputPassword" style="font-family:Montserrat Bold;font-size:14px;font-weight:700">MOT DE PASSE</label>
+				<label for="inputPassword" style="font-family:Montserrat Bold;font-size:14px;font-weight:700;margin-top:50px">MOT DE PASSE</label>
 				<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
-				<input
-				type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-				{#<a class="btn btn-actualite">
-									class="btn btn-lg btn-primary btn-sm"#}
-				<button class="btn-submit-client" type="submit">
-					Se connecter
-				</button>
-			</a>
-		</form>
-		{# fin du form de connexion #}
-	</div>
-	{#
-				<div class="col-sm-1 col-md-1 col-lg-2 col d-none d-sm-none d-md-block d-lg-block" id="vl"></div>
-	            #}
-	<div class="col-sm-6 ps-5" id="col2">
-		<h1 class="h3 mb-3" id="inscription" style="font-family:Helvetica;font-size:25px;font-weight:400">REJOIGNEZ-NOUS</h1>
-		<div class="clientform" style="font-family:Montserrat Bold;font-size:14px">
-			{{ render(path('register')) }}
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="text-center">
+					<button class="btn-submit-client" type="submit">
+						Connexion
+					</button>
+				</div>
+			</form>
 		</div>
+		<div class="col-sm-6 ps-5" id="col2">
+			<h1 class="h3 mb-3" id="inscription" style="font-family:Helvetica;font-size:25px;font-weight:400">REJOIGNEZ-NOUS</h1>
+			<div class="clientform" style="font-family:Montserrat Bold;font-size:14px">
+				{{ render(path('register')) }}
+			</div>
 
+		</div>
 	</div>
-</div></div><style>
-.btn-submit-client {
-	margin-top:18px;
-	background-color: #E6C9A5 !important;
-	color: black !important;
-	font-weight: 700;
-	font-family: "Montserrat Bold";
-	font-size: 18px;
-	border-radius: 30px !important;
-	width: 192px !important;
-	height: 42px !important;
-}
-{
-	#tester border #
-}
-{
-	# #vl {
-		border-left: 1.4px solid black;
-		height: 800px;
-		margin-left: 40px;
-		padding-right: 0 !important;
-		margin-top: 40px;
+</div>
+<style>
+	.btn-submit-client {
+		margin-top: 18px;
+		background-color: #E6C9A5 !important;
+		color: black !important;
+		font-weight: 700 !important;
+		font-family: "Montserrat Bold" !important;
+		font-size: 18px !important;
+		border-radius: 30px !important;
+		width: 192px !important;
+		height: 42px !important;
+		border:none!important;
+	}
+
+	#client-form-cont {
+		margin-top: 100px;
+
 
 	}
-	#
-}
+	#txt-client {
+		margin-top: 100px !important;
+	}
+	{#style="font-family:Montserrat Medium;font-size:24px"#}
+	#txt1 {
+		text-align: justify;
+		font-family:Montserrat Medium;
+		font-size:24px;
 
-#client-form-cont {
-	margin-top: 100px;
-
-
-}
-#txt-client {
-	margin-top: 100px !important;
-}
-#txt1 {
-	text-align: justify;
-}
-#txt2 {
-	text-align: justify;
-}
-#espace-client {
-	margin-bottom: 15px;
-	color: #95683E;
-}
-#col1 {
-	border-right: solid;
-}
-#col2 {}
+	}
+	#txt2 {
+		text-align: justify;
+		font-family:Montserrat Medium;
+		font-size:24px;
+	}
+	#espace-client {
+		margin-bottom: 15px;
+		color: #95683E;
+	}
+	#col1 {
+		border-right: solid;
+	}
 
 
-}</style>{% endif %}{# fin du container #}{% endblock %}
+}
+</style>{% endif %}{# fin du container #}{% endblock %}
