@@ -23,6 +23,11 @@ class Image
     private $url;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Galerie::class, inversedBy="images")
      * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
