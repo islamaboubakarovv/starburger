@@ -54,7 +54,7 @@ class Galerie
         return $this->taille;
     }
 
-    public function setTaille(?int $nom): self
+    public function setTaille(?int $taille): self
     {
         $this->taille = $taille;
 
