@@ -27,9 +27,9 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             
-            $user = $this->getUser()->getId();
+            $userId = $this->getUser()->getId();
 
-            $utilisateur = $em->getRepository(Client::class)->find(intval($user));
+            $utilisateur = $em->getRepository(Client::class)->find(intval($userId));
 
             $projet->setestRecontacte(0);
             $projet->setClient($utilisateur);
@@ -46,6 +46,8 @@ class ContactController extends AbstractController
                 ->context([
                     'description_devis' => $contentform->getDescription(),
                     'objet_devis' => $contentform->getObjet(),
+                    'client_prenom' => $this->getUser()->getPrenom(),
+                    'client_nom' => $this->getUser()->getNom(),
                 ]);
             $mailer->send($message);
 
