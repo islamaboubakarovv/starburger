@@ -23,7 +23,7 @@ class IllustrationArticleCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             AssociationField::new('article'),
-            TextareaField::new('imageFile')->setFormType(VichImageType::class)
+            TextareaField::new('imageFile','Image')->setFormType(VichImageType::class)
         ];
     }
 

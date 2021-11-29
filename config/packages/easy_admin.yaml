@@ -10,6 +10,16 @@ easy_admin:
             form:
                 fields:
                     - { property: 'imageFile', type: 'vich_image' }
+        Image:
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.galerie_images%' }
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.galerie_images%' }
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image' }
         Postulant:
             list:
                 fields:

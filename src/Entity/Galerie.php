@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GalerieRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,11 @@ class Galerie
      * @ORM\OneToMany(targetEntity=Image::class, mappedBy="galerie", orphanRemoval=true)
      */
     private $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -64,7 +71,7 @@ class Galerie
     /**
      * @return Collection|Image[]
      */
-    public function getImages(): Collection
+    public function getImage(): Collection
     {
         return $this->images;
     }
@@ -89,5 +96,9 @@ class Galerie
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->nom;
     }
 }
