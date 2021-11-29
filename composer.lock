@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3755aa4e2b6e7ec538f304e0f4d40ad5",
+
     "packages": [
         {
             "name": "barbieswimcrew/zip-code-validator",
@@ -1844,7 +1844,11 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
                     "Giggsey\\Locale\\": "src/"
+=======
+                    "JeroenDesloovere\\VCard\\": "src/"
+>>>>>>> devJulien
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1853,6 +1857,7 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
                     "name": "Joshua Gigg",
                     "email": "giggsey@gmail.com",
                     "homepage": "https://giggsey.com/"
@@ -1864,6 +1869,27 @@
                 "source": "https://github.com/giggsey/Locale/tree/2.1"
             },
             "time": "2021-11-04T19:12:22+00:00"
+=======
+                    "name": "Jeroen Desloovere",
+                    "email": "info@jeroendesloovere.be",
+                    "homepage": "http://jeroendesloovere.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This VCard PHP class can generate a vCard with some data. When using an iOS device it will export as a .ics file because iOS devices don't support the default .vcf files.",
+            "homepage": "https://github.com/jeroendesloovere/vcard",
+            "keywords": [
+                ".vcf",
+                "generator",
+                "php",
+                "vCard"
+            ],
+            "support": {
+                "issues": "https://github.com/jeroendesloovere/vcard/issues",
+                "source": "https://github.com/jeroendesloovere/vcard/tree/master"
+            },
+            "time": "2019-03-02T13:21:03+00:00"
+>>>>>>> devJulien
         },
         {
             "name": "jms/metadata",

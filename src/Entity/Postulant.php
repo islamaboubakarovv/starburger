@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
+use App\Repository\PostulantRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PostulantRepository::class)
+ * @Vich\Uploadable
  */
 class Postulant
 {
@@ -39,13 +43,27 @@ class Postulant
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $cv;
 
     /**
+     * @Vich\UploadableField(mapping="cv_pdf", fileNameProperty="cv")
+     * @var File
+     */
+    private $cvFile;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $lm;
+    
+    /**
+     * @Vich\UploadableField(mapping="lm_pdf", fileNameProperty="lm")
+     * @var File
+     */
+    private $lmFile;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -120,6 +138,26 @@ class Postulant
         $this->cv = $cv;
 
         return $this;
+    }
+
+    public function setCvFile(File $cv = null)
+    {
+        $this->cvFile = $cv;
+    }
+
+    public function getCvFile()
+    {
+        return $this->cvFile;
+    }
+
+    public function setLmFile(File $lm = null)
+    {
+        $this->lmFile = $lm;
+    }
+
+    public function getLmFile()
+    {
+        return $this->lmFile;
     }
 
     public function getLm(): ?string

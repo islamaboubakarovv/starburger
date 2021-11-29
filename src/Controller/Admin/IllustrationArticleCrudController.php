@@ -8,7 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use Vich\UploaderBundle\Form\Type\VichImageType; 
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class IllustrationArticleCrudController extends AbstractCrudController
 {
@@ -21,6 +22,7 @@ class IllustrationArticleCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
+            AssociationField::new('article'),
             TextareaField::new('imageFile')->setFormType(VichImageType::class)
         ];
     }
