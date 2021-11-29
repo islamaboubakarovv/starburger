@@ -63,14 +63,4 @@ class ClientCrudController extends AbstractCrudController
             ->add(Crud::PAGE_EDIT, $getVCard)
         ;
     }
-
-    public function getVCard(Request $request) {
-        $id = $request->query->get('id');
-        var_dump($id);
-        return $this->redirectToRoute('admin', [
-            'crudAction' => 'index',
-            'entity' => $request->query->get('entity')
-        ]);
-    }
-
 }

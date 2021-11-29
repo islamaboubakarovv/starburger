@@ -21,11 +21,6 @@ class IllustrationArticle
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $adresseImage;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="illustrationarticle")
      * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
@@ -52,18 +47,6 @@ class IllustrationArticle
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getAdresseImage(): ?string
-    {
-        return $this->adresseImage;
-    }
-
-    public function setAdresseImage(string $adresseImage): self
-    {
-        $this->adresseImage = $adresseImage;
-
-        return $this;
     }
 
     public function getArticle(): ?Article
