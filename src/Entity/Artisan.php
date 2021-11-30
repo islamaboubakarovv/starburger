@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+//modifier artisan pour qu'il puisse se connecter à la page easyadmin : gestion de sécurité etc
 use App\Repository\ArtisanRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -69,6 +69,14 @@ class Artisan
     public function getNom(): ?string
     {
         return $this->nom;
+    }
+    public function getRoles(): array
+    {
+        //$roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
     public function setNom(string $nom): self
