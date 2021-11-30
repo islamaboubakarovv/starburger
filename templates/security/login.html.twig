@@ -17,7 +17,41 @@
 		<a href="{{ path('app_logout') }}">Logout</a>
 	</div>
 {% else %}
-	{#texte espace client #}
+{#
+	{% set user =''%}
+	{{ user }}
+	#}
+	<script>
+	function switchClient(){
+		var clientform = document.getElementById('client-form-cont');
+		var artisanform = document.getElementById('artisan-form-cont');
+		clientform.style.display = 'block';
+		artisanform.style.display = 'none';
+
+		
+	}
+	function switchArtisan(){
+		var clientform = document.getElementById('client-form-cont');
+		var artisanform = document.getElementById('artisan-form-cont');
+		clientform.style.display = 'none';
+		artisanform.style.display = 'block';
+	}
+
+	</script>
+	{# prendre comme valeur 'client' our 'artisan'#}
+	{# choix du rôle : front end #}
+	<div class='text-center'>
+	<div class="btn-group mb-4" role="group" aria-label="Basic example">
+		<button type="button" class="btn btn-success" id="btnSwitchClient" onclick="switchClient()">Client
+		</button>
+		<button type="button" class="btn btn-success" id="btnSwitchArtisan" onclick="switchArtisan()">Artisan
+		</button>
+	</div>
+	</div>
+	{# choix du rôle : fin du front end #}
+
+
+	{#texte espace client/artisan #}
 
 	<div class="container shadow-sm p-5 my-10 bg-white rounded" id="txt-client">
 		<div class="row">
@@ -26,22 +60,22 @@
 		<div class="row">
 			<div class="col-sm-6" id="txt1">
 				Nous avons créé un espace dédié à nos clients.
-																								Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
+																												Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
 
 			Vous n’avez pas encore de compte client?
 		</div>
 
 		{#
-														                <div class="col-sm-1 col-md-2">
-														                </div>
-														                #}
+																                <div class="col-sm-1 col-md-2">
+																                </div>
+																                #}
 		<div class="col-sm-6" id="txt2">
 			Nous vous invitons à vous inscrire via notre formulaire de contact ci-dessous. Notre équipe commerciale se fera un plaisir de vous recontacter pour vous orienter dans votre projet. Découvrez notre large gamme de service et profitez d’avantages privilégiés au quotidien !
 		</div>
 	</div>
 </div>
 {# container pour login et register#}
-<div class="container shadow-sm py-5 px-5 {#pl-3#} my-5 bg-white rounded" id="client-form-cont">
+<div class="container shadow-sm py-5 px-5 my-5 bg-white rounded" id="client-form-cont">
 	<div class="row">
 		<div class="col-sm-6 pe-5" id="col1">
 			<form method="post" name="loginform">
@@ -60,14 +94,23 @@
 		</div>
 		<div class="col-sm-6 ps-5" id="col2">
 			<h1 class="h3 mb-3" id="inscription" style="font-family:Helvetica;font-size:25px;font-weight:400">REJOIGNEZ-NOUS</h1>
-			<div class="clientform" style="font-family:Montserrat Bold;font-size:14px">
+			<div
+				class="clientform" style="font-family:Montserrat Bold;font-size:14px">
+				{#l'user peut choisir d'afficher le form client ou user #}
 				{{ render(path('register')) }}
 			</div>
 
 		</div>
 	</div>
 </div>
+{# pour que l'artisan se connecte: il est déjà dans la BDD #}
+<div class="container shadow-sm py-5 px-5 my-5 bg-white rounded" id="artisan-form-cont">
+Artisan 
+</div>
 <style>
+	#artisan-form-cont{
+		display:none;
+	}
 	.btn-submit-client {
 		margin-top: 18px;
 		background-color: #E6C9A5 !important;
@@ -78,7 +121,7 @@
 		border-radius: 30px !important;
 		width: 192px !important;
 		height: 42px !important;
-		border:none!important;
+		border: none !important;
 	}
 
 	#client-form-cont {
@@ -89,17 +132,19 @@
 	#txt-client {
 		margin-top: 100px !important;
 	}
-	{#style="font-family:Montserrat Medium;font-size:24px"#}
+	{
+		#style="font-family:Montserrat Medium;font-size:24px"#
+	}
 	#txt1 {
 		text-align: justify;
-		font-family:Montserrat Medium;
-		font-size:24px;
+		font-family: Montserrat Medium;
+		font-size: 24px;
 
 	}
 	#txt2 {
 		text-align: justify;
-		font-family:Montserrat Medium;
-		font-size:24px;
+		font-family: Montserrat Medium;
+		font-size: 24px;
 	}
 	#espace-client {
 		margin-bottom: 15px;

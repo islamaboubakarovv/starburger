@@ -39,6 +39,22 @@ class Artisan
      */
     private $mdp;
 
+     /**
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->id;
+    }
+    public function getUsername(): string
+    {
+        return (string) $this->mail;
+    }
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="artisan", orphanRemoval=true)
      */
