@@ -47,6 +47,16 @@ body {
     height: 42px !important;
 }
 
+#footer {
+    font-family: Helvetica;
+}
+// HEADER
+
+.nav-link {
+    color: #e6c9a5;
+    font-family: Helvetica, sans-serif;
+}
+
 .navbar {
     background-color: #4a4134 !important;
     box-shadow: 3px 0px 7px black;
@@ -244,6 +254,17 @@ body {
 @media (min-width: 1024px) {
     #carrouselCharpente,
     #carrouselCharpente img {
+        .navbar-brand img {
+            filter: brightness(0) saturate(100%) invert(88%) sepia(13%) saturate(779%) hue-rotate(343deg)
+                brightness(94%) contrast(91%);
+            height: 70px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    #carrouselCharpente,
+    #carrouselCharpente img {
         height: 60vh !important;
         width: 60vw !important;
         margin: auto !important;
@@ -382,27 +403,6 @@ body {
     filter: brightness(255);
 }
 
-// FOOTER
-
-#footer {
-    .img-footer {
-        height: 30px;
-        width: 30px;
-        margin: 0 10px 10px 0 !important;
-    }
-
-    .btn-footer,
-    .btn-footer:hover,
-    .btn-footer:active,
-    .btn-footer:visited {
-        background-color: #e6c9a5 !important;
-        color: black !important;
-        border-radius: 30px !important;
-        width: 192px !important;
-        height: 42px !important;
-    }
-}
-
 // ACCUEIL
 
 .btn-accueil,
@@ -415,11 +415,16 @@ body {
     border-radius: 30px !important;
     width: 192px !important;
     height: 42px !important;
+    font-family: Montserrat Bold;
 }
 
 .accueil-second-part {
     background-color: #4a4134;
     color: white;
+    font-family: Montserrat Regular;
+    h2 {
+        font-family: Montserrat Bold;
+    }
     div > hr {
         width: 50%;
         margin: auto;
@@ -434,10 +439,9 @@ body {
 .accueil-third-part {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-}
-
-.accueil-second-part .accueil-info-item {
-    width: 450px !important;
+    h2 {
+        font-family: Montserrat Bold;
+    }
 }
 
 .logos-certificats {
@@ -473,6 +477,8 @@ body {
         margin-left: 1rem;
         text-align: left;
         text-shadow: 0px 4px 4px black;
+        font-family: Montserrat Bold;
+        font-weight: bold;
     }
 }
 
@@ -1213,13 +1219,9 @@ $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
 }
 #bienvenue_txt {
 }
-#inscrit{
-
+#inscrit {
 }
-#inscription{
-
+#inscription {
 }
-
-
 
 //fin page client: connexion/inscription

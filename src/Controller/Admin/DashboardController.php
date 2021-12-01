@@ -7,6 +7,8 @@ use App\Entity\Article;
 use App\Entity\Artisan;
 use App\Entity\Client;
 use App\Entity\Offre;
+use App\Entity\Galerie;
+use App\Entity\Image;
 use App\Entity\Postulant;
 use App\Entity\IllustrationArticle;
 use App\Entity\Projet;
@@ -39,6 +41,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Articles', 'fas fa-list', Article::class);
         yield MenuItem::linkToCrud('Artisans', 'fas fa-list', Artisan::class);
         yield MenuItem::linkToCrud('Clients', 'fas fa-list', Client::class);
+        yield MenuItem::linkToCrud('Galeries', 'fas fa-list', Galerie::class);
+        yield MenuItem::linkToCrud('Images des galeries', 'fas fa-list', Image::class);
         yield MenuItem::linkToCrud('Offres', 'fas fa-list', Offre::class);
         yield MenuItem::linkToCrud('Candidatures', 'fas fa-list', Postulant::class);
         yield MenuItem::linkToCrud('Projets', 'fas fa-list', Projet::class);

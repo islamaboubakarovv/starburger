@@ -2,16 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\IllustrationArticleRepository;
+use App\Repository\ImageRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass=IllustrationArticleRepository::class)
+ * @ORM\Entity(repositoryClass=ImageRepository::class)
  * @Vich\Uploadable
  */
-class IllustrationArticle
+class Image
 {
     /**
      * @ORM\Id
@@ -21,19 +21,13 @@ class IllustrationArticle
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="illustrationarticle")
-     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
-     */
-    private $article;
-
-    /**
      * @ORM\Column(type="string", length=255)
      * @var string
      */
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="article_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="galerie_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -44,30 +38,29 @@ class IllustrationArticle
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Galerie::class, inversedBy="images")
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
+     */
+    private $galerie;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getArticle(): ?Article
-    {
-        return $this->article;
-    }
-
-    public function setArticle(?Article $article): self
-    {
-        $this->article = $article;
-
-        return $this;
-    }
-    
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
 
         // VERY IMPORTANT:
         // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event lisùteners won't be called and the file is lost
+        // otherwise the event listeners won't be called and the file is lost
         if ($image) {
             // if 'updatedAt' is not defined in your entity, use another property
             $this->updatedAt = new \DateTime('now');
@@ -92,5 +85,29 @@ class IllustrationArticle
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+    
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getGalerie(): ?Galerie
+    {
+        return $this->galerie;
+    }
+
+    public function setGalerie(?Galerie $galerie): self
+    {
+        $this->galerie = $galerie;
+
+        return $this;
     }
 }
