@@ -88,11 +88,12 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): PassportInterface
     {
+
         //gérer si on avait submit pour register 
         if ($request->request->get('register')) {
             //!!!! inscrire un super artisan puis enlever son form d'insc
             //gestion de register si on a register client dans request
-            $user = new Artisan();
+            $user = new Client();
             $form = $this->createForm(RegisterType::class, $user);
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
@@ -104,8 +105,8 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
                         $form->get('mdp')->getData()
                     )
                 );
-                
-                
+
+
                 //$user->setTelephone($tel);
                 $entityManager = $this->getDoctrine()->getManager();
 
@@ -116,14 +117,14 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
         }
         $email = $request->request->get('email', '');
         $request->getSession()->set(Security::LAST_USERNAME, $email);
-        
+
 
 
 
         //dd(new Passport(new UserBadge($email),new PasswordCredentials($request->request->get('password', '')),[new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token'))]));
-        
-        
-        
+
+
+
         return new Passport(
             new UserBadge($email),
             new PasswordCredentials($request->request->get('password', '')),
@@ -135,11 +136,18 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        
+
+        //dd($request);
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         } else {
-            return new RedirectResponse($this->urlGenerator->generate('account'));
+            //la route /compte si on est un client sinon /admin
+            if (isset($_POST["artisan_name"])){
+                return new RedirectResponse($this->urlGenerator->generate('admin'));
+            }
+            if (isset($_POST["client_name"])) {
+                return new RedirectResponse($this->urlGenerator->generate('account'));
+            }
         }
     }
 

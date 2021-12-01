@@ -22,12 +22,18 @@
 	{{ user }}
 	#}
 	<script>
+	
 	function switchClient(){
 		var log = document.getElementById('client-form-cont');
 		var reg = document.getElementById('artisan-form-cont');
+		var radiobtn=document.getElementById('client');
+		var radiobtn2=document.getElementById('artisan');
+		radiobtn.checked=true;
+		radiobtn2.checked=false;
 		log.style.display = 'block';
 		reg.style.display = 'block';
 		col1.style.borderRight='solid';
+		
 
 		
 	}
@@ -36,6 +42,10 @@
 		var reg = document.getElementById('artisan-form-cont');
 		var col1 = document.getElementById('col1');
 		var col2 = document.getElementById('col2');
+		var radiobtn=document.getElementById('client');
+		var radiobtn2=document.getElementById('artisan');
+		radiobtn.checked=false;
+		radiobtn2.checked=true;
 		col1.style.border='none';
 		log.style.display = 'block';
 		reg.style.display = 'none';
@@ -89,6 +99,8 @@
 				<label for="inputPassword" style="font-family:Montserrat Bold;font-size:14px;font-weight:700;margin-top:50px">MOT DE PASSE</label>
 				<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<input type="radio" id="client" name="client_name" value="client" checked>
+				<input type="radio" id="artisan" name="artisan_name" value="artisan">  
 				<div class="text-center">
 					<button class="btn-submit-client" type="submit">
 						Connexion

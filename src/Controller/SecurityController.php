@@ -37,19 +37,19 @@ class SecurityController extends AbstractController
      */
     public function register(Request $request,UserPasswordEncoderInterface $encoder): Response
     {
-    $user = new Artisan();
+    $user = new Client();
     $form = $this->createForm(RegisterType::class,$user);
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
             
-            //$tel=$form->get('telephone')->getViewData();
+            $tel=$form->get('telephone')->getViewData();
             $user->setPassword(
                 $encoder->encodePassword(
                     $user,
                     $form->get('mdp')->getData()
                 )
             );
-            //$user->setTelephone($tel);
+            $user->setTelephone($tel);
             $entityManager=$this->getDoctrine()->getManager();
 
             $entityManager->persist($user);

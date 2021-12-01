@@ -6,6 +6,8 @@ security:
         #Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface: 'auto'
         App\Entity\Artisan:
             algorithm: bcrypt
+        App\Entity\Client:
+            algorithm: bcrypt
         #Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface: 'auto'
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -28,7 +30,7 @@ security:
             security: false
         main:
             lazy: true
-            provider: app_artisan_provider
+            provider: all_users
             logout:
                 path: app_logout
             custom_authenticator: App\Security\AppAuthAuthenticator
