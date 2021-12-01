@@ -1,0 +1,13 @@
+DELIMITER //
+CREATE TRIGGER del
+    BEFORE DELETE ON artisan
+    FOR EACH ROW
+    BEGIN
+    IF OLD.mail="admin@admin" THEN 
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'On ne peut pas supprimer le super admin';
+    END IF;
+
+
+    END;
+    //
+DELIMITER ;
