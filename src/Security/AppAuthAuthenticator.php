@@ -20,6 +20,7 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Psr\Link\LinkInterface;
 use Symfony\Component\WebLink\GenericLinkProvider;
 use App\Entity\Client;
+use App\Entity\Artisan;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\Persistence\ManagerRegistry;
@@ -70,8 +71,6 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
                 $entityManager->persist($user);
                 $entityManager->flush();
-                
-                
             }
         }
     }
@@ -79,32 +78,35 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     private UrlGeneratorInterface $urlGenerator;
 
-    public function __construct(UrlGeneratorInterface $urlGenerator,UserPasswordEncoderInterface $encoder,FormFactoryInterface $formfactory,ManagerRegistry $doctrine)
+    public function __construct(UrlGeneratorInterface $urlGenerator, UserPasswordEncoderInterface $encoder, FormFactoryInterface $formfactory, ManagerRegistry $doctrine)
     {
         $this->urlGenerator = $urlGenerator;
-        $this->encoder=$encoder;
-        $this->formfactory=$formfactory;
-        $this->doctrine=$doctrine;
+        $this->encoder = $encoder;
+        $this->formfactory = $formfactory;
+        $this->doctrine = $doctrine;
     }
 
     public function authenticate(Request $request): PassportInterface
     {
         //gérer si on avait submit pour register 
         if ($request->request->get('register')) {
-            //gestion de register si on a register dans request
-            $user = new Client();
+            //!!!! inscrire un super artisan puis enlever son form d'insc
+            //gestion de register si on a register client dans request
+            $user = new Artisan();
             $form = $this->createForm(RegisterType::class, $user);
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
 
-                $tel = $form->get('telephone')->getViewData();
+                //$tel = $form->get('telephone')->getViewData();
                 $user->setPassword(
                     $this->encoder->encodePassword(
                         $user,
                         $form->get('mdp')->getData()
                     )
                 );
-                $user->setTelephone($tel);
+                
+                
+                //$user->setTelephone($tel);
                 $entityManager = $this->getDoctrine()->getManager();
 
                 $entityManager->persist($user);
@@ -114,10 +116,14 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
         }
         $email = $request->request->get('email', '');
         $request->getSession()->set(Security::LAST_USERNAME, $email);
+        
 
 
 
-
+        //dd(new Passport(new UserBadge($email),new PasswordCredentials($request->request->get('password', '')),[new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token'))]));
+        
+        
+        
         return new Passport(
             new UserBadge($email),
             new PasswordCredentials($request->request->get('password', '')),
@@ -129,6 +135,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
+        
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         } else {
@@ -167,20 +174,20 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
     public static function getSubscribedServices()
     {
         return [
-            'router' => '?'.RouterInterface::class,
-            'request_stack' => '?'.RequestStack::class,
-            'http_kernel' => '?'.HttpKernelInterface::class,
-            'serializer' => '?'.SerializerInterface::class,
-            'session' => '?'.SessionInterface::class,
-            'security.authorization_checker' => '?'.AuthorizationCheckerInterface::class,
-            'twig' => '?'.Environment::class,
-            'doctrine' => '?'.ManagerRegistry::class, // to be removed in 6.0
-            'form.factory' => '?'.FormFactoryInterface::class,
-            'security.token_storage' => '?'.TokenStorageInterface::class,
-            'security.csrf.token_manager' => '?'.CsrfTokenManagerInterface::class,
-            'parameter_bag' => '?'.ContainerBagInterface::class,
-            'message_bus' => '?'.MessageBusInterface::class, // to be removed in 6.0
-            'messenger.default_bus' => '?'.MessageBusInterface::class, // to be removed in 6.0
+            'router' => '?' . RouterInterface::class,
+            'request_stack' => '?' . RequestStack::class,
+            'http_kernel' => '?' . HttpKernelInterface::class,
+            'serializer' => '?' . SerializerInterface::class,
+            'session' => '?' . SessionInterface::class,
+            'security.authorization_checker' => '?' . AuthorizationCheckerInterface::class,
+            'twig' => '?' . Environment::class,
+            'doctrine' => '?' . ManagerRegistry::class, // to be removed in 6.0
+            'form.factory' => '?' . FormFactoryInterface::class,
+            'security.token_storage' => '?' . TokenStorageInterface::class,
+            'security.csrf.token_manager' => '?' . CsrfTokenManagerInterface::class,
+            'parameter_bag' => '?' . ContainerBagInterface::class,
+            'message_bus' => '?' . MessageBusInterface::class, // to be removed in 6.0
+            'messenger.default_bus' => '?' . MessageBusInterface::class, // to be removed in 6.0
         ];
     }
 
@@ -526,7 +533,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
         if (!$this->container->has('messenger.default_bus')) {
             $message = class_exists(Envelope::class) ? 'You need to define the "messenger.default_bus" configuration option.' : 'Try running "composer require symfony/messenger".';
-            throw new \LogicException('The message bus is not enabled in your application. '.$message);
+            throw new \LogicException('The message bus is not enabled in your application. ' . $message);
         }
 
         return $this->container->get('messenger.default_bus')->dispatch($message, $stamps);

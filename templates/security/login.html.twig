@@ -23,18 +23,22 @@
 	#}
 	<script>
 	function switchClient(){
-		var clientform = document.getElementById('client-form-cont');
-		var artisanform = document.getElementById('artisan-form-cont');
-		clientform.style.display = 'block';
-		artisanform.style.display = 'none';
+		var log = document.getElementById('client-form-cont');
+		var reg = document.getElementById('artisan-form-cont');
+		log.style.display = 'block';
+		reg.style.display = 'block';
+		col1.style.borderRight='solid';
 
 		
 	}
 	function switchArtisan(){
-		var clientform = document.getElementById('client-form-cont');
-		var artisanform = document.getElementById('artisan-form-cont');
-		clientform.style.display = 'none';
-		artisanform.style.display = 'block';
+		var log = document.getElementById('client-form-cont');
+		var reg = document.getElementById('artisan-form-cont');
+		var col1 = document.getElementById('col1');
+		var col2 = document.getElementById('col2');
+		col1.style.border='none';
+		log.style.display = 'block';
+		reg.style.display = 'none';
 	}
 
 	</script>
@@ -60,7 +64,7 @@
 		<div class="row">
 			<div class="col-sm-6" id="txt1">
 				Nous avons créé un espace dédié à nos clients.
-																												Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
+																															Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
 
 			Vous n’avez pas encore de compte client?
 		</div>
@@ -92,24 +96,25 @@
 				</div>
 			</form>
 		</div>
-		<div class="col-sm-6 ps-5" id="col2">
+		<div class="col-sm-6 ps-5" id="artisan-form-cont">
 			<h1 class="h3 mb-3" id="inscription" style="font-family:Helvetica;font-size:25px;font-weight:400">REJOIGNEZ-NOUS</h1>
 			<div
 				class="clientform" style="font-family:Montserrat Bold;font-size:14px">
 				{#l'user peut choisir d'afficher le form client ou user #}
-				{{ render(path('register')) }}
+				{{render(path('register'))}}
 			</div>
 
 		</div>
 	</div>
 </div>
 {# pour que l'artisan se connecte: il est déjà dans la BDD #}
+{#
 <div class="container shadow-sm py-5 px-5 my-5 bg-white rounded" id="artisan-form-cont">
 Artisan 
 </div>
+#}
 <style>
 	#artisan-form-cont{
-		display:none;
 	}
 	.btn-submit-client {
 		margin-top: 18px;

@@ -4,16 +4,23 @@ security:
     # https://symfony.com/doc/current/security.html#c-hashing-passwords
     password_hashers:
         #Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface: 'auto'
-        App\Entity\Client:
+        App\Entity\Artisan:
             algorithm: bcrypt
         #Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface: 'auto'
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
+        all_users:
+            chain:
+                providers: [app_artisan_provider,app_user_provider]
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
                 class: App\Entity\Client
+                property: mail
+        app_artisan_provider:
+            entity:
+                class: App\Entity\Artisan
                 property: mail
     firewalls:
         dev:
@@ -21,7 +28,7 @@ security:
             security: false
         main:
             lazy: true
-            provider: app_user_provider
+            provider: app_artisan_provider
             logout:
                 path: app_logout
             custom_authenticator: App\Security\AppAuthAuthenticator

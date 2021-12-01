@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\RegisterType;
+use App\Entity\Artisan;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,19 +37,19 @@ class SecurityController extends AbstractController
      */
     public function register(Request $request,UserPasswordEncoderInterface $encoder): Response
     {
-        $user = new Client();
+    $user = new Artisan();
     $form = $this->createForm(RegisterType::class,$user);
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
             
-            $tel=$form->get('telephone')->getViewData();
+            //$tel=$form->get('telephone')->getViewData();
             $user->setPassword(
                 $encoder->encodePassword(
                     $user,
                     $form->get('mdp')->getData()
                 )
             );
-            $user->setTelephone($tel);
+            //$user->setTelephone($tel);
             $entityManager=$this->getDoctrine()->getManager();
 
             $entityManager->persist($user);

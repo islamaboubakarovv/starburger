@@ -6,11 +6,14 @@ use App\Repository\ArtisanRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Guard\PasswordAuthenticatedInterface;
 
 /**
  * @ORM\Entity(repositoryClass=ArtisanRepository::class)
  */
-class Artisan
+class Artisan implements UserInterface,PasswordAuthenticatedUserInterface
 {
     /**
      * @ORM\Id
@@ -30,21 +33,26 @@ class Artisan
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false,unique=true)
      */
     private $mail;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=128)
      */
     private $mdp;
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
      /**
      * @see UserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->id;
+        return (string) $this->mail;
+
     }
     public function getUsername(): string
     {
@@ -53,6 +61,21 @@ class Artisan
     public function getSalt(): ?string
     {
         return null;
+    }
+    public function getPassword(): string
+    {
+        return $this->mdp;
+    }
+    public function setPassword(string $mdp): self
+    {
+        $this->mdp = $mdp;
+
+        return $this;
+    }
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     /**
@@ -63,11 +86,6 @@ class Artisan
     public function __construct()
     {
         $this->auteur = new ArrayCollection();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getPrenom(): ?string

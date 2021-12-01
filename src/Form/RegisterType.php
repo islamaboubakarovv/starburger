@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Client;
+use App\Entity\Artisan;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use libphonenumber\PhoneNumber;
 use Symfony\Component\Form\AbstractType;
@@ -65,6 +66,7 @@ class RegisterType extends AbstractType
                     'placeholder'=>'Merci de confirmer votre mot de passe'
                 ]]
             ])
+            /*
             ->add('telephone',PhoneNumberType::class,[
                 'label'=>'NUMÉRO DE TÉLÉPHONE',
                 //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
@@ -100,6 +102,7 @@ class RegisterType extends AbstractType
                     'placeholder'=>'Merci de saisir votre code postal'
                 ]
             ])
+            */
             ->add('submit',SubmitType::class,[
                 'label'=>"Inscription",
                 'attr'=>[
@@ -112,7 +115,7 @@ class RegisterType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Client::class,
+            'data_class' => Artisan::class,
             'csrf_protection'=>true
         ]);
     }
