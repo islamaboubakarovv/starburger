@@ -52,9 +52,9 @@
             <li class="nav-item dropdown">
               <a class="nav-link text-center" data-bs-toggle="dropdown" id="compteDropdown" role="button" aria-expanded="false"/><img src="/images/Pictogrammes/noun_profile_1041818.svg"/></a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="compteDropdown">
-                <li><a class="dropdown-item" {% if app.user %}href="{{path('account')}}"{% else %}href="{{path('client')}}"{% endif %}</li>
+                <li><a class="dropdown-item" {% if app.user %}href="{{path('account')}}"{% else %}href="{{path('client')}}"{% endif %}>{% if app.user %}Mon compte{% else %}Espace client{% endif %}</li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Modifier mes informations</a></li>
+                <li><a class="dropdown-item" href="{{path('account_password')}}">Modifier mes informations</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Déconnexion</a></li>
               </ul>
