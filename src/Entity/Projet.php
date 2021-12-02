@@ -32,6 +32,12 @@ class Projet
      */
     private $estRecontacte;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Client::class, inversedBy="demandeur")
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
+     */
+    private $client;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -72,4 +78,17 @@ class Projet
 
         return $this;
     }
+
+    public function getClient(): ?Client
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Client $client): self
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
 }

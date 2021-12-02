@@ -107,6 +107,11 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $codePostal;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Projet::class, mappedBy="client", orphanRemoval=true)
+     */
+    private $demandeur;
+
     public function getId(): ?int
     {
         return $this->id;
