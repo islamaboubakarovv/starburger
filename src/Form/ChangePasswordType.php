@@ -3,8 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Client;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -41,6 +44,7 @@ class ChangePasswordType extends AbstractType
             ])
             ->add('new_password',RepeatedType::class,[
                 'type'=>PasswordType::class,
+                'constraints' => new Length(20, 2),
                 'mapped'=>false,
                 'invalid_message'=>'Le mot de passe et la confirmation doivent être identiques',
                 'label'=>'Mon nouveau mot de passe',
@@ -55,6 +59,62 @@ class ChangePasswordType extends AbstractType
                 ]]
 
             ])
+            ->add('new_mail',EmailType::class,[
+                'mapped'=>false,
+                'constraints' => new Length(60, 2),
+                'label'=>'Nouvelle adresse mail'
+                
+            ])
+            ->add('new_prenom',TextType::class,[
+                'mapped'=>false,
+                'constraints' => new Length(30, 2),
+                'label'=>'Nouveau prénom'
+            ])
+            ->add('new_nom',TextType::class,[
+                'mapped'=>false,
+                'constraints' => new Length(30, 2),
+                'label'=>'Nouveau nom'
+
+            ])
+            ->add('new_tel', PhoneNumberType::class, [
+                'mapped'=>false,
+                'label' => 'Nouveau numéro de tel',
+                //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre numéro de téléphone au format : "+code"+"numéro" '
+                ]
+
+            ])
+            ->add('new_adresse', null, [
+                'mapped'=>false,
+                'label' => 'Nouvelle adresse',
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre adresse'
+                ]
+
+            ])
+            ->add('new_ville', null, [
+                'mapped'=>false,
+                'label' => 'Nouvelle ville',
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre ville'
+
+                ]
+            ])
+            ->add('new_cp', TextType::class, [
+                'mapped'=>false,
+                'label' => 'Nouveau code postal',
+                //contrainte regex pour CP FR 
+                'constraints' => [
+                    new NotBlank(),
+                    new Regex('~^[0-9]{5}$~') //contrainte regex
+                ],
+                //'input'=>'number',
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre code postal'
+                ]
+            ])
+            
             ->add('submit',SubmitType::class,[
                 'label'=>"Mettre à jour"
             ])

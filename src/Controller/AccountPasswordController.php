@@ -40,6 +40,12 @@ class AccountPasswordController extends AbstractController
             }else{
                 $notification="Votre mot de passe actuel n'est pas le bon";
             }
+            $mail=$form->get('new_mail');
+            $prenom=$form->get('new_prenom');
+            $nom=$form->get('new_nom');
+            $tel=$form->get('new_tel');
+            $ville=$form->get('new_ville');
+            $cp=$form->get('new_cp');
         }
         return $this->render('account/password.html.twig',[
             'form'=>$form->createView(),
