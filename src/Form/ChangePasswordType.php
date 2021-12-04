@@ -59,19 +59,19 @@ class ChangePasswordType extends AbstractType
                 ]]
 
             ])
-            ->add('new_mail',EmailType::class,[
-                'mapped'=>false,
-                'constraints' => new Length(60, 2),
-                'label'=>'Nouvelle adresse mail'
-                
-            ])
             ->add('new_prenom',TextType::class,[
                 'mapped'=>false,
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre nouveau prénom'
+                ],
                 'constraints' => new Length(30, 2),
                 'label'=>'Nouveau prénom'
             ])
             ->add('new_nom',TextType::class,[
                 'mapped'=>false,
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre nouveau nom'
+                ],
                 'constraints' => new Length(30, 2),
                 'label'=>'Nouveau nom'
 

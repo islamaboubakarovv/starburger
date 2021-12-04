@@ -31,21 +31,27 @@ class AccountPasswordController extends AbstractController
         if($form->isSubmitted()&&$form->isValid()){
             $old_pwd=$form->get('old_password')->getData();
             if($encoder->isPasswordValid($user,$old_pwd)){
+                //récupéré sur le form 
                 $new_pwd= $form->get('new_password')->getData();
                 $password= $encoder->encodePassword($user,$new_pwd);
-
+                $prenom=$form->get('new_prenom');
+                $nom=$form->get('new_nom');
+                $tel=$form->get('new_tel');
+                $addr=$form->get('new_adresse');
+                $ville=$form->get('new_ville');
+                $cp=$form->get('new_cp');
+                //fin des var récupérées sur le form
+                //on set avec $user
                 $user->setPassword($password);
+                $user->setPrenom($prenom);
+                $user->setNom($nom);
+                
                 $this->entityManager->flush();
                 $notification="Votre mot de passe a été mis à jour";
             }else{
                 $notification="Votre mot de passe actuel n'est pas le bon";
             }
-            $mail=$form->get('new_mail');
-            $prenom=$form->get('new_prenom');
-            $nom=$form->get('new_nom');
-            $tel=$form->get('new_tel');
-            $ville=$form->get('new_ville');
-            $cp=$form->get('new_cp');
+            
         }
         return $this->render('account/password.html.twig',[
             'form'=>$form->createView(),
