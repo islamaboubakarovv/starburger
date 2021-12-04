@@ -11,3 +11,8 @@ CREATE TRIGGER del
     END;
     //
 DELIMITER ;
+
+--------------------------------------------------------------fin du TRIGGER
+Pour ajouter le premier artisan "super admin" : 
+L'insérer directement dans la BDD avec les logs souhaités.
+Toutefois, le mdp étant encrypté; il faudra insérer celui d'un client(on aura alors le mdp de base lors du décryptage).

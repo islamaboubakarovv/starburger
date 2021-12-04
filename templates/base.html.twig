@@ -54,9 +54,9 @@
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="compteDropdown">
                 <li><a class="dropdown-item" {% if app.user %}href="{{path('account')}}"{% else %}href="{{path('client')}}"{% endif %}>{% if app.user %}Mon compte{% else %}Espace client{% endif %}</li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{path('account_password')}}">Modifier mes informations</a></li>
+                <li><a class="dropdown-item" {% if app.user %}href="{{path('account_password')}}"{% endif %}>{% if app.user %}Modifier mes informations{% endif %}</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{path('app_logout')}}">Déconnexion</a></li>
+                <li><a class="dropdown-item" {% if app.user %}href="{{path('app_logout')}}"{% endif %}>{% if app.user %}Déconnexion{% endif %}</a></li>
               </ul>
             </li>
           </ul>
