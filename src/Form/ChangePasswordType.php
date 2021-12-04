@@ -59,6 +59,13 @@ class ChangePasswordType extends AbstractType
                 ]]
 
             ])
+            ->add('new_mail',EmailType::class,[
+                'mapped'=>false,
+                'label'=>'Nouvelle adresse mail',
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre nouvelle adresse mail'
+                ]
+            ])
             ->add('new_prenom',TextType::class,[
                 'mapped'=>false,
                 'attr' => [
