@@ -29,6 +29,9 @@ var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
 display.innerHTML = text;
 }
+function contact(){
+	window.location="{{path('contact')}}";
+}
 // texte par défaut
 function defaultText() {
 var display = document.getElementById('bookingLayer');
@@ -195,10 +198,10 @@ resize();
 function resize(){
 var s = window.innerWidth;
 if(s>1013){
-	myLayer.style.top="1090px";
+	myLayer.style.top="900px";
 	myLayer.style.left = '590px';
 }else if(s>820 && s<=1013){
-	myLayer.style.top="1150px";
+	myLayer.style.top="950px";
 	myLayer.style.left = '363px';
 	
 }else if(s<=820){
@@ -548,8 +551,9 @@ window.onresize=resize;
 				<div class="col-6" id="travaux">
 					Nos travaux vous intéressent ?
 				</div>
-				<div class="col-6" id="prendre_rdv">
-					Prendre RDV
+				<div class="col-6" id="prendre_rdv" onclick="contact()">
+				Nous contacter
+					{#<a href="{{path('contact')}}" id="prendre_rdv_txt">Nous contacter</a>#}
 				</div>
 			</div>
 
