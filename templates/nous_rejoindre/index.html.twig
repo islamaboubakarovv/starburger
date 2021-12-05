@@ -46,29 +46,25 @@
     <div class="row text-center">
         <h2 class="h2">Veuillez remplir ce formulaire</h2>
     </div>
-    <div class="row form-candidat">
-        <div class="col-6">
-        {{form_start(candidat_form)}}
+    <div class="row">
+        <div class="col-12 col-md-5">
+            {{form_start(candidat_form)}}
             {{ form_row(candidat_form.nom) }}
             {{ form_row(candidat_form.prenom) }}
             {{ form_row(candidat_form.telephone) }}
             {{ form_row(candidat_form.mail) }}
-        </div>
-        <div class="col-6">
-            {{ form_row(candidat_form.infoComp, {'attr': {'class': 'form-candidat-infoComp'}}) }}
             {# {{ form_row(candidat_form.captcha, {'attr': {'class': 'form-candidat-captcha'}}) }} #}
         </div>
-    </div>
-    <div class="row form-candidat">
-        <div class="col-6">
+        <div class="col-12-md col-md-2"></div>
+        <div class="col-12-md col-md-5">
+            {{ form_row(candidat_form.infoComp, {'attr': {'class': 'form-candidat-infoComp'}}) }}
             {{ form_row(candidat_form.cv) }}
-            {{ form_row(candidat_form.envoyer, {'attr': {'class': 'form-candidat-envoyer'}}) }}
-        </div>
-        <div class="col-6">
             {{ form_row(candidat_form.lm) }}
-            <button type="button" class="btn btn-outline-primary form-candidat-retour" onclick = "history.back()">Retour</button>
-        {{form_end(candidat_form)}}
-        </div>
-    </div>
+        </div>    
 </div>
+    <div class="row text-center mb-3">
+        <div class="col">{{ form_row(candidat_form.envoyer, {'attr': {'class': 'form-contact-button'}}) }}</div>
+        <div class="col"><button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button></div>
+    </div>
+{{ form_end(candidat_form) }}
 {% endblock %}

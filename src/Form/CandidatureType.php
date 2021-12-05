@@ -23,35 +23,32 @@ class CandidatureType extends AbstractType
         $builder
 
             ->add('nom', TextType::class, [
-                'label' => 'NOM',
+                'label' => 'Nom',
                 'constraints' => new Length(30, 2),
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre nom'
                 ]
             ])
             ->add('prenom', TextType::class, [
-                'label' => 'PRÉNOM',
+                'label' => 'Prénom',
                 'constraints' => new Length(30, 2),
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre prénom'
                 ]
             ])
             ->add('telephone', NumberType::class, [
-                'label' => 'NUMÉRO DE TÉLÉPHONE',
+                'label' => 'Numéro de téléphone',
                 //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre numéro de téléphone au format : "+code"+"numéro" '
                 ]
 
             ])
             ->add('mail', EmailType::class, [
-                'label' => 'ADRESSE E-MAIL',
+                'label' => 'Email',
                 'constraints' => new Length(60, 2),
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre adresse email'
                 ]
             ])
             ->add('cv', FileType::class, [
+                'label' => 'Votre CV',
                 'required' => false,
                 'mapped' => false,
                 'constraints' => [
@@ -62,6 +59,7 @@ class CandidatureType extends AbstractType
                 ],
             ])
             ->add('lm', FileType::class, [
+                'label' => 'Votre lettre de motivation',
                 'required' => false,
                 'mapped' => false,
                 'constraints' => [
@@ -71,7 +69,9 @@ class CandidatureType extends AbstractType
                     ])
                 ],
             ])
-            ->add('infoComp', TextareaType::class)
+            ->add('infoComp', TextareaType::class, [
+                "label" => "Infos complémentaires"
+            ])
             // ->add('captcha', CheckboxType::class)
             ->add('envoyer', SubmitType::class)
         ;
