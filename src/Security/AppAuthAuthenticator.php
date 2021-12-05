@@ -24,6 +24,7 @@ use App\Entity\Artisan;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -38,6 +39,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\PassportInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\Validator\Constraints\Length;
 
 class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -91,28 +93,28 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
         //gérer si on avait submit pour register 
         if ($request->request->get('register')) {
+            
             //!!!! inscrire un super artisan puis enlever son form d'insc
             //gestion de register si on a register client dans request
             $user = new Client();
             $form = $this->createForm(RegisterType::class, $user);
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
-
-                //$tel = $form->get('telephone')->getViewData();
+                if(!(strlen($form->get('telephone')->getViewData())==17)){
+                    throw new Exception('numéro de téléphone pas au format +33....');
+                }
+                $tel = $form->get('telephone')->getViewData();
                 $user->setPassword(
                     $this->encoder->encodePassword(
                         $user,
                         $form->get('mdp')->getData()
                     )
                 );
-
-
-                //$user->setTelephone($tel);
+                $user->setTelephone($tel);
                 $entityManager = $this->getDoctrine()->getManager();
 
                 $entityManager->persist($user);
                 $entityManager->flush();
-                //return new RedirectResponse('client');
             }
         }
         $email = $request->request->get('email', '');

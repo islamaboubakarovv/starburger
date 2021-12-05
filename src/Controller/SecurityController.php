@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\RegisterType;
 use App\Entity\Artisan;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,7 +42,10 @@ class SecurityController extends AbstractController
     $form = $this->createForm(RegisterType::class,$user);
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
-            
+            dd($request->request->get('captcha'));
+            if(!(strlen($form->get('telephone')->getViewData())==17)){
+                throw new Exception('numéro de téléphone pas au format +33....');
+            }
             $tel=$form->get('telephone')->getViewData();
             $user->setPassword(
                 $encoder->encodePassword(

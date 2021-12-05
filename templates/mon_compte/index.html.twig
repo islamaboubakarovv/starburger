@@ -3,6 +3,12 @@
 {% block title %}Hello MonCompteController!{% endblock %}
 
 {% block body %}
+{% block javascripts %}
+{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('base') }}
+<script type="text/javascript">
+</script>
+{% endblock %}
 <div class="bloc-haut">
     <div style="width:100%; height:150px; overflow:hidden">
       <img src="/images/illustrations/charpente_bois_haut.jpg" class="img-haut" style="margin-top: -100px;"/>
@@ -13,7 +19,7 @@
     </div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="./">Accueil</a></li>
+        <li class="breadcrumb-item"><a href=".../">Accueil</a></li>
         <li class="breadcrumb-item">Mon compte</li>
       </ol>
     </nav>

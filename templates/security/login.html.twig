@@ -4,12 +4,65 @@
 {% block title %}Espace client
 {% endblock %}
 {% block body %}
-{% if error %}
-	<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-<div id="bienvenue" style="background-image: url('{{asset('images/client/Bienvenue.png')}}')">
-	<p id="bienvenue_txt" style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
-</div>
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+	{{ encore_entry_script_tags('base') }}
+	<script type="text/javascript">
+		var border = document.getElementById('col1');
+window.onresize = resize;
+resize();
+function resize() {
+var s = window.innerWidth;
+if (s < 576) {
+col1.style.border = 'none';
+
+} else {
+col1.style.borderRight = 'solid';
+}
+}
+function switchClient() {
+var log = document.getElementById('client-form-cont');
+var reg = document.getElementById('artisan-form-cont');
+var radiobtn = document.getElementById('client');
+var radiobtn2 = document.getElementById('artisan');
+radiobtn.checked = true;
+radiobtn2.checked = false;
+log.style.display = 'block';
+reg.style.display = 'block';
+col1.style.borderRight = 'solid';
+
+
+}
+function switchArtisan() {
+var log = document.getElementById('client-form-cont');
+var reg = document.getElementById('artisan-form-cont');
+var col1 = document.getElementById('col1');
+var col2 = document.getElementById('col2');
+var radiobtn = document.getElementById('client');
+var radiobtn2 = document.getElementById('artisan');
+radiobtn.checked = false;
+radiobtn2.checked = true;
+col1.style.border = 'none';
+log.style.display = 'block';
+reg.style.display = 'none';
+}
+	</script>
+{% endblock %}
+{##############}
+<div class="bloc-haut">
+    <div style="width:100%; height:150px; overflow:hidden">
+      <img src="/images/client/business.jpg" class="img-haut" style="margin-top: -100px;"/>
+    </div>
+    <div class="surtext">
+      	<h1>Bienvenue</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href=".../">Accueil</a></li>
+        <li class="breadcrumb-item">Mon compte</li>
+      </ol>
+    </nav>
+  </div>
 {% if app.user %}
 	<div class="mb-3">
 		You are logged in as
@@ -17,50 +70,15 @@
 		<a href="{{ path('app_logout') }}">Logout</a>
 	</div>
 {% else %}
-{#
-	{% set user =''%}
-	{{ user }}
-	#}
-	<script>
-	
-	function switchClient(){
-		var log = document.getElementById('client-form-cont');
-		var reg = document.getElementById('artisan-form-cont');
-		var radiobtn=document.getElementById('client');
-		var radiobtn2=document.getElementById('artisan');
-		radiobtn.checked=true;
-		radiobtn2.checked=false;
-		log.style.display = 'block';
-		reg.style.display = 'block';
-		col1.style.borderRight='solid';
-		
 
-		
-	}
-	function switchArtisan(){
-		var log = document.getElementById('client-form-cont');
-		var reg = document.getElementById('artisan-form-cont');
-		var col1 = document.getElementById('col1');
-		var col2 = document.getElementById('col2');
-		var radiobtn=document.getElementById('client');
-		var radiobtn2=document.getElementById('artisan');
-		radiobtn.checked=false;
-		radiobtn2.checked=true;
-		col1.style.border='none';
-		log.style.display = 'block';
-		reg.style.display = 'none';
-	}
-
-	</script>
 	{# prendre comme valeur 'client' our 'artisan'#}
 	{# choix du rôle : front end #}
-	<div class='text-center'>
-	<div class="btn-group mb-4" role="group" aria-label="Basic example">
-		<button type="button" class="btn btn-success" id="btnSwitchClient" onclick="switchClient()">Client
-		</button>
-		<button type="button" class="btn btn-success" id="btnSwitchArtisan" onclick="switchArtisan()">Artisan
-		</button>
-	</div>
+		<div class='text-center'> <div class="btn-group mb-4" role="group" aria-label="Basic example">
+			<button type="button" class="btn btn-success" id="btnSwitchClient" onclick="switchClient()">Client
+			</button>
+			<button type="button" class="btn btn-success" id="btnSwitchArtisan" onclick="switchArtisan()">Artisan
+			</button>
+		</div>
 	</div>
 	{# choix du rôle : fin du front end #}
 
@@ -74,15 +92,15 @@
 		<div class="row">
 			<div class="col-sm-6" id="txt1">
 				Nous avons créé un espace dédié à nos clients.
-																															Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
+																																							Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
 
 			Vous n’avez pas encore de compte client?
 		</div>
 
 		{#
-																                <div class="col-sm-1 col-md-2">
-																                </div>
-																                #}
+																				                <div class="col-sm-1 col-md-2">
+																				                </div>
+																				                #}
 		<div class="col-sm-6" id="txt2">
 			Nous vous invitons à vous inscrire via notre formulaire de contact ci-dessous. Notre équipe commerciale se fera un plaisir de vous recontacter pour vous orienter dans votre projet. Découvrez notre large gamme de service et profitez d’avantages privilégiés au quotidien !
 		</div>
@@ -100,7 +118,7 @@
 				<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<input type="radio" id="client" name="client_name" value="client" checked>
-				<input type="radio" id="artisan" name="artisan_name" value="artisan">  
+				<input type="radio" id="artisan" name="artisan_name" value="artisan">
 				<div class="text-center">
 					<button class="btn-submit-client" type="submit">
 						Connexion
@@ -126,14 +144,20 @@ Artisan
 </div>
 #}
 <style>
-	#client{
-		display:none;
+	#btnSwitchClient {
+		background-color: #95683E;
 	}
-	#artisan{
-		display:none;
+	#btnSwitchArtisan{
+		background-color: #95683E;
+
 	}
-	#artisan-form-cont{
+	#client {
+		display: none;
 	}
+	#artisan {
+		display: none;
+	}
+	#artisan-form-cont {}
 	.btn-submit-client {
 		margin-top: 18px;
 		background-color: #E6C9A5 !important;

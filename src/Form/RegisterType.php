@@ -7,6 +7,7 @@ use App\Entity\Artisan;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use libphonenumber\PhoneNumber;
 use Symfony\Component\Form\AbstractType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -21,6 +22,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
+
 
 
 class RegisterType extends AbstractType
@@ -70,7 +72,7 @@ class RegisterType extends AbstractType
                 ]
             ])
 
-            ->add('telephone', PhoneNumberType::class, [
+            ->add('telephone', PhoneNumberType::class, [//mettre phonenumbertype apres
                 'label' => 'NUMÉRO DE TÉLÉPHONE',
                 //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
                 'attr' => [
@@ -104,7 +106,8 @@ class RegisterType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Merci de saisir votre code postal'
                 ]
-            ])
+                ])
+            ->add('captcha', CaptchaType::class)
             ->add('submit', SubmitType::class, [
                 'label' => "Inscription",
                 'attr' => [

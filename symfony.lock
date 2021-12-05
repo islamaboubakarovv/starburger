@@ -109,6 +109,12 @@
     "giggsey/locale": {
         "version": "2.1"
     },
+    "gregwar/captcha": {
+        "version": "v1.1.9"
+    },
+    "gregwar/captcha-bundle": {
+        "version": "v2.1.5"
+    },
     "jeroendesloovere/vcard": {
         "version": "1.7.2"
     },
