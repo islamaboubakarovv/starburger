@@ -3,6 +3,22 @@
 {% form_theme candidat_form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
 {% for offres in offres %}
+<div class="bloc-haut">
+  <div style="width:100%; height:150px; overflow:hidden">
+    <img src="/images/illustrations/nous_rejoindre.jpg" class="img-haut" style="margin-top: -450px;"/>
+  </div>
+  <div class="surtext">
+    <h1>Nous rejoindre</h1>
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./accueil">Accueil</a></li>
+      <li class="breadcrumb-item"><a href="./liste_offres">Offre d'emplois</a></li>
+      <li class="breadcrumb-item">Nous rejoindre</li>
+    </ol>
+  </nav>
+</div>
+
 <div class="container shadow-sm px-lg-5 px-4 py-4 my-5 bg-white rounded container-article">
 
     <div class="row pb-4">

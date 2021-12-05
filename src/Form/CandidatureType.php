@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Postulant;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -11,9 +12,9 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Validator\Constraints\File;
+// use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 
 class CandidatureType extends AbstractType
 {
@@ -21,10 +22,35 @@ class CandidatureType extends AbstractType
     {
         $builder
 
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('telephone', NumberType::class)
-            ->add('mail', EmailType::class)
+            ->add('nom', TextType::class, [
+                'label' => 'NOM',
+                'constraints' => new Length(30, 2),
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre nom'
+                ]
+            ])
+            ->add('prenom', TextType::class, [
+                'label' => 'PRÉNOM',
+                'constraints' => new Length(30, 2),
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre prénom'
+                ]
+            ])
+            ->add('telephone', NumberType::class, [
+                'label' => 'NUMÉRO DE TÉLÉPHONE',
+                //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre numéro de téléphone au format : "+code"+"numéro" '
+                ]
+
+            ])
+            ->add('mail', EmailType::class, [
+                'label' => 'ADRESSE E-MAIL',
+                'constraints' => new Length(60, 2),
+                'attr' => [
+                    'placeholder' => 'Merci de saisir votre adresse email'
+                ]
+            ])
             ->add('cv', FileType::class, [
                 'required' => false,
                 'mapped' => false,
