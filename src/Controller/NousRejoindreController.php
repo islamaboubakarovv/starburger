@@ -14,7 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
 class NousRejoindreController extends AbstractController
 {
     #[Route('/nous_rejoindre', name: 'nous_rejoindre')]
-
     public function index(Request $request, string $fichierCv, string $fichierLm): Response
     {
 
@@ -58,6 +57,9 @@ class NousRejoindreController extends AbstractController
             }
             $candidature->setLm($filename);
         }
+
+            $etat = $em->getRepository(Offre::class)->find(intval($_GET['id']));
+            $candidature->setOffre($etat);
 
             $em->persist($candidature);
             $em->flush();
