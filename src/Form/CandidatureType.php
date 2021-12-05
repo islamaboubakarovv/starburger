@@ -40,7 +40,7 @@ class CandidatureType extends AbstractType
                 'label' => 'NUMÉRO DE TÉLÉPHONE',
                 //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
                 'attr' => [
-                    'placeholder' => 'Merci de saisir votre numéro de téléphone au format : "+code"+"numéro" '
+                    'placeholder' => 'Merci de saisir votre numéro de téléphone '
                 ]
 
             ])
