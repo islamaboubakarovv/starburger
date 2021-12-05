@@ -93,6 +93,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
         //gérer si on avait submit pour register 
         if ($request->request->get('register')) {
+            
             //!!!! inscrire un super artisan puis enlever son form d'insc
             //gestion de register si on a register client dans request
             $user = new Client();

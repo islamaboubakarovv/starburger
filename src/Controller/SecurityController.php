@@ -42,6 +42,7 @@ class SecurityController extends AbstractController
     $form = $this->createForm(RegisterType::class,$user);
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
+            dd($request->request->get('captcha'));
             if(!(strlen($form->get('telephone')->getViewData())==17)){
                 throw new Exception('numéro de téléphone pas au format +33....');
             }
