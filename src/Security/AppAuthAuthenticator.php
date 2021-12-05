@@ -374,6 +374,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
      *
      * If an invalid form is found in the list of parameters, a 422 status code is returned.
      */
+    //test merge
     protected function renderForm(string $view, array $parameters = [], Response $response = null): Response
     {
         if (null === $response) {
