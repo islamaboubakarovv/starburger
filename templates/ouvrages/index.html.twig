@@ -5,7 +5,9 @@
 	<!-- script js pour afficher texte en position absolue -->
 
 	{% block javascripts %}
-<script type="text/javascript">
+		{{ encore_entry_script_tags('app') }}
+		{{ encore_entry_script_tags('base') }}
+		<script type="text/javascript">
 			var myLayer = document.createElement('div');
 myLayer.id = 'bookingLayer';
 myLayer.style.position = 'absolute';
@@ -29,8 +31,8 @@ var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
 display.innerHTML = text;
 }
-function contact(){
-	window.location="{{path('contact')}}";
+function contact() {
+window.location ="{{ path('contact') }}";
 }
 // texte par défaut
 function defaultText() {
@@ -38,184 +40,183 @@ var display = document.getElementById('bookingLayer');
 display.innerHTML = "";
 display.innerHTML = "passez le curseur sur un ouvrage et cliquez pour développer";
 }
-//fonctions pour la gallerie d'images 
-//display:block afficher
-//display:none ne pas afficher
-function gall1(){
-var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-btn.style.display="block";
-gall1.style.display="block";
-gall2.style.display="none";
-gall3.style.display="none";
-gall4.style.display="none";
-gall5.style.display="none";
-gall6.style.display="none";
-lab.style.display="none";
-layer.style.display="none";
+// fonctions pour la gallerie d'images
+// display:block afficher
+// display:none ne pas afficher
+function gall1() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "block";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
 
 }
-function gall2(){
-	var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-btn.style.display="block";
-gall1.style.display="none";
-gall2.style.display="block";
-gall3.style.display="none";
-gall4.style.display="none";
-gall5.style.display="none";
-gall6.style.display="none";
-lab.style.display="none";
-layer.style.display="none";
-	
-}
-function gall3(){
-	var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-btn.style.display="block";
-gall1.style.display="none";
-gall2.style.display="none";
-gall3.style.display="block";
-gall4.style.display="none";
-gall5.style.display="none";
-gall6.style.display="none";
-lab.style.display="none";
-layer.style.display="none";
-	
-}
-function gall4(){
-	var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-btn.style.display="block";
-gall1.style.display="none";
-gall2.style.display="none";
-gall3.style.display="none";
-gall4.style.display="block";
-gall5.style.display="none";
-gall6.style.display="none";
-lab.style.display="none";
-layer.style.display="none";
-	
-}
-function gall5(){
-	var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-btn.style.display="block";
-gall1.style.display="none";
-gall2.style.display="none";
-gall3.style.display="none";
-gall4.style.display="none";
-gall5.style.display="block";
-gall6.style.display="none";
-lab.style.display="none";
-layer.style.display="none";
-	
-}
-function gall6(){
-var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-btn.style.display="block";
-gall1.style.display="none";
-gall2.style.display="none";
-gall3.style.display="none";
-gall4.style.display="none";
-gall5.style.display="none";
-gall6.style.display="block";
-lab.style.display="none";
-layer.style.display="none";
-	
-}
-
-function closed(){//pour fermer la gallerie et revenir au grid
-var gall1=document.getElementById("main1");
-var gall2=document.getElementById("main2");
-var gall3=document.getElementById("main3");
-var gall4=document.getElementById("main4");
-var gall5=document.getElementById("main5");
-var gall6=document.getElementById("main6");
-var lab=document.getElementById("lab");
-var layer=document.getElementById("bookingLayer");
-var btn=document.getElementById("btn");
-lab.style.display="block";
-layer.style.display="block";
-gall1.style.display="none";
-gall2.style.display="none";
-gall3.style.display="none";
-gall4.style.display="none";
-gall5.style.display="none";
-gall6.style.display="none";
-btn.style.display="none";
+function gall2() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "block";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
 
 }
-//fin des fonctions galleries d'images 
+function gall3() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "block";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall4() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "block";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall5() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "block";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall6() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "block";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+
+function closed() { // pour fermer la gallerie et revenir au grid
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+lab.style.display = "block";
+layer.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+btn.style.display = "none";
+
+}
+// fin des fonctions galleries d'images
 
 
 resize();
-//js responsive pour position du bloc de texte dynamique
-//fonction qui s'active quand la taille de la fenêtre change
-function resize(){
+// js responsive pour position du bloc de texte dynamique
+// fonction qui s'active quand la taille de la fenêtre change
+function resize() {
 var s = window.innerWidth;
-if(s>1013){
-	myLayer.style.top="900px";
-	myLayer.style.left = '590px';
-}else if(s>820 && s<=1013){
-	myLayer.style.top="950px";
-	myLayer.style.left = '363px';
-	
-}else if(s<=820){
-	myLayer.style.top="1150px";
-	myLayer.style.left="0px";
-	
+if (s > 1013) {
+myLayer.style.top = "900px";
+myLayer.style.left = '590px';
+} else if (s > 820 && s <= 1013) {
+myLayer.style.top = "950px";
+myLayer.style.left = '363px';
+
+} else if (s <= 820) {
+myLayer.style.top = "1150px";
+myLayer.style.left = "0px";
+
 
 }
 }
 
-window.onresize=resize;
-
-	</script>
-	{% endblock %}   
+window.onresize = resize;
+		</script>
+	{% endblock %}
 	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
 		<p id="ouv_spec" style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
 	</div>
@@ -256,11 +257,12 @@ window.onresize=resize;
 		</div>
 	</section>
 	<div class="col-md-4 text-center" onclick="closed()">
-    <img src="{{asset('images/hexa_grid/btn.png')}}" class="close-button-1" alt="" id="btn">
-  </div>
-	
+		<img src="{{asset('images/hexa_grid/btn.png')}}" class="close-button-1" alt="" id="btn">
+	</div>
+
 	{# le hexa grid #}
-	<section id="lab">
+	<section
+		id="lab">
 		{#whitespace#}
 
 
@@ -349,215 +351,245 @@ window.onresize=resize;
 	</section>
 	{# fin du hexagrid #}
 	{# gallerie js responsive des ouvrages #}
-		<main class="main" id="main1" >
-  <div class="containerbox">
-    <div class="card">
-      <div class="card-image">
-          <img src="{{asset('images/hexa_grid/gall_1/1.jpg')}}" alt="Image Gallery">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_1/2.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_1/3.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_1/4.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_1/5.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_1/6.jpg')}}" alt="Image Gallery">      </div>
-  </div>
-</main>
-{#2#}
-<main class="main" id="main2">
-  <div class="containerbox">
-    <div class="card">
-      <div class="card-image">
-          <img src="{{asset('images/hexa_grid/gall_2/1.jpg')}}" alt="Image Gallery">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_2/2.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_2/3.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_2/4.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_2/5.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_2/6.jpg')}}" alt="Image Gallery">      </div>
-  </div>
-</main>
-{#3#}
-<main class="main" id="main3">
-  <div class="containerbox">
-    <div class="card">
-      <div class="card-image">
-          <img src="{{asset('images/hexa_grid/gall_3/1.jpg')}}" alt="Image Gallery">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_3/2.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_3/3.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_3/4.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_3/5.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_3/6.jpg')}}" alt="Image Gallery">      </div>
-  </div>
-</main>
-{#4#}
-<main class="main" id="main4">
-  <div class="containerbox">
-    <div class="card">
-      <div class="card-image">
-          <img src="{{asset('images/hexa_grid/gall_4/1.jpg')}}" alt="Image Gallery">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_4/2.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_4/3.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_4/4.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_4/5.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_4/6.jpg')}}" alt="Image Gallery">      </div>
-  </div>
-</main>
-{#5#}
-<main class="main" id="main5">
-  <div class="containerbox">
-    <div class="card">
-      <div class="card-image">
-          <img src="{{asset('images/hexa_grid/gall_5/1.jpg')}}" alt="Image Gallery">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_5/2.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_5/3.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_5/4.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_5/5.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_5/6.jpg')}}" alt="Image Gallery">      </div>
-  </div>
-</main>
-{#6#}
-<main class="main" id="main6">
-  <div class="containerbox">
-    <div class="card">
-      <div class="card-image">
-          <img src="{{asset('images/hexa_grid/gall_6/1.jpg')}}" alt="Image Gallery">
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_6/2.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_6/3.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_6/4.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_6/5.jpg')}}" alt="Image Gallery">      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-<img src="{{asset('images/hexa_grid/gall_6/6.jpg')}}" alt="Image Gallery">      </div>
-  </div>
-</main>
-		{# fin gallerie js responsive #}
-	<section id="rdv">
-		<style>
-			.conteneur2 {
-				display: flex;
-				margin: 50px;
-				width: 95%;
-				justify-content: space-around;
-			}
-		</style>
-
-		<!--
-													<div class="conteneur2">
-														<div>
-															<p id="travaux">Nos travaux vous intéressent ?
-															</p>
-														</div>
-														<div>
-															<a id="prendre_rdv">Prendre RDV</a>
-														</div>
-													</div>
-													avant bootstrap
-										-->
-
-		<div class="container">
-			<div class="row">
-				<div class="col-6" id="travaux">
-					Nos travaux vous intéressent ?
-				</div>
-				<div class="col-6" id="prendre_rdv" onclick="contact()">
-				Nous contacter
-					{#<a href="{{path('contact')}}" id="prendre_rdv_txt">Nous contacter</a>#}
+	<main class="main" id="main1">
+		<div class="containerbox">
+			<div class="card">
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_1/1.jpg')}}" alt="Image Gallery">
 				</div>
 			</div>
+			<div class="card">
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_1/2.jpg')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_1/3.jpg')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_1/4.jpg')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_1/5.jpg')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_1/6.jpg')}}" alt="Image Gallery">
+				</div>
+			</div>
+		</main>
+		{#2#}
+		<main class="main" id="main2">
+			<div class="containerbox">
+				<div class="card">
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_2/1.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_2/2.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_2/3.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_2/4.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_2/5.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_2/6.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+			</main>
+			{#3#}
+			<main class="main" id="main3">
+				<div class="containerbox">
+					<div class="card">
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_3/1.jpg')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_3/2.jpg')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_3/3.jpg')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_3/4.jpg')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_3/5.jpg')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_3/6.jpg')}}" alt="Image Gallery">
+						</div>
+					</div>
+				</main>
+				{#4#}
+				<main class="main" id="main4">
+					<div class="containerbox">
+						<div class="card">
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_4/1.jpg')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_4/2.jpg')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_4/3.jpg')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_4/4.jpg')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_4/5.jpg')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_4/6.jpg')}}" alt="Image Gallery">
+							</div>
+						</div>
+					</main>
+					{#5#}
+					<main class="main" id="main5">
+						<div class="containerbox">
+							<div class="card">
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_5/1.jpg')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_5/2.jpg')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_5/3.jpg')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_5/4.jpg')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_5/5.jpg')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_5/6.jpg')}}" alt="Image Gallery">
+								</div>
+							</div>
+						</main>
+						{#6#}
+						<main class="main" id="main6">
+							<div class="containerbox">
+								<div class="card">
+									<div class="card-image">
+										<img src="{{asset('images/hexa_grid/gall_6/1.jpg')}}" alt="Image Gallery">
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-image">
+										<img src="{{asset('images/hexa_grid/gall_6/2.jpg')}}" alt="Image Gallery">
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-image">
+										<img src="{{asset('images/hexa_grid/gall_6/3.jpg')}}" alt="Image Gallery">
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-image">
+										<img src="{{asset('images/hexa_grid/gall_6/4.jpg')}}" alt="Image Gallery">
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-image">
+										<img src="{{asset('images/hexa_grid/gall_6/5.jpg')}}" alt="Image Gallery">
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-image">
+										<img src="{{asset('images/hexa_grid/gall_6/6.jpg')}}" alt="Image Gallery">
+									</div>
+								</div>
+							</main>
+							{# fin gallerie js responsive #}
+							<section id="rdv">
+								<style>
+									.conteneur2 {
+										display: flex;
+										margin: 50px;
+										width: 95%;
+										justify-content: space-around;
+									}
+								</style>
 
-		</section>
-		
+								<!--
+																					<div class="conteneur2">
+																						<div>
+																							<p id="travaux">Nos travaux vous intéressent ?
+																							</p>
+																						</div>
+																						<div>
+																							<a id="prendre_rdv">Prendre RDV</a>
+																						</div>
+																					</div>
+																					avant bootstrap
+																		-->
 
-	{% endblock %}
+								<div class="container">
+									<div class="row">
+										<div class="col-6" id="travaux">
+											Nos travaux vous intéressent ?
+										</div>
+										<div class="col-6" id="prendre_rdv" onclick="contact()">
+											Nous contacter
+											{#<a href="{{path('contact')}}" id="prendre_rdv_txt">Nous contacter</a>#}
+										</div>
+									</div>
+
+								</section>
+
+
+							{% endblock %}
