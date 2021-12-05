@@ -2,7 +2,9 @@ $(function () {
   $(".petite").click(function () {
     if($(window).width() >= 600) {
       var Image = $(this).attr('src');
-      $(".grande").html("<img src='" + Image + "'>");
+      var Desc = $(this).attr('alt');
+      $(".lightbox-img").attr("src", Image);
+      $(".lightbox-desc").text(Desc);
       $(".grande").fadeIn("slow").css("display", "flex");
     }
   });
