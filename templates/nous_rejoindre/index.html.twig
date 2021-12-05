@@ -40,8 +40,6 @@
     </div>
 </div>
 {% endfor %}
-
-</div>
 <div class="container shadow-sm p-5 my-5 bg-white rounded">
     <div class="row text-center">
         <h2 class="h2">Veuillez remplir ce formulaire</h2>
@@ -61,10 +59,11 @@
             {{ form_row(candidat_form.cv) }}
             {{ form_row(candidat_form.lm) }}
         </div>    
-</div>
+    </div>
     <div class="row text-center mb-3">
         <div class="col">{{ form_row(candidat_form.envoyer, {'attr': {'class': 'form-contact-button'}}) }}</div>
         <div class="col"><button type="button" class="btn btn-outline-primary form-return-button" onclick = "history.back()">Retour</button></div>
     </div>
+</div>
 {{ form_end(candidat_form) }}
 {% endblock %}
