@@ -7,14 +7,15 @@
 {% endblock %}
 
 {% block body %}
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0" nonce="jrGgztzM"></script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% for articles in articles %}
 <div class="bloc-haut">
   <div style="width:100%; height:150px; overflow:hidden">
     <img src="/images/illustrations/journal.jpg" class="img-haut" style="margin-top: -450px;"/>
   </div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0" nonce="jrGgztzM"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% for articles in articles %}
+
   <div class="surtext">
     <h1>Nos actualités</h1>
     <p>Découvrez ABC au quotidien</p>

@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Hello OuvragesController!
+{% block title %}Ouvrages spécifiques
 {% endblock %}
 {% block body %}
 	<!-- script js pour afficher texte en position absolue -->
@@ -217,9 +217,22 @@ myLayer.style.left = "0px";
 window.onresize = resize;
 		</script>
 	{% endblock %}
-	<div id="ouvrages_spec" style="background-image: url('{{asset('images/header/carpentry3.png')}}')">
-		<p id="ouv_spec" style="font-size:48px;font-weight:700;font-family:'Montserrat';color:white;text-shadow: black 1px 0 10px">Ouvrages spécifiques</p>
-	</div>
+	<div class="bloc-haut">
+  <div style="width:100%; height:150px; overflow:hidden "background-image: url('{{asset('images/header/carpentry3.png')}}')"">
+    <img src="/images/header/carpentry3.png" class="img-haut"/>
+  </div>
+  <div class="surtext">
+    <h1>Ouvrages spécifiques</h1>
+    <p>Un aperçu de nos meilleurs oeuvres</p>
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./">Accueil</a></li>
+      <li class="breadcrumb-item">Ouvrages spécifiques</li>
+    </ol>
+  </nav>
+</div>
+	
 
 	<section id="palette">
 		<h1 id="large">Large palette de créations</h1>
@@ -244,6 +257,7 @@ window.onresize = resize;
 				column-gap: 100px;
 			}
 		</style>
+		
 
 		<div class="container">
 			<div class="row">

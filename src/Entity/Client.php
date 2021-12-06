@@ -93,7 +93,7 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     private $telephone;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=254, nullable=true)
      */
     private $adresse;
 

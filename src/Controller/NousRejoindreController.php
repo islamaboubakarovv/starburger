@@ -7,6 +7,7 @@ use App\Form\CandidatureType;
 use App\Entity\Postulant;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Exception;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,6 +37,9 @@ class NousRejoindreController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            if(!(strlen($form->get('telephone')->getViewData())==17)){
+                throw new Exception('numéro de téléphone pas au format +33....');
+            }
             $em = $this->getDoctrine()->getManager();
 
         if ($pdfCv = $form['cv']->getData()) {
@@ -60,7 +64,8 @@ class NousRejoindreController extends AbstractController
 
             $etat = $em->getRepository(Offre::class)->find(intval($_GET['id']));
             $candidature->setOffre($etat);
-
+            $tel = $form->get('telephone')->getViewData();
+            $candidature->setTelephone($tel);
             $em->persist($candidature);
             $em->flush();
 

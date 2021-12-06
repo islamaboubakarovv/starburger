@@ -13,6 +13,8 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
+use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 use Symfony\Component\Validator\Constraints\File;
 // use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 
@@ -34,7 +36,7 @@ class CandidatureType extends AbstractType
                 'attr' => [
                 ]
             ])
-            ->add('telephone', NumberType::class, [
+            ->add('telephone', PhoneNumberType::class, [
                 'label' => 'Numéro de téléphone',
                 //array('default_region' => 'FR', 'format' => PhoneNumberFormat::INTERNATIONAL),
                 'attr' => [
@@ -72,7 +74,9 @@ class CandidatureType extends AbstractType
             ->add('infoComp', TextareaType::class, [
                 "label" => "Infos complémentaires"
             ])
+            
             // ->add('captcha', CheckboxType::class)
+            ->add('captcha', CaptchaType::class)
             ->add('envoyer', SubmitType::class)
         ;
     }

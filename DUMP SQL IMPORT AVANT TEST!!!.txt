@@ -1,0 +1,453 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le : lun. 06 déc. 2021 à 03:38
+-- Version du serveur : 10.4.21-MariaDB
+-- Version de PHP : 8.0.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `l3_artisan`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `article`
+--
+
+CREATE TABLE `article` (
+  `id` int(11) NOT NULL,
+  `titre` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contenu` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_publi` date NOT NULL,
+  `artisan_id` int(11) NOT NULL,
+  `importance` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`id`, `titre`, `contenu`, `date_publi`, `artisan_id`, `importance`) VALUES
+(1, 'test1', 'test1', '2021-12-01', 4, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `artisan`
+--
+
+CREATE TABLE `artisan` (
+  `id` int(11) NOT NULL,
+  `prenom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mdp` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `artisan`
+--
+
+INSERT INTO `artisan` (`id`, `prenom`, `nom`, `mail`, `mdp`) VALUES
+(4, 'admin', 'admin', 'admin@admin', '$2y$13$We4cX9JNbOnE.EM/Tch/B./1ReWg.qlbzVoToisjyzFqQoC487kCm'),
+(7, 'admin2', 'admin2', 'admin2@admin2', 'admin2'),
+(8, 'admin3', 'admin3', 'admin3@admin3', 'admin3');
+
+--
+-- Déclencheurs `artisan`
+--
+DELIMITER $$
+CREATE TRIGGER `del` BEFORE DELETE ON `artisan` FOR EACH ROW BEGIN
+    IF OLD.mail="admin@admin" THEN 
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'On ne peut pas supprimer le super admin';
+    END IF;
+
+
+    END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `client`
+--
+
+CREATE TABLE `client` (
+  `id` int(11) NOT NULL,
+  `prenom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mdp` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telephone` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `adresse` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ville` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code_postal` varchar(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`id`, `prenom`, `nom`, `mail`, `mdp`, `telephone`, `adresse`, `ville`, `code_postal`) VALUES
+(75, 'test', 'test', 'test@test', '$2y$13$Zlq5ubwPKw4MeQbok2uUL.ulsfA6NKO5BSzTTJNiAOerksxFEaViC', '+33 6 84 94 17 69', 'test', 'test2', '37000'),
+(80, 'test2', 'test2', 'test2@test2', '$2y$13$HrvSoSFI2rwJVRaIIo7M7uanJ0vkJwL8mlamSftqk34JFxIcml8zW', '+33 6 87 94 17 68', 'test2', 'test2', '37000'),
+(81, 'test', 'test', 'islamaboubakarov@gmail.com', '$2y$13$eUL/J9QSAc9JsMH7p9QaSOERlc9FGygjjkvDVoB/BdgrvEF4c6Fge', '+33 6 87 94 17 68', 'test', 'test', '37000');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `doctrine_migration_versions`
+--
+
+CREATE TABLE `doctrine_migration_versions` (
+  `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `executed_at` datetime DEFAULT NULL,
+  `execution_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `doctrine_migration_versions`
+--
+
+INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
+('DoctrineMigrations\\Version20211002145050', '2021-11-02 14:09:33', 202),
+('DoctrineMigrations\\Version20211002154724', '2021-11-02 14:09:33', 24),
+('DoctrineMigrations\\Version20211002155206', '2021-11-02 14:09:33', 9),
+('DoctrineMigrations\\Version20211002155407', '2021-11-02 14:09:33', 35),
+('DoctrineMigrations\\Version20211002161954', '2021-11-02 14:09:33', 27),
+('DoctrineMigrations\\Version20211002164232', '2021-11-02 14:09:33', 32),
+('DoctrineMigrations\\Version20211002164703', '2021-11-02 14:09:33', 36),
+('DoctrineMigrations\\Version20211002165039', '2021-11-02 14:09:33', 11),
+('DoctrineMigrations\\Version20211002165707', '2021-11-02 14:09:33', 14),
+('DoctrineMigrations\\Version20211112101707', '2021-11-12 11:17:14', 273),
+('DoctrineMigrations\\Version20211113171635', '2021-11-13 18:17:00', 185),
+('DoctrineMigrations\\Version20211114195530', '2021-11-14 20:55:50', 662),
+('DoctrineMigrations\\Version20211114200134', '2021-11-14 21:01:42', 40),
+('DoctrineMigrations\\Version20211119091801', '2021-11-19 10:19:55', 49),
+('DoctrineMigrations\\Version20211119093256', '2021-11-19 10:33:00', 76),
+('DoctrineMigrations\\Version20211119093522', '2021-11-19 10:35:26', 40),
+('DoctrineMigrations\\Version20211119102230', '2021-11-19 11:22:35', 77),
+('DoctrineMigrations\\Version20211119105101', '2021-11-19 11:51:45', 40),
+('DoctrineMigrations\\Version20211119112228', '2021-11-19 12:22:35', 48),
+('DoctrineMigrations\\Version20211123152544', '2021-11-23 16:26:05', 212),
+('DoctrineMigrations\\Version20211201104131', '2021-12-01 11:42:28', 180),
+('DoctrineMigrations\\Version20211201122257', '2021-12-01 13:23:02', 43),
+('DoctrineMigrations\\Version20211204013937', '2021-12-04 02:39:42', 100),
+('DoctrineMigrations\\Version20211205233536', '2021-12-06 00:37:28', 106);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `galerie`
+--
+
+CREATE TABLE `galerie` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `taille` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `galerie`
+--
+
+INSERT INTO `galerie` (`id`, `nom`, `taille`) VALUES
+(1, 'galerie_accueil', 5),
+(2, 'carousel_accueil', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `illustration_article`
+--
+
+CREATE TABLE `illustration_article` (
+  `id` int(11) NOT NULL,
+  `article_id` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image`
+--
+
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL,
+  `galerie_id` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `image`
+--
+
+INSERT INTO `image` (`id`, `galerie_id`, `image`, `description`, `updated_at`) VALUES
+(9, 1, 'HPIM2912.JPG', 'Magnifique charpente visible depuis l\'intérieur', '2021-12-05 17:00:41'),
+(10, 1, 'Copie de HPIM2904.JPG', 'Toiture parfaitement réalisée', '2021-12-05 16:42:44'),
+(11, 1, 'HPIM2921.JPG', 'Aménagement de colombages en intérieur', '2021-12-05 16:43:26'),
+(12, 1, 'HPIM2930.JPG', 'Charpente prévue pour une serre', '2021-12-05 16:44:07'),
+(13, 1, 'HPIM2893.JPG', 'Toiture courbée en ardoise vue de près', '2021-12-05 17:26:24'),
+(14, 2, 'Copie (2) de Copie de HPIM2910.JPG', 'Ossature interne d\'un projet', '2021-12-05 17:01:24'),
+(15, 2, 'Copie (2) de Copie de HPIM2889.JPG', 'Puit fait avec amour', '2021-12-05 16:46:28'),
+(16, 2, 'Copie de HPIM2860.JPG', 'Charmante rembarde d\'escalier', '2021-12-05 16:46:59');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `offre`
+--
+
+CREATE TABLE `offre` (
+  `id` int(11) NOT NULL,
+  `poste` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prerequis` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type_contrat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `offre`
+--
+
+INSERT INTO `offre` (`id`, `poste`, `description`, `prerequis`, `type_contrat`) VALUES
+(1, 'Poste1', 'Poste1', 'poste1', 'poste1'),
+(2, 'poste2', 'poste2', 'poste2', 'poste2'),
+(3, 'poste3', 'poste3', 'poste3', 'poste3'),
+(4, 'poste4', 'poste4', 'poste4', 'poste4'),
+(5, 'poste5', 'poste5', 'poste5', 'poste5');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `postulant`
+--
+
+CREATE TABLE `postulant` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cv` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lm` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `info_comp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `offre_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `postulant`
+--
+
+INSERT INTO `postulant` (`id`, `nom`, `prenom`, `mail`, `telephone`, `cv`, `lm`, `info_comp`, `offre_id`) VALUES
+(1, 'test', 'test', 'test4@test4', '+33 6 87 9', '01c2fffab4b2.pdf', '69c29e61a178.pdf', 'test4', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `projet`
+--
+
+CREATE TABLE `projet` (
+  `id` int(11) NOT NULL,
+  `objet` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `est_recontacte` tinyint(1) NOT NULL,
+  `client_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `projet`
+--
+
+INSERT INTO `projet` (`id`, `objet`, `description`, `est_recontacte`, `client_id`) VALUES
+(1, 'test', 'test de devis', 1, 75),
+(2, 'test', 'test', 0, 75),
+(3, 'testtes', 'test', 0, 75),
+(4, 'test', 'aaaaaaaaaaaaa', 0, 81);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_23A0E665ED3C7B7` (`artisan_id`);
+
+--
+-- Index pour la table `artisan`
+--
+ALTER TABLE `artisan`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_3C600AD35126AC48` (`mail`);
+
+--
+-- Index pour la table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_C74404555126AC48` (`mail`);
+
+--
+-- Index pour la table `doctrine_migration_versions`
+--
+ALTER TABLE `doctrine_migration_versions`
+  ADD PRIMARY KEY (`version`);
+
+--
+-- Index pour la table `galerie`
+--
+ALTER TABLE `galerie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `illustration_article`
+--
+ALTER TABLE `illustration_article`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_312274027294869C` (`article_id`);
+
+--
+-- Index pour la table `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_C53D045F825396CB` (`galerie_id`);
+
+--
+-- Index pour la table `offre`
+--
+ALTER TABLE `offre`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `postulant`
+--
+ALTER TABLE `postulant`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_F79395124CC8505A` (`offre_id`);
+
+--
+-- Index pour la table `projet`
+--
+ALTER TABLE `projet`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_50159CA919EB6921` (`client_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `article`
+--
+ALTER TABLE `article`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `artisan`
+--
+ALTER TABLE `artisan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pour la table `client`
+--
+ALTER TABLE `client`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT pour la table `galerie`
+--
+ALTER TABLE `galerie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `illustration_article`
+--
+ALTER TABLE `illustration_article`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `image`
+--
+ALTER TABLE `image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT pour la table `offre`
+--
+ALTER TABLE `offre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `postulant`
+--
+ALTER TABLE `postulant`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `projet`
+--
+ALTER TABLE `projet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `article`
+--
+ALTER TABLE `article`
+  ADD CONSTRAINT `FK_23A0E665ED3C7B7` FOREIGN KEY (`artisan_id`) REFERENCES `artisan` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `illustration_article`
+--
+ALTER TABLE `illustration_article`
+  ADD CONSTRAINT `FK_312274027294869C` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `image`
+--
+ALTER TABLE `image`
+  ADD CONSTRAINT `FK_C53D045F825396CB` FOREIGN KEY (`galerie_id`) REFERENCES `galerie` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `postulant`
+--
+ALTER TABLE `postulant`
+  ADD CONSTRAINT `FK_F79395124CC8505A` FOREIGN KEY (`offre_id`) REFERENCES `offre` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `projet`
+--
+ALTER TABLE `projet`
+  ADD CONSTRAINT `FK_50159CA919EB6921` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
