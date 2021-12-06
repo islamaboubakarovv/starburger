@@ -11,5 +11,12 @@ Réalisé par :
 </ul>
 
 URL du site : <a href="#">test 1.2 1.2</a>
+!!!!!Manipulation importantes avant de tester: 
+-faire la dernière migration (ça va remplir les images de la BDD)
+-décommenter l'extension gd (php.ini)
+-composer i 
+-npm i 
+-npm run dev
+-symfony console cache:clear
 
 
