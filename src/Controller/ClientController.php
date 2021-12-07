@@ -9,7 +9,7 @@ use JeroenDesloovere\VCard\VCard;
 
 class ClientController extends AbstractController
 {
-    #[Route('/client', name: 'client')]
+    #[Route('/clientt', name: 'clientt')]
     public function index(): Response
     {
         $vcard = new VCard();

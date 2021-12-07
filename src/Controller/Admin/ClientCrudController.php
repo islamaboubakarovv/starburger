@@ -51,9 +51,10 @@ class ClientCrudController extends AbstractCrudController
     {
 
         $getVCard = Action::new('getVCard', 'Exporter les données', 'fa fa-user')
-            ->linkToRoute('client', function(Client $entity){
+            ->linkToRoute('clientt', function(Client $entity){
                 return [
                     'id' => $entity->getId()
+                    
                 ];
             })
         ;
