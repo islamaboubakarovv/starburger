@@ -1,19 +1,148 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+		<link rel="icon" type="image/png" href="images/logos/logoArtisan.png"/>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			{{ encore_entry_script_tags('base') }}
+		{% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+			<div class="container-fluid mx-3" style="color:#e6c9a5;">
+				<a class="navbar-brand" href="./"><img src="/images/logos/logo3.svg" style="color:#e6c9a5;"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color:#e6c9a5;">
+					<span class="navbar-toggler-icon" style="color:#e6c9a5;background-color:#e6c9a5"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="charpente" style="color:#FFC000">CONCEPT</a>
+						</li>
+						<li class="nav-item dropdown" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+							<a class="nav-link dropdown-toggle" id="savoirfaireDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								MENU
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="savoirfaireDropdown" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+
+								<li style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+									<a class="dropdown-item" href="/ouvrages" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">LA CARTE</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/actualites">ACTUALITES</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/liste_offres">NOUS REJOINDRE</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/contact">CONTACT</a>
+						</li>
+						<li class="nav-item dropdown">
+						</li>
+						<a class="nav-link text-center" data-bs-toggle="dropdown" id="compteDropdown" role="button" aria-expanded="false"/><img src="/images/Pictogrammes/noun_profile_1041818.svg"/></a>
+
+						
+					
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="compteDropdown" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+						<li style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+							<a style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')" class="dropdown-item" {% if app.user %} href="{{path('account')}}" {% else %} href="{{path('client')}}" {% endif %}>
+								{% if app.user %}Mon compte{% else %}Espace client
+								{% endif %}
+							</li>
+						</li>
+						<li style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')"><hr style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')" class="dropdown-divider"></li>
+						<li style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+							<a style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')" class="dropdown-item" {% if app.user %} href="{{path('account_password')}}" {% endif %}>
+								{% if app.user %}Modifier mes informations
+								{% endif %}
+							</a>
+						</li>
+						<li style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')"><hr class="dropdown-divider"></li>
+						<li style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+							<a style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')" class="dropdown-item" {% if app.user %} href="{{path('app_logout')}}" {% endif %}>
+								{% if app.user %}Déconnexion
+								{% endif %}
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html></div></nav>{% block body %}{% endblock %}<footer id="footer" class="container-fluid text-white py-3 px-5" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')"><div class="row gy-3">
+<div class="col-xs-12 col-md-4 px-5">
+	<h5>
+		<b>RÉSEAUX SOCIAUX</b>
+	</h5>
+	<ul class="list-unstyled mb-0">
+		<li>
+			<a href="https://www.instagram.com/star_burgers_and_steaks/" class="text-decoration-none text-white"><img src="images/logos/logo_instagram.png" class="img-footer">Instagram</a>
+		</li>
+		<li>
+			<a href="https://fr-fr.facebook.com/StarBurgersAndSteaks/" class="text-decoration-none text-white"><img src="images/logos/logo_facebook.png" class="img-footer">Facebook</a>
+		</li>
+	</ul>
+</div>
+<div class="col-xs-12 col-md-4 px-5">
+	<h5>
+		<b>NAVIGATION</b>
+	</h5>
+	<ul class="list-unstyled mb-0">
+		<li>
+			<a href="/qui" class="text-white">> Qui sommes nous ?</a>
+		</li>
+		<li class="my-2">
+			<a href="/" class="text-white">> Notre savoir faire</a>
+		</li>
+		<li class="my-2">
+			<a href="/actualites" class="text-white">> Actualités</a>
+		</li>
+		<li class="my-2">
+			<a href="/liste_offres" class="text-white">> Nous rejoindre</a>
+		</li>
+		<li class="my-2">
+			<a href="/contact" class="text-white">> Contact</a>
+		</li>
+	</ul>
+</div>
+<div class="col-xs-12 col-md-4 px-5">
+	<h5>
+		<b>CONTACT</b>
+	</h5>
+	<ul class="list-unstyled mb-0">
+		<li>
+			<p>
+				<b>Horaires :</b>
+				du lundi au samedi 11h-14h et 17h-21h</p>
+		</li>
+		<li>
+			<p>
+				<b>Adresse :</b>
+				18 Rue Maréchal Joffre, 37100 Tours</p>
+		</li>
+		<li>
+			<p>
+				<b>Téléphone :</b>
+				09.81.89.59.86</p>
+		</li>
+		<li>
+			<p>
+				<b>Email :</b>
+				chabazovtanzila@gmail.com</p>
+		</li>
+	</ul>
+</div></div><div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+<a class="btn btn-footer" {% if app.user %} href="/compte" {% else %} href="/client" {% endif %} role="button">
+	{% if app.user %}Mon compte{% else %}Connexion
+	{% endif %}
+</a></div></footer></body></html>

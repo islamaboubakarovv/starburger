@@ -1,0 +1,8 @@
+pour utiliser git :
+1. tout d'abord aller sur gitlab, aller dans clone et utiliser le clone in IDE (https)
+2. composer i dans le cmd
+3. 'git status' (pour vérifier dans quelle branche on est) et se placer sur dev 'git checkout dev'
+4. puis pour développer : créer une branche dans laquelle on fait nos modifs : 'git checkout -b nombranche'
+5. ATTENTION PAS SUR DEMANDER AVANT : pour terminer nos modifs et "finir" notre release : 
+  'git checkout dev' + git merge nombranche
+6. remercier dieu

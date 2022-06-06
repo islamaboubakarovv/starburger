@@ -1,0 +1,717 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ouvrages spécifiques
+{% endblock %}
+{% block body %}
+	<!-- script js pour afficher texte en position absolue -->
+
+	{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}
+		{{ encore_entry_script_tags('base') }}
+		<script type="text/javascript">
+			var myLayer = document.createElement('div');
+myLayer.id = 'bookingLayer';
+myLayer.style.position = 'absolute';
+myLayer.style.zIndex = 1;
+myLayer.style.left = '590px';
+myLayer.style.top = '1200px';
+myLayer.style.width = '160px';
+myLayer.style.height = '145px';
+myLayer.style.padding = '10px';
+myLayer.style.background = '#11ffee00';
+myLayer.style.color = "#E6C9A3";
+myLayer.style.fontSize = "15px";
+myLayer.style.textShadow = "1px 0 10px black";
+myLayer.style.fontFamily = "Montserrat";
+myLayer.style.textAlign = "center";
+myLayer.innerHTML = 'passez le curseur sur une catégorie et cliquez pour développer';
+document.body.appendChild(myLayer);
+// fonctions pour changer texte du bloc
+function changeText(text) {
+var display = document.getElementById('bookingLayer');
+display.innerHTML = "";
+display.innerHTML = text;
+}
+function contact() {
+window.location ="{{ path('contact') }}";
+}
+// texte par défaut
+function defaultText() {
+var display = document.getElementById('bookingLayer');
+display.innerHTML = "";
+display.innerHTML = "passez le curseur sur une catégorie et cliquez pour développer";
+
+}
+// fonctions pour la gallerie d'images
+// display:block afficher
+// display:none ne pas afficher
+function gall1() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "block";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall2() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "block";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall3() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "block";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall4() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "block";
+gall5.style.display = "none";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall5() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "block";
+gall6.style.display = "none";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+function gall6() {
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+btn.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "block";
+lab.style.display = "none";
+layer.style.display = "none";
+
+}
+
+function closed() { // pour fermer la gallerie et revenir au grid
+var gall1 = document.getElementById("main1");
+var gall2 = document.getElementById("main2");
+var gall3 = document.getElementById("main3");
+var gall4 = document.getElementById("main4");
+var gall5 = document.getElementById("main5");
+var gall6 = document.getElementById("main6");
+var lab = document.getElementById("lab");
+var layer = document.getElementById("bookingLayer");
+var btn = document.getElementById("btn");
+lab.style.display = "block";
+layer.style.display = "block";
+gall1.style.display = "none";
+gall2.style.display = "none";
+gall3.style.display = "none";
+gall4.style.display = "none";
+gall5.style.display = "none";
+gall6.style.display = "none";
+btn.style.display = "none";
+
+}
+// fin des fonctions galleries d'images
+
+
+resize();
+// js responsive pour position du bloc de texte dynamique
+// fonction qui s'active quand la taille de la fenêtre change
+function resize() {
+var s = window.innerWidth;
+if (s > 1013) {
+myLayer.style.top = "900px";
+myLayer.style.left = '590px';
+} else if (s > 820 && s <= 1013) {
+myLayer.style.top = "950px";
+myLayer.style.left = '363px';
+
+} else if (s <= 820) {
+myLayer.style.top = "1150px";
+myLayer.style.left = "0px";
+
+
+}
+}
+
+window.onresize = resize;
+		</script>
+	{% endblock %}
+	<div class="bloc-haut">
+		<div style="width:100%; height:150px; overflow:hidden " background-image: url('{{asset('images/header/carpentry3.png')}}')"">
+			<img src="/images/fond/coal.jpg" class="img-haut"/>
+		</div>
+		<div class="surtext">
+			<h1>La carte</h1>
+			<p>Un aperçu de notre menu</p>
+		</div>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="./">Accueil</a>
+				</li>
+				<li class="breadcrumb-item">La carte</li>
+			</ol>
+		</nav>
+	</div>
+
+
+	<section id="palette">
+		<h2 id="large">Découvrez nos plats et nos spécialités</h1>
+		<style>
+			#large {
+				position: relative;
+				text-align: center;
+				color: #95683E;
+				font-weight: 700;
+				font-size: 48px;
+				font-family: Helvetica;
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			.conteneur {
+				display: flex;
+				margin-left: 100px;
+				margin-right: 100px;
+				margin-top: 50px;
+				width: 80%;
+				justify-content: space-around;
+				column-gap: 100px;
+			}
+		</style>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm" id="cont_txt1">
+					Nous vous proposons de délicieux burgers et plats russes. Notre mot d’ordre : le fait-maison. Chez nous, tout est frais et tout est fait sur place !
+				</div>
+				<div class="col-sm" id="cont_txt2">
+					Venez découvrir notre cuisine tous les jours de 11h à 14h et de 17h à 20h. Sur place, à emporter ou en livraison via Uber Eats,Just Eat ou Deliveroo  : c’est vous qui décidez !
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="col-md-4 text-center" onclick="closed()">
+		<img src="{{asset('images/hexa_grid/btn.png')}}" class="close-button-1" alt="" id="btn">
+	</div>
+
+	{# le hexa grid #}
+	<section
+		id="lab" style="background-image: url('{{asset('images/fond/fond_etoile.PNG')}}')">
+		{#whitespace#}
+
+
+		<article>
+
+
+			<!-- ça change le texte quand on hover -->
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item" onmouseover="changeText('Burger simple 9,5 e // Menu 12,5 e')" onmouseout="defaultText()" onclick="gall6()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1" style="background-image: url('{{asset('images/hexa_grid/simple.png')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item" onmouseover="changeText('Burger double 12,5 e // Menu 15,9 e')" onmouseout="defaultText()" onclick="gall1()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-2" style="background-image: url('{{asset('images/hexa_grid/double.png')}}')"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item" onmouseover="changeText('Desserts')" onmouseout="defaultText()" onclick="gall5()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-3" style="background-image: url('{{asset('images/hexa_grid/dessert.png')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lab_item" onmouseover="changeText('Viandes/spécialités russes')" onmouseout="defaultText()" onclick="gall2()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-4" style="background-image: url('{{asset('images/hexa_grid/viande.png')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item">
+				<div class="hexagon hexagon2inv">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-1"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="lab_item" onmouseover="changeText('Entrées')" onmouseout="defaultText()" onclick="gall4()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-5" style="background-image: url('{{asset('images/hexa_grid/entree.png')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lab_item" onmouseover="changeText('Boissons')" onmouseout="defaultText()" onclick="gall3()">
+				<div class="hexagon hexagon2">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2-6" style="background-image: url('{{asset('images/hexa_grid/coca_verre.PNG')}}')"></div>
+					</div>
+				</div>
+			</div>
+
+		</article>
+	</section>
+	{# fin du hexagrid #}
+	{# gallerie js responsive des ouvrages #}
+	<main class="main" id="main1">
+		<div class="containerbox">
+			<div class="card">
+				<div class="centered">Fish double 12,5€ / Menu(frites,boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_6/fish-double.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Texas double 12,5€ / Menu(frites,boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_6/texas.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Paris double 12,5€ / Menu(frites,boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_6/paris.png')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Milan double 12,5€ / Menu(frites,boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_6/milan.png')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Chicago double 12,5€ / Menu(frites,boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_6/chicago.png')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">New York double 12,5 € / Menu(frites,boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_6/new york.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+		</div>
+	</main>
+	{#2#}
+	<main class="main" id="main2">
+		<div class="containerbox">
+			<div class="card">
+				<div class="centered">Manti 8,3€ / Menu(salade+boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_2/manti.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Viande maturée (légumes,salade) 30€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_2/maturee.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Entrecôte marinée à la plancha 20,9€ 25,9€ en menu</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_2/entrecote_plancha.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+			<div class="card">
+				<div class="centered">Côtelette de Kiev en menu(salade+riz+boisson) 15,9€</div>
+				<div class="card-image">
+					<img src="{{asset('images/hexa_grid/gall_2/cotelette.PNG')}}" alt="Image Gallery">
+				</div>
+			</div>
+		</main>
+		{#3#}
+		<main class="main" id="main3">
+			<div class="containerbox">
+				<div class="card">
+					<div class="centered">Café (expresso 2,5€/cappucino,allongé 3€)</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/cafe.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Thé (noir/vert/fruits) 2,5€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/cafe.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Coca Cola verre 33 cl 3€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/coca_verre.PNG')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Coca zero/cherry cannette 33 cl 2€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/coca_zero.png')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Fanta cannette 33cl 2€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/fanta.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Powerade 50cl 3€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/powerade.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">St Pellegrino eau pétillante 50cl 2€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/pellegrino.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Orangina 25cl 2€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/orangina.png')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Gilbert orange/pomme 25cl 2€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/gilbert_orange.png')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Lorina limonade 33cl 3€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/lorina_33.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Lorina limonade 75cl 5€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/lorina_75.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+				<div class="card">
+					<div class="centered">Sprite 33cl 2€</div>
+					<div class="card-image">
+						<img src="{{asset('images/hexa_grid/gall_3/sprite.jpg')}}" alt="Image Gallery">
+					</div>
+				</div>
+			</main>
+			{#4#}
+			<main class="main" id="main4">
+				<div class="containerbox">
+					<div class="card">
+						<div class="centered">Salade césar 7€
+						</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/cesar.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Burrata 6€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/burrata.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Sauce maison Adjika 1,5€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/adjika.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Salade Olivier à la russe 8€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/adjika.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Gâteau aux légumes 6€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/adjika.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Choux à la coréenne 4,5€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/adjika.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Carottes râpées à la coréenne 4,5€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/adjika.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+					<div class="card">
+						<div class="centered">Salade Vinegret 6€</div>
+						<div class="card-image">
+							<img src="{{asset('images/hexa_grid/gall_4/adjika.PNG')}}" alt="Image Gallery">
+						</div>
+					</div>
+				</main>
+				{#5#}
+				<main class="main" id="main5">
+					<div class="containerbox">
+						<div class="card">
+							<div class="centered">Gâteau framboises 4,5€</div>
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_5/framboise.PNG')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered">Gâteau medovik 4,5€</div>
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_5/medovik.PNG')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered">Milkshake(vanille/fraise/framboise/banane) 4,5€</div>
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_5/milkshake.PNG')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered">Génoise fruits rouges 4,5€</div>
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_5/genoise.PNG')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered">Gâteau rafaello 4,5€</div>
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_5/raffaelo.PNG')}}" alt="Image Gallery">
+							</div>
+						</div>
+						<div class="card">
+							<div class="centered">Gâteau au chocolat 4,5€</div>
+							<div class="card-image">
+								<img src="{{asset('images/hexa_grid/gall_5/chocolat.PNG')}}" alt="Image Gallery">
+							</div>
+						</div>
+					</main>
+					{#6#}
+					<main class="main" id="main6">
+						<div class="containerbox">
+							<div class="card">
+								<div class="centered">Fish 9,5 € / Menu(frites+boisson) 12,9€
+								</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/fish-simple.PNG')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">Texas 9,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/texas.PNG')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">Paris 9,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/paris.png')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">Milan 9,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/milan.png')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">Star Burger 9,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/star-double.png')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">Juicy Star 12,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/juicy.png')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">Chicago 9,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/chicago.png')}}" alt="Image Gallery">
+								</div>
+							</div>
+							<div class="card">
+								<div class="centered">New York 9,5 € / Menu(frites+boisson) 12,9€</div>
+								<div class="card-image">
+									<img src="{{asset('images/hexa_grid/gall_6/new york.PNG')}}" alt="Image Gallery">
+								</div>
+							</div>
+						</div>
+
+					</main>
+					{# fin gallerie js responsive #}
+					<section id="rdv">
+						<div class="col mx-5 text-center">
+							<h4 style="color: #95683E;">Pour commander
+								<a class="btn btn-primary mx-5" style="background-color:#1E2F79" href="https://star-burgers-and-steaks-restaurant.order.dish.co/menus" role="button">Lien Dish Order</a>
+							</h4>
+						</div>
+					</section>
+					<div>
+						<blockquote>
+							<p>
+								<center>
+									Téléphone :
+									<b>09.81.89.59.86</b>
+									<br><br>
+									Whatsapp :
+									<b>06.44.88.88.10</b>
+								</center>
+							</p>
+						</blockquote>
+					</div>
+					<div class="row" id="commandes">
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<a href="https://www.ubereats.com/fr/store/star-burgers-and-steaks/WO45bENZQvKYLj5F_usSqw?diningMode=PICKUP">
+									<img width="100px" height="100px" src="{{asset('images/hexa_grid/gall_6/uber.jpg')}}" alt="Image Gallery">
+								</a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<a href="https://www.just-eat.fr/menu/star-burger-and-steaks">
+									<img width="100px" height="100px" src="{{asset('images/hexa_grid/gall_6/just.png')}}" alt="Image Gallery">
+								</a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<a href="https://deliveroo.fr/fr/menu/tours/petite-arche/star-burgers-and-steaks-37/">
+									<img width="100px" height="100px" src="{{asset('images/hexa_grid/gall_6/deliveroo.png')}}" alt="Image Gallery">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div>
+					</br>
+					</div>
+					<style>
+						#commandes {
+							margin-left: 250px;
+						}
+					</style>
+
+
+				{% endblock %}

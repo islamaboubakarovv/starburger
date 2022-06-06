@@ -1,0 +1,206 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Espace client
+{% endblock %}
+{% block body %}
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+	{{ encore_entry_script_tags('base') }}
+	<script type="text/javascript">
+		var border = document.getElementById('col1');
+window.onresize = resize;
+resize();
+function resize() {
+var s = window.innerWidth;
+if (s < 576) {
+col1.style.border = 'none';
+
+} else {
+col1.style.borderRight = 'solid';
+}
+}
+function switchClient() {
+var log = document.getElementById('client-form-cont');
+var reg = document.getElementById('artisan-form-cont');
+var radiobtn = document.getElementById('client');
+var radiobtn2 = document.getElementById('artisan');
+radiobtn.checked = true;
+radiobtn2.checked = false;
+log.style.display = 'block';
+reg.style.display = 'block';
+col1.style.borderRight = 'solid';
+
+
+}
+function switchArtisan() {
+var log = document.getElementById('client-form-cont');
+var reg = document.getElementById('artisan-form-cont');
+var col1 = document.getElementById('col1');
+var col2 = document.getElementById('col2');
+var radiobtn = document.getElementById('client');
+var radiobtn2 = document.getElementById('artisan');
+radiobtn.checked = false;
+radiobtn2.checked = true;
+col1.style.border = 'none';
+log.style.display = 'block';
+reg.style.display = 'none';
+}
+	</script>
+{% endblock %}
+{##############}
+<div class="bloc-haut">
+    <div style="width:100%; height:150px; overflow:hidden">
+      <img src="/images/client/business.jpg" class="img-haut" style="margin-top: -100px;"/>
+    </div>
+    <div class="surtext">
+      	<h1>Bienvenue</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href=".../">Accueil</a></li>
+        <li class="breadcrumb-item">Mon compte</li>
+      </ol>
+    </nav>
+  </div>
+{% if app.user %}
+	<div class="mb-3">
+		You are logged in as
+		{{ app.user.username }},
+		<a href="{{ path('app_logout') }}">Logout</a>
+	</div>
+{% else %}
+
+	{# prendre comme valeur 'client' our 'artisan'#}
+	{# choix du rôle : front end #}
+		<div class='text-center'> <div class="btn-group mb-4" role="group" aria-label="Basic example">
+			<button type="button" class="btn btn-success" id="btnSwitchClient" onclick="switchClient()">Client
+			</button>
+			<button type="button" class="btn btn-success" id="btnSwitchArtisan" onclick="switchArtisan()">Artisan
+			</button>
+		</div>
+	</div>
+	{# choix du rôle : fin du front end #}
+
+
+	{#texte espace client/artisan #}
+
+	<div class="container shadow-sm p-5 my-10 bg-white rounded" id="txt-client">
+		<div class="row">
+			<div class="d-flex justify-content-center" id="espace-client" style="font-size:48px;font-weight:700;font-family:Helvetica">Espace client</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6" id="txt1">
+				Nous avons créé un espace dédié à nos clients.
+																																							Vous pourrez retrouver sur celui-ci vos différents devis en cours.</br>
+
+			Vous n’avez pas encore de compte client?
+		</div>
+
+		{#
+																				                <div class="col-sm-1 col-md-2">
+																				                </div>
+																				                #}
+		<div class="col-sm-6" id="txt2">
+			Nous vous invitons à vous inscrire via notre formulaire de contact ci-dessous. Notre équipe commerciale se fera un plaisir de vous recontacter pour vous orienter dans votre projet. Découvrez notre large gamme de service et profitez d’avantages privilégiés au quotidien !
+		</div>
+	</div>
+</div>
+{# container pour login et register#}
+<div class="container shadow-sm py-5 px-5 my-5 bg-white rounded" id="client-form-cont">
+	<div class="row">
+		<div class="col-sm-6 pe-5" id="col1">
+			<form method="post" name="loginform">
+				<h1 class="h3 mb-3" id="inscrit" style="font-family:Helvetica;font-size:25px;font-weight:400">DÉJÀ INSCRIT ?</h1>
+				<label for="inputEmail" style="font-family:Montserrat Bold;font-size:14px;font-weight:700">EMAIL</label>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Votre adresse mail" autocomplete="email" required autofocus>
+				<label for="inputPassword" style="font-family:Montserrat Bold;font-size:14px;font-weight:700;margin-top:50px">MOT DE PASSE</label>
+				<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<input type="radio" id="client" name="client_name" value="client" checked>
+				<input type="radio" id="artisan" name="artisan_name" value="artisan">
+				<div class="text-center">
+					<button class="btn-submit-client" type="submit">
+						Connexion
+					</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-6 ps-5" id="artisan-form-cont">
+			<h1 class="h3 mb-3" id="inscription" style="font-family:Helvetica;font-size:25px;font-weight:400">REJOIGNEZ-NOUS</h1>
+			<div
+				class="clientform" style="font-family:Montserrat Bold;font-size:14px">
+				{#l'user peut choisir d'afficher le form client ou user #}
+				{{render(path('register'))}}
+			</div>
+
+		</div>
+	</div>
+</div>
+{# pour que l'artisan se connecte: il est déjà dans la BDD #}
+{#
+<div class="container shadow-sm py-5 px-5 my-5 bg-white rounded" id="artisan-form-cont">
+Artisan 
+</div>
+#}
+<style>
+	#btnSwitchClient {
+		background-color: #95683E;
+	}
+	#btnSwitchArtisan{
+		background-color: #95683E;
+
+	}
+	#client {
+		display: none;
+	}
+	#artisan {
+		display: none;
+	}
+	#artisan-form-cont {}
+	.btn-submit-client {
+		margin-top: 18px;
+		background-color: #E6C9A5 !important;
+		color: black !important;
+		font-weight: 700 !important;
+		font-family: "Montserrat Bold" !important;
+		font-size: 18px !important;
+		border-radius: 30px !important;
+		width: 192px !important;
+		height: 42px !important;
+		border: none !important;
+	}
+
+	#client-form-cont {
+		margin-top: 100px;
+
+
+	}
+	#txt-client {
+		margin-top: 100px !important;
+	}
+	{
+		#style="font-family:Montserrat Medium;font-size:24px"#
+	}
+	#txt1 {
+		text-align: justify;
+		font-family: Montserrat Medium;
+		font-size: 24px;
+
+	}
+	#txt2 {
+		text-align: justify;
+		font-family: Montserrat Medium;
+		font-size: 24px;
+	}
+	#espace-client {
+		margin-bottom: 15px;
+		color: #95683E;
+	}
+	#col1 {
+		border-right: solid;
+	}
+
+
+}
+</style>{% endif %}{# fin du container #}{% endblock %}
